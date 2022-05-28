@@ -3,10 +3,11 @@ import Zfont from 'zfont'
 import Zdog from 'zdog'
 import React, { useRef } from 'react'
 import { Illustration, Group, Box, Shape } from 'react-zdog'
-
+import noto from '../assets/NotoSans-Regular.ttf'
+console.log(noto)
 Zfont.init(Zdog)
 const font = new Zdog.Font({
-  src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf',
+  src: noto,
 })
 // const TAU = Math.PI * 2
 
@@ -65,7 +66,7 @@ const BoxGroup = () => {
     <Group ref={ref} updateSort>
       <ResumeBox />
       <Facet x y>
-        <Text />
+        <Text content="sweet bbj" size={25} />
       </Facet>
     </Group>
   )
@@ -92,11 +93,10 @@ const Facet = ({ x, y, children }) => {
   return <Group translate={{ z: 1 }}>{children}</Group>
 }
 
-const Text = () => {
-  const text = font.getTextPath('hello bbj', 50)
-  console.log(text)
+const Text = ({ content, size }) => {
+  const text = font.getTextPath(content || '.', size)
   return (
-    <>
+    <div onClick={() => console.log('yessss')}>
       <Group translate={{ z: 1 }}>
         <Shape
           translate={{ x: -150, z: 151 }}
@@ -104,6 +104,8 @@ const Text = () => {
           path={text}
           stroke={2}
           color="#fff"
+          fill
+          backface={false}
         />
         <Shape
           translate={{ x: -150, z: Zdog.TAU * 100 }}
@@ -114,7 +116,7 @@ const Text = () => {
           visible={false}
         />
       </Group>
-    </>
+    </div>
   )
 }
 

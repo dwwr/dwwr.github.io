@@ -1,7 +1,8 @@
 Zfont.init(Zdog)
 
 const font = new Zdog.Font({
-  src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf',
+  // src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf',
+  src: '/src/assets/NotoSans-Regular.ttf',
 })
 
 const illo = new Zdog.Illustration({
