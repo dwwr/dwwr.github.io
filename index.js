@@ -72,7 +72,7 @@ const box = new Zdog.Box({
       translate: { z: 151 },
       addTo: textGroup,
       font: font,
-      value: "sweet BBJ!!\n",
+      value: "Sweet \nlittle \nprep",
       fontSize: 50,
       stroke: 2,
       textAlign: "center",
