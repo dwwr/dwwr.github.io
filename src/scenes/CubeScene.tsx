@@ -1,6 +1,14 @@
-// import { TAU, lerp, easeInOut } from 'zdog'
+// import { lerp, easeInOut } from 'zdog'
+import Zfont from 'zfont'
+import Zdog from 'zdog'
 import React, { useRef } from 'react'
-import { Illustration, Group, Box } from 'react-zdog'
+import { Illustration, Group, Box, Shape } from 'react-zdog'
+
+Zfont.init(Zdog)
+const font = new Zdog.Font({
+  src: 'https://cdn.jsdelivr.net/gh/jaames/zfont/demo/fredokaone.ttf',
+})
+// const TAU = Math.PI * 2
 
 // const side = [
 //   [-1, -1, 1],
@@ -55,15 +63,15 @@ const BoxGroup = () => {
   // })
   return (
     <Group ref={ref} updateSort>
-      {/* <Dots coords={side} translate={{ z: 0 }} rotate={{ y: 0 }} />
-      <Dots coords={middle} />
-      <Dots coords={side} translate={{ z: 0 }} rotate={{ x: TAU / 2 }} /> */}
       <ResumeBox />
+      <Facet x y>
+        <Text />
+      </Facet>
     </Group>
   )
 }
 
-const ResumeBox = () => {
+const ResumeBox: React.FC = () => {
   return (
     <Box
       width={300}
@@ -80,12 +88,41 @@ const ResumeBox = () => {
   )
 }
 
-export const CubeScene = () => {
+const Facet = ({ x, y, children }) => {
+  return <Group translate={{ z: 1 }}>{children}</Group>
+}
+
+const Text = () => {
+  const text = font.getTextPath('hello bbj', 50)
+  console.log(text)
+  return (
+    <>
+      <Group translate={{ z: 1 }}>
+        <Shape
+          translate={{ x: -150, z: 151 }}
+          closed={false}
+          path={text}
+          stroke={2}
+          color="#fff"
+        />
+        <Shape
+          translate={{ x: -150, z: Zdog.TAU * 100 }}
+          closed={false}
+          path={text}
+          stroke={2}
+          color="#fff"
+          visible={false}
+        />
+      </Group>
+    </>
+  )
+}
+
+export const CubeScene: React.FC = () => {
   return (
     <Illustration
       // rotate={{ x: (TAU * -35) / 360, y: (TAU * 1) / 8 }}
       element="canvas"
-      // zoom={15}
       dragRotate={true}
     >
       <BoxGroup />
