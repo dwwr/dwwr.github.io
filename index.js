@@ -40,7 +40,39 @@ const box = new Zdog.Box({
       translate: { z: 151 },
       addTo: textGroup,
       font: font,
-      value: "sweet BBJ!!",
+      value: "sweet BBJ!!\n",
+      fontSize: 50,
+      stroke: 2,
+      textAlign: "center",
+      textBaseline: "middle",
+      color: "#fff",
+      fill: true,
+    });
+
+    if (isFixed) {
+      const antiText = new Zdog.Text({
+        translate: { z: 300 },
+        addTo: textGroup,
+        font: font,
+        visible: false,
+      });
+    }
+  })
+);
+
+[-4, 4, ].forEach((d) =>
+  [false, true].forEach((isFixed) => {
+    const textGroup = new Zdog.Group({
+      translate: { z: 1 },
+      addTo: box,
+      rotate: { x: Zdog.TAU / d },
+    });
+
+    const text = new Zdog.Text({
+      translate: { z: 151 },
+      addTo: textGroup,
+      font: font,
+      value: "sweet BBJ!!\n",
       fontSize: 50,
       stroke: 2,
       textAlign: "center",
