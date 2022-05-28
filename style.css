@@ -1,4 +1,6 @@
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body {
   min-height: 100%;
@@ -8,11 +10,11 @@ body {
   justify-content: center;
   background: black;
   color: white;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   text-align: center;
 }
 
-.zdog-canvas{
+.zdog-canvas {
   display: block;
   cursor: grab;
 }
