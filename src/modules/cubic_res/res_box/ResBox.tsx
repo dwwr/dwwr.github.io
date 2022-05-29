@@ -4,15 +4,19 @@ import { Face } from '../../../content/types'
 export type ColorMap = Record<Face, string>
 
 interface ResumeBoxProps {
-  colorMap: ColorMap
+  readonly sideLength: number
+  readonly colorMap: ColorMap
 }
 
-export const ResumeBox: React.FC<ResumeBoxProps> = ({ colorMap }) => {
+export const ResumeBox: React.FC<ResumeBoxProps> = ({
+  sideLength,
+  colorMap,
+}) => {
   return (
     <Box
-      width={300}
-      height={300}
-      depth={300}
+      width={sideLength}
+      height={sideLength}
+      depth={sideLength}
       color={colorMap.back}
       leftFace={colorMap.left}
       rightFace={colorMap.right}

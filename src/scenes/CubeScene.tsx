@@ -59,6 +59,8 @@ const contents: Record<Face, FacetContent> = {
   },
 }
 
+const SIDE_LENGTH = 300
+
 export const CubeScene: React.FC = () => {
   const colorMap: Record<Face, string> = {
     front: contents.front.color,
@@ -76,8 +78,12 @@ export const CubeScene: React.FC = () => {
     >
       <BoxGroup>
         <>
-          <ResumeBox colorMap={colorMap} />
-          <FacetAnchor font={font} contents={contents} />
+          <ResumeBox sideLength={SIDE_LENGTH} colorMap={colorMap} />
+          <FacetAnchor
+            sideLength={SIDE_LENGTH}
+            font={font}
+            contents={contents}
+          />
         </>
       </BoxGroup>
     </Illustration>

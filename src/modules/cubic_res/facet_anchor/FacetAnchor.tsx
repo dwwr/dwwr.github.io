@@ -1,15 +1,14 @@
 import React from 'react'
 import { Anchor } from 'react-zdog'
-import { Face } from '../../content/types'
 import { Facet } from '../facet/Facet'
-import { FacetContent } from '../../content/types'
+import { FacetContent, Face } from '../../../content/types'
 
-interface FaceVector {
+interface FacetVector {
   readonly face: Face
   readonly x: number
   readonly y: number
 }
-const faceVectors: ReadonlyArray<FaceVector> = [
+const facetVectors: ReadonlyArray<FacetVector> = [
   { face: 'front', x: 1, y: 1 },
   { face: 'left', x: 1, y: 4 },
   { face: 'back', x: 1, y: 2 },
@@ -19,16 +18,22 @@ const faceVectors: ReadonlyArray<FaceVector> = [
 ]
 
 export interface FacetAnchorProps {
+  readonly sideLength: number
   readonly font: any
   readonly contents: Record<Face, FacetContent>
 }
 
-export const FacetAnchor: React.FC<FacetAnchorProps> = ({ font, contents }) => {
+export const FacetAnchor: React.FC<FacetAnchorProps> = ({
+  sideLength,
+  font,
+  contents,
+}) => {
   return (
     <Anchor>
-      {Object.values(faceVectors).map((vector, i) => {
+      {Object.values(facetVectors).map((vector, i) => {
         return (
           <Facet
+            sideLength={sideLength}
             xRotate={vector.x}
             yRotate={vector.y}
             content={{
