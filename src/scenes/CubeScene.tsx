@@ -4,9 +4,9 @@ import React from 'react'
 import { Illustration } from 'react-zdog'
 import '../assets/fonts'
 import noto from '../assets/NotoSans-Regular.ttf'
-import { FacetAnchor } from '../modules/facet_anchor/FacetAnchor'
-import { BoxGroup } from '../modules/box_group/BoxGroup'
-import { ResumeBox } from '../modules/res_box/ResBox'
+import { FacetAnchor } from '../modules/cubic_res/facet_anchor/FacetAnchor'
+import { BoxGroup } from '../modules/cubic_res/box_group/BoxGroup'
+import { ResumeBox } from '../modules/cubic_res/res_box/ResBox'
 import { Face, FacetContent } from '../content/types'
 
 Zfont.init(Zdog)

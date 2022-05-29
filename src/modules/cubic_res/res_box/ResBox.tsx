@@ -1,5 +1,5 @@
 import { Box } from 'react-zdog'
-import { Face } from '../../content/types'
+import { Face } from '../../../content/types'
 
 export type ColorMap = Record<Face, string>
 
