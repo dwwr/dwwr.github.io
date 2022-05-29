@@ -13,52 +13,60 @@ const font = new Zdog.Font({
   src: noto,
 })
 
-const content: Record<Face, FacetContent> = {
+const contents: Record<Face, FacetContent> = {
   front: {
     text: 'front',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#f5e0a3',
     face: 'front',
   },
   right: {
     text: 'right',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#a3a3f5',
     face: 'front',
   },
   back: {
     text: 'back',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#a3e0f5',
     face: 'front',
   },
   left: {
     text: 'left',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#a3f5a3',
     face: 'front',
   },
   top: {
     text: 'top',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#e0a3f5',
     face: 'front',
   },
   bottom: {
     text: 'bottom',
     fontSize: 25,
     font: noto,
-    color: '',
+    color: '#f5a3a3',
     face: 'front',
   },
 }
 
 export const CubeScene: React.FC = () => {
+  const colorMap: Record<Face, { color: string }> = {
+    front: { color: contents.front.color },
+    right: { color: contents.right.color },
+    back: { color: contents.back.color },
+    left: { color: contents.left.color },
+    top: { color: contents.top.color },
+    bottom: { color: contents.bottom.color },
+  }
   return (
     <Illustration
       // rotate={{ x: (Zdog.TAU * -35) / 360, y: (Zdog.TAU * 1) / 8 }}
@@ -67,8 +75,8 @@ export const CubeScene: React.FC = () => {
     >
       <BoxGroup>
         <>
-          <ResumeBox />
-          <FacetAnchor font={font} contents={content} />
+          <ResumeBox colorMap={colorMap} />
+          <FacetAnchor font={font} contents={contents} />
         </>
       </BoxGroup>
     </Illustration>

@@ -11,9 +11,9 @@ interface FaceVector {
 }
 const faceVectors: ReadonlyArray<FaceVector> = [
   { face: 'front', x: 1, y: 1 },
-  { face: 'right', x: 1, y: 4 },
+  { face: 'left', x: 1, y: 4 },
   { face: 'back', x: 1, y: 2 },
-  { face: 'left', x: 1, y: -4 },
+  { face: 'right', x: 1, y: -4 },
   { face: 'top', x: 4, y: 1 },
   { face: 'bottom', x: -4, y: 1 },
 ]
@@ -36,7 +36,7 @@ export const FacetAnchor: React.FC<FacetAnchorProps> = ({ font, contents }) => {
               font,
               fontSize: contents[vector.face].fontSize,
             }}
-            key={`${vector.face}-i`}
+            key={`${vector.face}-${i}`}
           />
         )
       })}
