@@ -1,7 +1,5 @@
 import { Box } from 'react-zdog'
-import { Face } from '../../../content/types'
-
-export type ColorMap = Record<Face, string>
+import { ColorMap } from '../../../content/types'
 
 interface ResumeBoxProps {
   readonly sideLength: number
