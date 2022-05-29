@@ -1,7 +1,7 @@
 import { Box } from 'react-zdog'
 import { Face } from '../../content/types'
 
-export type ColorMap = Record<Face, { color: string }>
+export type ColorMap = Record<Face, string>
 
 interface ResumeBoxProps {
   colorMap: ColorMap
@@ -13,15 +13,13 @@ export const ResumeBox: React.FC<ResumeBoxProps> = ({ colorMap }) => {
       width={300}
       height={300}
       depth={300}
-      color={colorMap.back.color}
-      stroke={false}
-      leftFace={colorMap.left.color}
-      rightFace={colorMap.right.color}
-      topFace={colorMap.top.color}
-      bottomFace={colorMap.bottom.color}
-      backFace={colorMap.back.color}
-      frontFace={colorMap.front.color}
-      updateSort={true}
+      color={colorMap.back}
+      leftFace={colorMap.left}
+      rightFace={colorMap.right}
+      topFace={colorMap.top}
+      bottomFace={colorMap.bottom}
+      backFace={colorMap.back}
+      frontFace={colorMap.front}
     />
   )
 }

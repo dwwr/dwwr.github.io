@@ -2,6 +2,7 @@ import Zfont from 'zfont'
 import Zdog from 'zdog'
 import React from 'react'
 import { Illustration } from 'react-zdog'
+import '../assets/fonts'
 import noto from '../assets/NotoSans-Regular.ttf'
 import { FacetAnchor } from '../modules/facet_anchor/FacetAnchor'
 import { BoxGroup } from '../modules/box_group/BoxGroup'
@@ -59,13 +60,13 @@ const contents: Record<Face, FacetContent> = {
 }
 
 export const CubeScene: React.FC = () => {
-  const colorMap: Record<Face, { color: string }> = {
-    front: { color: contents.front.color },
-    right: { color: contents.right.color },
-    back: { color: contents.back.color },
-    left: { color: contents.left.color },
-    top: { color: contents.top.color },
-    bottom: { color: contents.bottom.color },
+  const colorMap: Record<Face, string> = {
+    front: contents.front.color,
+    right: contents.right.color,
+    back: contents.back.color,
+    left: contents.left.color,
+    top: contents.top.color,
+    bottom: contents.bottom.color,
   }
   return (
     <Illustration
