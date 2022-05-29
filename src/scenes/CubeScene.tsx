@@ -13,12 +13,12 @@ const font = new Zdog.Font({
 })
 
 const chillin = [
-  'sweet bbj!!!',
-  'sweet bbj!!!',
-  'sweet bbj!!!',
-  'sweet bbj!!!',
-  'sweet bbj!!!',
-  'sweet bbj!!!',
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
+  { text: 'sweet bbj!!!', fontSize: 25, font: noto },
 ]
 
 export const CubeScene: React.FC = () => {
@@ -30,7 +30,7 @@ export const CubeScene: React.FC = () => {
     >
       <BoxGroup>
         <ResumeBox />
-        <FacetGroup font={font}>{chillin}</FacetGroup>
+        <FacetGroup font={font} contents={chillin}></FacetGroup>
       </BoxGroup>
     </Illustration>
   )

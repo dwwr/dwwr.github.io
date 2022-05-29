@@ -1,7 +1,6 @@
-import { Group, Anchor } from 'react-zdog'
-import Zdog from 'zdog'
+import React from 'react'
+import { Anchor } from 'react-zdog'
 import { Facet } from '../facet/Facet'
-import { ZText } from '../ztext/ZText'
 
 const faceVectors = {
   front: { x: 1, y: 1 },
@@ -12,14 +11,25 @@ const faceVectors = {
   bottom: { x: -4, y: 1 },
 }
 
-export const FacetGroup = ({ font, children }) => {
+export interface FacetGroupProps {
+  readonly font: any
+  readonly contents: ReadonlyArray<{ text: string; fontSize: number }>
+}
+
+export const FacetGroup: React.FC<FacetGroupProps> = ({ font, contents }) => {
   return (
     <Anchor>
       {Object.values(faceVectors).map((vector, i) => {
         return (
-          <Facet xRotate={vector.x} yRotate={vector.y} font={font}>
-            {children[i]}
-          </Facet>
+          <Facet
+            xRotate={vector.x}
+            yRotate={vector.y}
+            content={{
+              text: contents[i].text,
+              font,
+              fontSize: contents[i].fontSize,
+            }}
+          />
         )
       })}
     </Anchor>
