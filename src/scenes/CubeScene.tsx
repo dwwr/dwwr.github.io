@@ -1,5 +1,6 @@
 import React from 'react'
 import { Illustration } from 'react-zdog'
+import Zdog from 'zdog'
 import { FacetAnchor } from '../modules/cubic_res/facet_anchor/FacetAnchor'
 import { BoxGroup } from '../modules/cubic_res/box_group/BoxGroup'
 import { ResumeBox } from '../modules/cubic_res/res_box/ResBox'
@@ -24,7 +25,7 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
   }
   return (
     <Illustration
-      // rotate={{ x: (Zdog.TAU * -35) / 360, y: (Zdog.TAU * 1) / 8 }}
+      rotate={{ x: (Zdog.TAU * -35) / 360, y: (Zdog.TAU * 1) / 8 }}
       element="canvas"
       dragRotate={true}
     >
