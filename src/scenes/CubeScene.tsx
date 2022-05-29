@@ -20,6 +20,7 @@ const chillin = [
   'sweet bbj!!!',
   'sweet bbj!!!',
 ]
+
 export const CubeScene: React.FC = () => {
   return (
     <Illustration
