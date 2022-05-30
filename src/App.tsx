@@ -4,7 +4,7 @@ import { contents, SIDE_LENGTH } from './content/contents'
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <CubeScene contents={contents} sideLength={SIDE_LENGTH} />
     </div>
   )

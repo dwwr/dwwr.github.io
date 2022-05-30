@@ -35,6 +35,11 @@ body {
   }
 }
 
+.app {
+  height: 100%;
+  width: 100%;
+}
+
 .zdog-canvas {
   display: block;
   cursor: grab;

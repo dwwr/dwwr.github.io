@@ -30,10 +30,8 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
       dragRotate={true}
     >
       <BoxGroup>
-        <>
-          <ResumeBox sideLength={sideLength} colorMap={colorMap} />
-          <FacetAnchor sideLength={sideLength} contents={contents} />
-        </>
+        <ResumeBox sideLength={sideLength} colorMap={colorMap} />
+        <FacetAnchor sideLength={sideLength} contents={contents} />
       </BoxGroup>
     </Illustration>
   )
