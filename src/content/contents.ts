@@ -11,7 +11,7 @@ const noto = new Zdog.Font({
 
 export const contents: Contents = {
   front: {
-    text: '\nIn \nDepth \nExperience',
+    text: 'In \nDepth \nExperience',
     fontSize: 40,
     font: noto,
     color: '#f5e0a3',

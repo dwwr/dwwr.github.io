@@ -8,7 +8,7 @@ export interface ZTextProps {
   readonly font: any
 }
 export const ZText: React.FC<ZTextProps> = ({ text, fontSize, font }) => {
-  const textPath = font.getTextPath(text || '.', fontSize)
+  const textPath = font.getTextPath(text, fontSize)
   return (
     <Group>
       <Shape
