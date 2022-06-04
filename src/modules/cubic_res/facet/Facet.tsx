@@ -18,11 +18,13 @@ export const Facet: React.FC<FacetProps> = ({
 }) => {
   return (
     <Group rotate={{ x: Zdog.TAU / xRotate, y: Zdog.TAU / yRotate }}>
-      <Group translate={{ z: sideLength / 2, x: -sideLength / 2 }}>
+      <Group translate={{ z: sideLength / 2 }}>
         <ZText
           text={content.text}
           fontSize={content.fontSize}
           font={content.font}
+          color={content.color}
+          textAlign="center"
         />
       </Group>
     </Group>
