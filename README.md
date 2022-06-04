@@ -1,8 +1,8 @@
-#A Resume With Depth
+# A Resume With Depth
 
 
 
-A functional, modular, typescript react app leveraging Zdog and react-zdog for smooth, elegant animations.
+A functional, modular, ts-react app leveraging Zdog and react-zdog for smooth, elegant animations.
 
 Implements a declarative abstraction of Zfont for use in react-zdog apps.
 
