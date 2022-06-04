@@ -29,6 +29,8 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
+    "@types/zdog": "^1.1.2",
+    "@types/zfont": "^1.2.1",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.16.0",
