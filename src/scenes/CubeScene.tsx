@@ -36,7 +36,7 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
   const getClickedColor = React.useCallback(() => {
     const canvas = document.getElementsByTagName('canvas')[0]
     canvas?.addEventListener(
-      'dblclick',
+      'click',
       e => {
         const rect = canvas.getBoundingClientRect()
         const x =
@@ -65,7 +65,7 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
       onDragStart={getClickedColor}
       onDragEnd={() => {
         const canvas = document.getElementsByTagName('canvas')[0]
-        canvas.ondblclick = null
+        canvas.onclick = null
       }}
     >
       <BoxGroup>

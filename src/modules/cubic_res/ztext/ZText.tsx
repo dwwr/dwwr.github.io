@@ -35,7 +35,7 @@ export const ZText: React.FC<ZTextProps> = ({
     textBaseline || 'top'
   )
 
-  console.log('measured text', text, font.measureText(text, fontSize))
+  // console.log('measured text', text, font.measureText(text, fontSize))
 
   return (
     <Group>
