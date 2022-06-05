@@ -9,49 +9,51 @@ const font: Zdog.Font = new Zdog.Font({
   src: NotoSans,
 })
 
+export const SIDE_LENGTH = window.innerWidth < 400 ? 250 : 300
+
+const fontSize = window.innerWidth < 400 ? 30 : 40
+
 export const contents: Contents = {
   front: {
     text: 'In \nDepth \nExperience',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#f5e0a3',
     face: 'front',
   },
   right: {
     text: 'Contributions \nIn \nVolume',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#a3a3f5',
     face: 'front',
   },
   back: {
     text: 'Expertise \nIn \nBackend',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#a3e0f5',
     face: 'front',
   },
   left: {
     text: 'Dimensions \nOf \nCreativity',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#a3f5a3',
     face: 'front',
   },
   top: {
     text: 'Top \nTier \nEngineering',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#e0a3f5',
     face: 'front',
   },
   bottom: {
     text: 'Bottom \nLine \nOriented',
-    fontSize: 40,
-    font: font,
+    fontSize,
+    font,
     color: '#f5a3a3',
     face: 'front',
   },
 }
-
-export const SIDE_LENGTH = 300
