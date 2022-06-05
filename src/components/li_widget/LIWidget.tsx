@@ -18,7 +18,7 @@ export const LIWidget: React.FC = () => {
     <div
       className="badge-base LI-profile-badge"
       data-locale="en_US"
-      data-size="medium"
+      data-size="small"
       data-theme="light"
       data-type="HORIZONTAL"
       data-vanity="dwwr"

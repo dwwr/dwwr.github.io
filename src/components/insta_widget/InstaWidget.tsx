@@ -133,7 +133,7 @@ export const InstaWidget: React.FC = () => {
               View this profile on Instagram
             </div>
           </div>
-          <div style={{ padding: '12.5% 0;' }}></div>
+          <div style={{ padding: '12.5% 0' }}></div>
           <div
             style={{
               display: 'flex',
