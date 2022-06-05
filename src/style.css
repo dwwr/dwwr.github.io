@@ -11,13 +11,8 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: black;
   color: white;
-  font-family: 'Noto Sans', sans-serif;
-  text-align: center;
   background: linear-gradient(-30deg, #e1a1f5, #4747eb, #fb51a6, #f5e0a3);
   animation: gradient 7.5s ease infinite;
   background-size: 200% 200%;
@@ -38,11 +33,24 @@ body {
 .app {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.zdog-canvas {
+.cube-scene-container {
   display: block;
   cursor: grab;
-  height: 100%;
+  height: 550px;
+  width: 550px;
+}
+
+.card-container {
+  height: 30%;
   width: 100%;
+  background-color: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  justify-items: start;
 }

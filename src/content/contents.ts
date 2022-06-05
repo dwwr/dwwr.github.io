@@ -13,6 +13,7 @@ export const SIDE_LENGTH = window.innerWidth < 400 ? 250 : 300
 
 const fontSize = window.innerWidth < 400 ? 30 : 40
 
+// 'multifaceted'
 export const contents: Contents = {
   front: {
     text: 'In \nDepth \nExperience',
