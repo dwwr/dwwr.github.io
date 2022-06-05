@@ -23,6 +23,14 @@ export const LIWidget: React.FC = () => {
       data-type="HORIZONTAL"
       data-vanity="dwwr"
       data-version="v1"
-    />
+    >
+      <a
+        className="badge-base__link LI-simple-link"
+        href="https://www.linkedin.com/in/dwwr?trk=profile-badge"
+        target="_blank"
+      >
+        Derek Warner-Reyes
+      </a>
+    </div>
   )
 }
