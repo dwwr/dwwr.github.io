@@ -9,6 +9,7 @@ import { Contents, Face } from '../content/types'
 export interface CubeSceneProps {
   contents: Contents
   sideLength: number
+  setCurrentFace: (face: Face) => void
 }
 
 const rgbToHex = (r: number, g: number, b: number) => {
@@ -19,6 +20,7 @@ const rgbToHex = (r: number, g: number, b: number) => {
 export const CubeScene: React.FC<CubeSceneProps> = ({
   contents,
   sideLength,
+  setCurrentFace,
 }) => {
   const colorMap: Record<Face, string> = {
     front: contents.front.color,
@@ -29,9 +31,9 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
     bottom: contents.bottom.color,
   }
 
-  const backwardColorMap: Record<string, string> = Object.fromEntries(
+  const backwardColorMap = Object.fromEntries(
     Object.entries(colorMap).map(([key, value]) => [value, key])
-  )
+  ) as Record<string, Face>
 
   const getClickedColor = React.useCallback(() => {
     const canvas = document.getElementsByTagName('canvas')[0]
@@ -54,6 +56,7 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
   }, [])
 
   const getClickedFace = (hex: string) => {
+    setCurrentFace(backwardColorMap[hex] || 'none')
     return backwardColorMap[hex]
   }
 
