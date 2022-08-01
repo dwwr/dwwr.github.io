@@ -5,10 +5,12 @@ import { FacetAnchor } from '../modules/cubic_res/facet_anchor/FacetAnchor'
 import { BoxGroup } from '../modules/cubic_res/box_group/BoxGroup'
 import { ResumeBox } from '../modules/cubic_res/res_box/ResBox'
 import { Contents, Face } from '../content/types'
+// import { CardContainer } from '../components/card_container/CardContainer'
 
 export interface CubeSceneProps {
   contents: Contents
   sideLength: number
+  // setCurrentFace: (face: Face) => void
 }
 
 const rgbToHex = (r: number, g: number, b: number) => {
@@ -19,7 +21,10 @@ const rgbToHex = (r: number, g: number, b: number) => {
 export const CubeScene: React.FC<CubeSceneProps> = ({
   contents,
   sideLength,
+  // setCurrentFace,
 }) => {
+  // const [currentFace, setCurrentFace] = React.useState<Face | 'none'>('none')
+
   const colorMap: Record<Face, string> = {
     front: contents.front.color,
     right: contents.right.color,
@@ -29,9 +34,9 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
     bottom: contents.bottom.color,
   }
 
-  const backwardColorMap: Record<string, string> = Object.fromEntries(
+  const backwardColorMap = Object.fromEntries(
     Object.entries(colorMap).map(([key, value]) => [value, key])
-  )
+  ) as Record<string, Face>
 
   const getClickedColor = React.useCallback(() => {
     const canvas = document.getElementsByTagName('canvas')[0]
@@ -54,24 +59,28 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
   }, [])
 
   const getClickedFace = (hex: string) => {
+    // setCurrentFace(backwardColorMap[hex] || 'none')
     return backwardColorMap[hex]
   }
 
   return (
-    <Illustration
-      rotate={{ x: (Zdog.TAU * -35) / 360, y: (Zdog.TAU * 1) / 8 }}
-      element="canvas"
-      dragRotate={true}
-      onDragStart={getClickedColor}
-      onDragEnd={() => {
-        const canvas = document.getElementsByTagName('canvas')[0]
-        canvas.onclick = null
-      }}
-    >
-      <BoxGroup>
-        <ResumeBox sideLength={sideLength} colorMap={colorMap} />
-        <FacetAnchor sideLength={sideLength} contents={contents} />
-      </BoxGroup>
-    </Illustration>
+    <>
+      <Illustration
+        rotate={{ x: (Zdog.TAU * -35) / 360, y: (Zdog.TAU * 1) / 8 }}
+        element="canvas"
+        dragRotate={true}
+        onDragStart={getClickedColor}
+        onDragEnd={() => {
+          const canvas = document.getElementsByTagName('canvas')[0]
+          canvas.onclick = null
+        }}
+      >
+        <BoxGroup>
+          <ResumeBox sideLength={sideLength} colorMap={colorMap} />
+          <FacetAnchor sideLength={sideLength} contents={contents} />
+        </BoxGroup>
+      </Illustration>
+      {/* <CardContainer /> */}
+    </>
   )
 }

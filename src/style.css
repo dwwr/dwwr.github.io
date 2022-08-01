@@ -51,6 +51,5 @@ body {
   background-color: black;
   overflow: hidden;
   display: flex;
-  justify-content: start;
-  justify-items: start;
+  justify-content: center;
 }
