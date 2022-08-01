@@ -1,8 +1,8 @@
 import React from 'react'
 import { CubeScene } from './scenes/CubeScene'
 import { contents, SIDE_LENGTH } from './content/contents'
-import { Face } from './content/types'
-import { CardContainer } from './components/card_container/CardContainer'
+// import { Face } from './content/types'
+// import { CardContainer } from './components/card_container/CardContainer'
 
 const App: React.FC = () => {
   // const [currentFace, setCurrentFace] = React.useState<Face | 'none'>('none')
@@ -13,7 +13,8 @@ const App: React.FC = () => {
         <CubeScene
           contents={contents}
           sideLength={SIDE_LENGTH}
-          // setCurrentFace={face => {}}
+          // currentFace={currentFace}
+          // setCurrentFace={face => setCurrentFace(face)}
         />
       </div>
       {/* <CardContainer currentFace={currentFace} /> */}
