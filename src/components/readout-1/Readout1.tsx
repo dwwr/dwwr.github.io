@@ -6,6 +6,8 @@ import { ListContainer } from './subcomponents/ListContainer'
 import { Readout1ListItemProps } from './subcomponents/Readout1ListItem'
 
 const readout1 = css`
+  height: 100%;
+  width: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;

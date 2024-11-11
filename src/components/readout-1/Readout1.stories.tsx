@@ -8,7 +8,7 @@ export default {
 } as Meta<typeof Readout1>
 
 const Template: StoryFn<typeof Readout1> = (props: Readout1Props) => (
-  <div style={{ width: '100%', minHeight: '500px', backgroundColor: 'black' }}>
+  <div style={{ width: '100%', minHeight: '1000px', height: '100%', backgroundColor: 'black' }}>
     <Readout1 {...props} />
   </div>
 )
