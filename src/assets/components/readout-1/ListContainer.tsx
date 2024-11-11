@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import React from 'react'
 import { ListHeader } from './ListHeader'
-import { ListItem, ListItemProps } from './ListItem'
+import { Readout1ListItemProps, Readout1ListItem } from './Readout1ListItem'
 import { ListWarningRow } from './ListWarningRow'
 
 const listContainer = css`
@@ -19,7 +19,7 @@ export const ListContainer: React.FC<ListContainerProps> = ({ items }) => {
       {items.map((item) => (
         <>
           <ListWarningRow />
-          <ListItem {...item} />
+          <Readout1ListItem {...item} />
         </>
       ))}
     </div>
@@ -27,5 +27,5 @@ export const ListContainer: React.FC<ListContainerProps> = ({ items }) => {
 }
 
 interface ListContainerProps {
-  items: ListItemProps[]
+  items: Readout1ListItemProps[]
 }

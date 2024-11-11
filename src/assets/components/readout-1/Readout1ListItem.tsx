@@ -1,19 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { useState, useEffect } from 'react'
+import { glowText } from './Readout1'
 
 const listItem = css`
   display: contents;
 `
 
 const label = css`
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   font-size: clamp(0.4rem, 2vw, 1rem);
   text-align: center;
   justify-self: end;
   letter-spacing: -0.5px;
   line-height: 1;
   margin-right: 0.5rem;
+  text-transform: uppercase;
 `
 
 const number = css`
@@ -70,7 +72,7 @@ const styleIncrementor = (i: number, currentNumber: number) => {
   `
 }
 
-export const ListItem: React.FC<ListItemProps> = ({
+export const Readout1ListItem: React.FC<Readout1ListItemProps> = ({
   subject,
   subjectNumber,
   subjectLabel,
@@ -79,7 +81,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   const currentNumber = useRandomDeviation(value || 0, 2)
   return (
     <div css={listItem}>
-      <div css={label}>
+      <div css={[label, glowText]}>
         <div>{subject}</div>
         <div css={number}>{subjectNumber}</div>
         <div>{subjectLabel}</div>
@@ -93,7 +95,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   )
 }
 
-export interface ListItemProps {
+export interface Readout1ListItemProps {
   subject: string
   subjectNumber: string
   subjectLabel: string

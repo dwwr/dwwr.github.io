@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import { Header } from './Header'
 import { GlowLine } from './GlowLine'
 import { ListContainer } from './ListContainer'
-import { ListItemProps } from './ListItem'
+import { Readout1ListItemProps } from './Readout1ListItem'
 
 const readout1 = css`
   background-color: black;
@@ -47,7 +47,7 @@ const readout1 = css`
   }
 `
 
-const glowText = css`
+export const glowText = css`
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgb(237, 110, 46);
@@ -86,5 +86,5 @@ export interface Readout1Props {
   kpi1Value: string
   kpi2Key: string
   kpi2Value: string
-  items: ListItemProps[]
+  items: Readout1ListItemProps[]
 }
