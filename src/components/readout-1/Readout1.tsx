@@ -50,9 +50,11 @@ export const glowText = css`
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgb(237, 110, 46);
-  text-shadow: 0 0 3px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+  text-shadow: 0 0 0.375px #ff0000, 0 0 1.125px #ff0000, 0 0 1.875px #ff0000, 0 0 2.625px #ff0000,
+    0 0 3.375px #ff0000;
   height: 100%;
   opacity: 0.95;
+  filter: blur(0.3px);
 `
 
 export const Readout1: React.FC<Readout1Props> = ({

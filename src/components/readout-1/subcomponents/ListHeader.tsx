@@ -10,7 +10,7 @@ const listHeader = css`
 `
 
 const scaleNumbers = css`
-  font-size: clamp(0.4rem, 1vw, 2rem);
+  font-size: clamp(0.45rem, 1vw, 2rem);
   transform: scaleY(1.5);
 `
 
