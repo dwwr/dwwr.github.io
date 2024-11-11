@@ -11,7 +11,6 @@ const readout1 = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  padding: 1rem;
 
   &::before {
     content: '';
@@ -52,7 +51,6 @@ export const glowText = css`
   font-weight: bold;
   color: rgb(237, 110, 46);
   text-shadow: 0 0 3px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
-  // letter-spacing: 0.1rem;
   height: 100%;
   opacity: 0.95;
 `

@@ -10,6 +10,7 @@ const listContainer = css`
   grid-template-columns: 10% 90%;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin: 1rem;
 `
 
 const loadingPulse = css`
