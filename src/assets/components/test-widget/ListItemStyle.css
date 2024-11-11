@@ -1,0 +1,55 @@
+.scale-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.subject-number {
+  color: #ff3e3e;
+  font-family: monospace;
+  min-width: 80px;
+}
+
+.subject-number .label {
+  font-size: 0.8em;
+}
+
+.subject-number .number {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.subject-number .sub-label {
+  font-size: 0.8em;
+}
+
+.scale-bar {
+  flex-grow: 1;
+  position: relative;
+}
+
+.gradient-bar {
+  height: 20px;
+  background: linear-gradient(
+    to right,
+    rgb(158, 255, 255) 0%,
+    rgb(158, 255, 255) 40%,
+    rgb(0, 149, 255) 70%,
+    rgb(0, 89, 255) 100%
+  );
+}
+
+.warnings {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  display: flex;
+  gap: 1rem;
+  color: #ff3e3e;
+  font-family: monospace;
+}
+
+.warnings span {
+  font-size: 0.8em;
+}
