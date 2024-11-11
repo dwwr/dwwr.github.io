@@ -8,6 +8,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    layout: 'fullscreen', // Removes padding around the stories
+    backgrounds: {
+      disable: true, // Disables the background color picker
+      default: 'transparent',
+    },
   },
 }
 
