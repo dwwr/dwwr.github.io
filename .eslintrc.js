@@ -1,5 +1,7 @@
 module.exports = {
-  parser: '@typescript-eslint/parser', // Specifies the ESLint parser]
+  // Specifies the ESLint parser]
+  parser: '@typescript-eslint/parser',
+
   rules: {
     'no-console': 'off',
     'react/jsx-props-no-spreading': 'off', // storybook conflict
@@ -11,4 +13,6 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
   },
+
+  extends: ['plugin:storybook/recommended']
 }
