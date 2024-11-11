@@ -46,16 +46,18 @@ const getGradientColor = (index: number, total: number): string => {
 }
 
 const useRandomDeviation = (baseNumber: number, range: number = 3) => {
-  const [currentNumber, setCurrentNumber] = useState(baseNumber)
+  // Convert baseNumber from 0-100 range to 0-40 range
+  const scaledBaseNumber = (baseNumber / 100) * 40
+  const [currentNumber, setCurrentNumber] = useState(scaledBaseNumber)
 
   useEffect(() => {
     const interval = setInterval(() => {
       const deviation = Math.random() * range * 2 - range
-      setCurrentNumber(baseNumber + deviation)
+      setCurrentNumber(scaledBaseNumber + deviation)
     }, 100)
 
     return () => clearInterval(interval)
-  }, [baseNumber, range])
+  }, [scaledBaseNumber, range])
 
   return currentNumber
 }

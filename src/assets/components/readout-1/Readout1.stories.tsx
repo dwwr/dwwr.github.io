@@ -21,9 +21,9 @@ const DefaultArgs = {
   kpi2Key: 'L.C.L. PURITY',
   kpi2Value: '99.9999989%',
   items: [
-    { subject: 'subject', subjectNumber: '01', subjectLabel: 'FIRST.C', value: 20 },
-    { subject: 'subject', subjectNumber: '02', subjectLabel: 'SECOND.C', value: 20 },
-    { subject: 'subject', subjectNumber: '03', subjectLabel: 'THIRD.C', value: 30 }
+    { subject: 'subject', subjectNumber: '00', subjectLabel: 'FIRST.C', value: 25 },
+    { subject: 'subject', subjectNumber: '01', subjectLabel: 'THIRD.C', value: 50 },
+    { subject: 'subject', subjectNumber: '02', subjectLabel: 'SECOND.C', value: 85 }
   ]
 }
 Default.args = DefaultArgs
