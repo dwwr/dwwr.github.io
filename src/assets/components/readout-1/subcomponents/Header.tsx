@@ -21,6 +21,7 @@ const column = css`
 const stretch = css`
   font-size: clamp(0.5rem, 3.5vw, 2.5rem);
   transform: scaleY(2);
+  text-transform: uppercase;
 `
 
 export const Header: React.FC<HeaderProps> = ({

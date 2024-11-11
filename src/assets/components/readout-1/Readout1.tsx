@@ -63,7 +63,8 @@ export const Readout1: React.FC<Readout1Props> = ({
   kpi1Value,
   kpi2Key,
   kpi2Value,
-  items
+  items,
+  isLoading = false
 }) => {
   return (
     <div css={[readout1, glowText]}>
@@ -75,7 +76,7 @@ export const Readout1: React.FC<Readout1Props> = ({
         kpi2Value={kpi2Value}
       />
       <GlowLine />
-      <ListContainer items={items} />
+      <ListContainer items={items} isLoading={isLoading} />
     </div>
   )
 }
@@ -87,4 +88,5 @@ export interface Readout1Props {
   kpi2Key: string
   kpi2Value: string
   items: Readout1ListItemProps[]
+  isLoading?: boolean
 }

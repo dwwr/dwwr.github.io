@@ -8,7 +8,7 @@ export default {
 } as Meta<typeof Readout1>
 
 const Template: StoryFn<typeof Readout1> = (props: Readout1Props) => (
-  <div style={{ width: '100%', height: '100%', backgroundColor: 'black' }}>
+  <div style={{ width: '100%', minHeight: '500px', backgroundColor: 'black' }}>
     <Readout1 {...props} />
   </div>
 )
@@ -27,3 +27,25 @@ const DefaultArgs = {
   ]
 }
 Default.args = DefaultArgs
+
+export const Empty = Template.bind({})
+const EmptyArgs = {
+  title: 'MENTAL TOXICITY LEVEL',
+  kpi1Key: 'ELAPSED TIME',
+  kpi1Value: '120 min.',
+  kpi2Key: 'L.C.L. PURITY',
+  kpi2Value: '99.9999989%',
+  items: []
+}
+Empty.args = EmptyArgs
+
+export const Loading = Template.bind({})
+const LoadingArgs = {
+  title: 'Loading',
+  kpi1Key: 'Loading',
+  kpi1Value: 'Loading',
+  kpi2Key: 'Loading',
+  kpi2Value: 'Loading',
+  isLoading: true
+}
+Loading.args = LoadingArgs
