@@ -8,9 +8,9 @@ export default {
 } as Meta<typeof TestWidget>
 
 const Template: StoryFn<typeof TestWidget> = (args) => (
-  // <div style={{ width: '1200px', height: '400px', padding: '20px' }}>
-  <TestWidget {...args} />
-  // </div>
+  <div style={{ width: '100%', height: '100%', backgroundColor: 'black' }}>
+    <TestWidget {...args} />
+  </div>
 )
 
 export const Default = Template.bind({})

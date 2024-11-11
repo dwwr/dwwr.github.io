@@ -1,4 +1,6 @@
 .test-widget {
+  position: relative;
+
   &::before {
     content: '';
     position: absolute;
@@ -6,98 +8,36 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.1) 50%, transparent 100%);
-    animation: scanline 4s linear infinite;
+    background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.2) 50%, transparent 100%);
+    animation: scanline 2s linear infinite, flicker 0.15s infinite;
+    pointer-events: none;
   }
-  @keyframes scanline {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(100%);
-    }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
   }
 }
 
 .glow-text {
   color: #ff0000;
-  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+  text-shadow: 0 0 3px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
   letter-spacing: 0.1em;
   height: 100%;
-}
-
-.glow-line {
-  border: none;
-  height: 2px;
-  background: #ff3300;
-  box-shadow: 0 0 5px #ff3300;
-}
-
-.toxicity-scale {
-  margin-top: 4px;
-}
-
-.scale-numbers {
-  display: flex;
-  justify-content: space-between;
-  color: #ff3300;
-  text-shadow: 0 0 5px #ff3300;
-  font-family: monospace;
-  padding: 0 4px;
-}
-
-.scale-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.subject-number {
-  color: #ff3e3e;
-  font-family: monospace;
-  min-width: 80px;
-}
-
-.subject-number .label {
-  font-size: 0.8em;
-}
-
-.subject-number .number {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-.subject-number .sub-label {
-  font-size: 0.8em;
-}
-
-.scale-bar {
-  flex-grow: 1;
-  position: relative;
-}
-
-.gradient-bar {
-  height: 20px;
-  background: linear-gradient(
-    to right,
-    rgb(158, 255, 255) 0%,
-    rgb(158, 255, 255) 40%,
-    rgb(0, 149, 255) 70%,
-    rgb(0, 89, 255) 100%
-  );
-}
-
-.warnings {
-  position: absolute;
-  top: -20px;
-  right: 0;
-  display: flex;
-  gap: 1rem;
-  color: #ff3e3e;
-  font-family: monospace;
-}
-
-.warnings span {
-  font-size: 0.8em;
 }
