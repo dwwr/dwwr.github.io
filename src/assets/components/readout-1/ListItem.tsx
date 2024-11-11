@@ -8,12 +8,12 @@ const listItem = css`
 
 const label = css`
   padding: 0.5rem 0;
-  padding-right: 0.33rem;
   font-size: clamp(0.4rem, 2vw, 1rem);
-  text-align: left;
-  letter-spacing: -0.5px;
+  text-align: center;
   justify-self: end;
+  letter-spacing: -0.5px;
   line-height: 1;
+  margin-right: 0.5rem;
 `
 
 const number = css`
@@ -70,23 +70,32 @@ const styleIncrementor = (i: number, currentNumber: number) => {
   `
 }
 
-export const ListItem: React.FC = () => {
-  const currentNumber = useRandomDeviation(20, 2) || 0
+export const ListItem: React.FC<ListItemProps> = ({
+  subject,
+  subjectNumber,
+  subjectLabel,
+  value
+}) => {
+  const currentNumber = useRandomDeviation(value || 0, 2)
   return (
     <div css={listItem}>
       <div css={label}>
-        <div>SUBJECT</div>
-        <div css={number}>01</div>
-        <div>FIRST.C</div>
+        <div>{subject}</div>
+        <div css={number}>{subjectNumber}</div>
+        <div>{subjectLabel}</div>
       </div>
-      <div>
-        <div css={gradientBar}>
-          {[...Array(40)].map((_, i) => (
-            <div key={i} css={styleIncrementor(i, currentNumber)} />
-          ))}
-          <div></div>
-        </div>
+      <div css={gradientBar}>
+        {[...Array(40)].map((_, i) => (
+          <div key={i} css={styleIncrementor(i, currentNumber)} />
+        ))}
       </div>
     </div>
   )
+}
+
+export interface ListItemProps {
+  subject: string
+  subjectNumber: string
+  subjectLabel: string
+  value: number
 }

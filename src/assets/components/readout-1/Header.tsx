@@ -23,14 +23,32 @@ const stretch = css`
   transform: scaleY(2);
 `
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({
+  title,
+  kpi1Key,
+  kpi1Value,
+  kpi2Key,
+  kpi2Value
+}) => {
   return (
     <div css={display}>
-      <div css={[column, stretch]}>MENTAL TOXICITY LEVEL</div>
+      <div css={[column, stretch]}>{title}</div>
       <div css={column}>
-        <div>ELAPSED TIME: 120 min.</div>
-        <div>L.C.L. PURITY: 99.9999989%</div>
+        <div>
+          {kpi1Key}: {kpi1Value}
+        </div>
+        <div>
+          {kpi2Key}: {kpi2Value}
+        </div>
       </div>
     </div>
   )
+}
+
+export interface HeaderProps {
+  title: string
+  kpi1Key: string
+  kpi1Value: string
+  kpi2Key: string
+  kpi2Value: string
 }

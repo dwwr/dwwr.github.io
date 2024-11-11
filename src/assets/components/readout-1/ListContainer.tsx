@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import React from 'react'
 import { ListHeader } from './ListHeader'
-import { ListItem } from './ListItem'
+import { ListItem, ListItemProps } from './ListItem'
 import { ListWarningRow } from './ListWarningRow'
 
 const listContainer = css`
@@ -12,16 +12,20 @@ const listContainer = css`
   padding-right: 1rem;
 `
 
-export const ListContainer: React.FC = () => {
+export const ListContainer: React.FC<ListContainerProps> = ({ items }) => {
   return (
     <div css={listContainer}>
       <ListHeader />
-      <ListWarningRow />
-      <ListItem />
-      <ListWarningRow />
-      <ListItem />
-      <ListWarningRow />
-      <ListItem />
+      {items.map((item) => (
+        <>
+          <ListWarningRow />
+          <ListItem {...item} />
+        </>
+      ))}
     </div>
   )
+}
+
+interface ListContainerProps {
+  items: ListItemProps[]
 }

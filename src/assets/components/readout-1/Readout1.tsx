@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { Header } from './Header'
-import { GlowLine } from '../GlowLine'
+import { GlowLine } from './GlowLine'
 import { ListContainer } from './ListContainer'
+import { ListItemProps } from './ListItem'
 
 const readout1 = css`
   background-color: black;
@@ -10,7 +11,7 @@ const readout1 = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  margin: 1rem;
+  padding: 1rem;
 
   &::before {
     content: '';
@@ -56,12 +57,34 @@ const glowText = css`
   opacity: 0.95;
 `
 
-export const Readout1: React.FC = () => {
+export const Readout1: React.FC<Readout1Props> = ({
+  title,
+  kpi1Key,
+  kpi1Value,
+  kpi2Key,
+  kpi2Value,
+  items
+}) => {
   return (
     <div css={[readout1, glowText]}>
-      <Header />
+      <Header
+        title={title}
+        kpi1Key={kpi1Key}
+        kpi1Value={kpi1Value}
+        kpi2Key={kpi2Key}
+        kpi2Value={kpi2Value}
+      />
       <GlowLine />
-      <ListContainer />
+      <ListContainer items={items} />
     </div>
   )
+}
+
+export interface Readout1Props {
+  title: string
+  kpi1Key: string
+  kpi1Value: string
+  kpi2Key: string
+  kpi2Value: string
+  items: ListItemProps[]
 }

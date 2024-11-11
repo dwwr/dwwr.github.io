@@ -14,8 +14,8 @@ export const ListWarningRow: React.FC = () => {
     <div css={listWarningRow}>
       <div>|</div>
       <div></div>
-      <span>|CAUTION|</span>
-      <span>|DANGER|</span>
+      <span>| CAUTION |</span>
+      <span>| DANGER |</span>
     </div>
   )
 }
