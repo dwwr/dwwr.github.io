@@ -11,6 +11,10 @@ const readout1 = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 
   &::before {
     content: '';
