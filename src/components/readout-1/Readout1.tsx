@@ -20,7 +20,7 @@ const readout1 = css`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.1) 50%, transparent 100%);
+    background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.15) 50%, transparent 100%);
     animation: scanline 0.167s linear infinite, flicker 0.167s infinite;
     pointer-events: none;
   }
