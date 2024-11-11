@@ -7,7 +7,7 @@ import { ListWarningRow } from './ListWarningRow'
 
 const listContainer = css`
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 10% 90%;
   padding-left: 1rem;
   padding-right: 1rem;
 `

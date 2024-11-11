@@ -1,17 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-const toxicityDisplay = css`
-  padding: 20px;
-  padding-left: 30px;
-  padding-bottom: 0px;
-  font-family: 'Helvetica';
+const display = css`
   display: flex;
-  gap: 10px;
-  // align-items: center;
-  width: 100%;
-  font-size: clamp(0.8rem, 2vw, 2rem);
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 1rem 0.75rem;
+  gap: 0.5rem;
+  font-size: clamp(0.8rem, 2.1vw, 2rem);
   letter-spacing: -0.25px;
+  text-wrap: balance;
 `
 
 const column = css`
@@ -21,14 +19,13 @@ const column = css`
 `
 
 const stretch = css`
-  font-size: clamp(1rem, 2.5vw, 2.5rem);
-  font-weight: bold;
+  font-size: clamp(1.1rem, 3vw, 2.5rem);
   transform: scaleY(2);
 `
 
 export const Header: React.FC = () => {
   return (
-    <div css={toxicityDisplay}>
+    <div css={display}>
       <div css={[column, stretch]}>MENTAL TOXICITY LEVEL</div>
       <div css={column}>
         <div>ELAPSED TIME: 120 min.</div>

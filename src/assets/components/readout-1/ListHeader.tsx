@@ -10,10 +10,7 @@ const listHeader = css`
 `
 
 const scaleNumbers = css`
-  font-family: 'Helvetica', monospace;
-  font-weight: bold;
-  color: #ff3e3e;
-  font-size: clamp(0.5rem, 1vw, 2rem);
+  font-size: clamp(0.4rem, 1vw, 2rem);
   transform: scaleY(1.5);
 `
 
