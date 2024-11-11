@@ -19,7 +19,7 @@ const Template: StoryFn<typeof Readout1ListItem> = (props: Readout1ListItemProps
       width: '100%',
       height: '100%',
       backgroundColor: 'black',
-      padding: '1rem',
+      padding: '2rem',
       display: 'grid',
       gridTemplateColumns: '10% 90%'
     }}
