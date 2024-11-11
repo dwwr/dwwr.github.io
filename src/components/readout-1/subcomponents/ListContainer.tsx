@@ -11,6 +11,7 @@ const listContainer = css`
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 1rem;
+  margin-top: 0;
 `
 
 const loadingPulse = css`
