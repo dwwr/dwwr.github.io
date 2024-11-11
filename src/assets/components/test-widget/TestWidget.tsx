@@ -1,12 +1,28 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import { Header } from './Header'
 import './style.css'
-import React from 'react'
+import { GlowLine } from '../GlowLine'
+
+const testWidget = css`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+`
 
 export const TestWidget: React.FC = () => {
   return (
-    <div className="test-widget">
+    <div css={testWidget} className="test-widget glow-text">
       <Header />
-      <hr className="glow-line" />
+      <GlowLine />
+      <div className="scale-numbers">
+        <span>-100.0</span>
+        <span>+0</span>
+        <span>+10.0</span>
+        <span>+15.0</span>
+      </div>
       <div className="toxicity-scale">
         <div className="scale-info">
           <div className="subject-number">
@@ -21,12 +37,6 @@ export const TestWidget: React.FC = () => {
               <span className="danger">DANGER</span>
             </div>
           </div>
-        </div>
-        <div className="scale-numbers">
-          <span>-100.0</span>
-          <span>+0</span>
-          <span>+10.0</span>
-          <span>+15.0</span>
         </div>
       </div>
     </div>
