@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Header } from './Header'
-import { GlowLine } from './GlowLine'
-import { ListContainer } from './ListContainer'
-import { Readout1ListItemProps } from './Readout1ListItem'
+import { Header } from './subcomponents/Header'
+import { GlowLine } from './subcomponents/GlowLine'
+import { ListContainer } from './subcomponents/ListContainer'
+import { Readout1ListItemProps } from './subcomponents/Readout1ListItem'
 
 const readout1 = css`
   background-color: black;
