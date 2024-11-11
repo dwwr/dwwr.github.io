@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { useState, useEffect } from 'react'
 
 const listItem = css`
   display: contents;
@@ -42,8 +43,6 @@ const getGradientColor = (index: number, total: number): string => {
   }
 }
 
-import { useState, useEffect } from 'react'
-
 const useRandomDeviation = (baseNumber: number, range: number = 3) => {
   const [currentNumber, setCurrentNumber] = useState(baseNumber)
 
@@ -59,8 +58,20 @@ const useRandomDeviation = (baseNumber: number, range: number = 3) => {
   return currentNumber
 }
 
+const styleIncrementor = (i: number, currentNumber: number) => {
+  const gradientColor = getGradientColor(i, 40)
+  return css`
+    background: ${i > currentNumber ? 'none' : gradientColor};
+    flex: 1;
+    height: 75%;
+    border-radius: 3px;
+    margin: 0 0.1rem;
+    box-shadow: ${i > currentNumber ? 'none' : `0 0 15px ${gradientColor}`};
+  `
+}
+
 export const ListItem: React.FC = () => {
-  const currentNumber = useRandomDeviation(40, 2) || 0
+  const currentNumber = useRandomDeviation(20, 2) || 0
   return (
     <div css={listItem}>
       <div css={label}>
@@ -71,17 +82,7 @@ export const ListItem: React.FC = () => {
       <div>
         <div css={gradientBar}>
           {[...Array(40)].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                background: i > currentNumber ? 'none' : getGradientColor(i, 40),
-                flex: '1',
-                height: '75%',
-                borderRadius: '3px',
-                margin: '0 0.1rem',
-                boxShadow: i > currentNumber ? 'none' : `0 0 15px ${getGradientColor(i, 40)}`
-              }}
-            />
+            <div key={i} css={styleIncrementor(i, currentNumber)} />
           ))}
           <div></div>
         </div>

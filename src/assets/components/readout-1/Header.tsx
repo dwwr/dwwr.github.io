@@ -5,9 +5,9 @@ const display = css`
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-  padding: 0 1rem 0.75rem;
+  padding: 0 1rem 0.25rem;
   gap: 0.5rem;
-  font-size: clamp(0.8rem, 2.1vw, 2rem);
+  font-size: clamp(0.5rem, 2.5vw, 2rem);
   letter-spacing: -0.25px;
   text-wrap: balance;
 `
@@ -19,7 +19,7 @@ const column = css`
 `
 
 const stretch = css`
-  font-size: clamp(1.1rem, 3vw, 2.5rem);
+  font-size: clamp(0.5rem, 3.5vw, 2.5rem);
   transform: scaleY(2);
 `
 

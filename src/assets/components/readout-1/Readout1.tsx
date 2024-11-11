@@ -10,6 +10,7 @@ const readout1 = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  margin: 1rem;
 
   &::before {
     content: '';
