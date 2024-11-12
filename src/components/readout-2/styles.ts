@@ -11,24 +11,27 @@ export const mainStyle = css`
   width: 100%;
   background-color: black;
   display: flex;
-  transform: rotate(90deg) scale(1);
+  transform: rotate(-90deg) scaleX(-1);
   filter: blur(0.9px);
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   --emergency-color: rgb(215, 0, 6);
+  --s: 100px; /* size  */
+  --m: 4px; /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
 
   @media (max-width: 499px) {
-    transform: rotate(90deg) scale(1);
+    transform: rotate(-90deg) scaleX(-1) scale(1);
   }
 
   @media (min-width: 500px) {
-    transform: rotate(90deg) scale(2);
+    transform: rotate(-90deg) scaleX(-1) scale(2);
   }
 
   @media (min-width: 600px) {
-    transform: rotate(90deg) scale(1.5);
+    transform: rotate(-90deg) scaleX(-1) scale(1.5);
   }
 `
 
@@ -44,29 +47,29 @@ export const pulse = keyframes`
 export const containerStyle = css`
   &::before {
     content: '';
-    width: 54px;
+    width: calc(var(--s) / 2 + var(--m));
     float: left;
     height: 120%;
-    shape-outside: repeating-linear-gradient(#0000 0 174.2px, #000 0 178px);
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
   }
 `
 
 export const hexagonStyle = css`
-  width: 100px;
-  margin: 4px;
-  height: 115.47px;
+  position: relative;
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
   display: inline-block;
   font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: -24.85px;
-  position: relative;
-  vertical-align: top;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
 `
 
 export const hexagonOnStyle = css`
   ${hexagonStyle};
   background: var(--emergency-color);
   box-shadow: 0 0 15px var(--emergency-color);
+  transform: scaleY(-1);
   animation: ${pulse} 1s ease-in-out infinite;
 
   &::before {
