@@ -9,16 +9,9 @@ const mainStyle = css`
   display: flex;
   transform: rotate(90deg) scale(2);
   filter: blur(0.8px);
-  position: absolute;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: hidden;
-  top: 0;
-  left: 0;
 `
 
 const containerStyle = css`
-  font-size: 0; /* disable white space between inline block elements */
 
   &::before {
     content: '';
