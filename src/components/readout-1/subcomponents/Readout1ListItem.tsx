@@ -47,17 +47,16 @@ const getGradientColor = (index: number, total: number): string => {
 
 const useRandomDeviation = (baseNumber: number, range: number = 3) => {
   // Convert baseNumber from 0-100 range to 0-40 range
-  const scaledBaseNumber = (baseNumber / 100) * 40
-  const [currentNumber, setCurrentNumber] = useState(scaledBaseNumber)
+  const [currentNumber, setCurrentNumber] = useState(baseNumber)
 
   useEffect(() => {
     const interval = setInterval(() => {
       const deviation = Math.random() * range * 2 - range
-      setCurrentNumber(scaledBaseNumber + deviation)
+      setCurrentNumber(baseNumber + deviation)
     }, 100)
 
     return () => clearInterval(interval)
-  }, [scaledBaseNumber, range])
+  }, [baseNumber, range])
 
   return currentNumber
 }
@@ -80,7 +79,8 @@ export const Readout1ListItem: React.FC<Readout1ListItemProps> = ({
   subjectLabel,
   value
 }) => {
-  const currentNumber = useRandomDeviation(value || 0, 2)
+  const scaledValue = (value / 100) * 40
+  const currentNumber = useRandomDeviation(scaledValue || 0, 2)
   return (
     <div css={listItem}>
       <div css={[label, glowText]}>
