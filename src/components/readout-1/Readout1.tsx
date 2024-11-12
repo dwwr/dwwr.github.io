@@ -63,7 +63,17 @@ export const glowText = css`
   filter: blur(0.3px);
 `
 
-export const Readout1: React.FC<Readout1Props> = ({
+export interface Readout1Props {
+  title: string
+  kpi1Key: string
+  kpi1Value: string
+  kpi2Key: string
+  kpi2Value: string
+  items: Readout1ListItemProps[]
+  isLoading?: boolean
+}
+
+const Readout1: React.FC<Readout1Props> = ({
   title,
   kpi1Key,
   kpi1Value,
@@ -87,12 +97,4 @@ export const Readout1: React.FC<Readout1Props> = ({
   )
 }
 
-export interface Readout1Props {
-  title: string
-  kpi1Key: string
-  kpi1Value: string
-  kpi2Key: string
-  kpi2Value: string
-  items: Readout1ListItemProps[]
-  isLoading?: boolean
-}
+export default Readout1
