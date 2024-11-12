@@ -6,10 +6,15 @@ const mainStyle = css`
   height: 100%;
   width: 100%;
   background-color: black;
-  position: absolute;
   display: flex;
-  transform: rotate(90deg) scale(1.5);
+  transform: rotate(90deg) scale(2);
   filter: blur(0.8px);
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
+  top: 0;
+  left: 0;
 `
 
 const containerStyle = css`
@@ -21,7 +26,7 @@ const containerStyle = css`
     float: left;
     height: 120%;
     shape-outside: repeating-linear-gradient(#0000 0 174.2px, #000 0 177.2px); /* f - 3px, f */
-  }
+  }\
 `
 
 const hexagonStyle = css`
@@ -107,45 +112,6 @@ const textStyle = css`
   transform: translate(-50%, -50%) rotate(-90deg);
   text-transform: uppercase;
 `
-const buildRandomHexagonState = (numberOfHexagons: number, range: number = 3) => {
-  const [hexagonStates, setHexagonStates] = useState<number[]>(Array(numberOfHexagons).fill(0))
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHexagonStates((prevStates) => {
-        return prevStates.map((state) => {
-          if (state < 1) {
-            const deviation = Math.random() * range * 2 - range
-            return Math.min(1, state + deviation)
-          }
-          return state
-        })
-      })
-    }, 100)
-
-    return () => clearInterval(interval)
-  }, [numberOfHexagons, range])
-
-  return hexagonStates
-}
-
-const useFlashHexagons = (flashInterval: number = 500) => {
-  const [flash, setFlash] = useState(false)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFlash((prevFlash) => !prevFlash)
-    }, flashInterval)
-
-    return () => clearInterval(interval)
-  }, [flashInterval])
-
-  return flash
-}
-
-interface Readout2Props {
-  numberOfHexagons?: number
-}
 
 const useHexagonStateAndFlash = (numberOfHexagons: number, range: number = 3) => {
   const [hexagonStates, setHexagonStates] = useState<number[]>(Array(numberOfHexagons).fill(0))
@@ -202,7 +168,11 @@ const useHexagonStateAndFlash = (numberOfHexagons: number, range: number = 3) =>
   return { hexagonStates, flash }
 }
 
-const Readout2: React.FC<Readout2Props> = ({ numberOfHexagons = 100 }) => {
+interface Readout2Props {
+  numberOfHexagons?: number
+}
+
+const Readout2: React.FC<Readout2Props> = ({ numberOfHexagons = 1000 }) => {
   const { hexagonStates, flash } = useHexagonStateAndFlash(numberOfHexagons)
 
   return (
@@ -210,7 +180,7 @@ const Readout2: React.FC<Readout2Props> = ({ numberOfHexagons = 100 }) => {
       <div css={containerStyle}>
         {hexagonStates.map((_, i) => (
           <div key={i} css={flash || hexagonStates[i] === 1 ? hexagonOnStyle : hexagonOffStyle}>
-            <span css={textStyle}>Emergency {i}</span>
+            <span css={textStyle}>Emergency</span>
           </div>
         ))}
       </div>
