@@ -19,12 +19,16 @@ export const mainStyle = css`
   -ms-user-select: none;
   --emergency-color: rgb(215, 0, 6);
 
-  @media (min-width: 600px) {
-    transform: rotate(90deg) scale(1.5);
+  @media (max-width: 499px) {
+    transform: rotate(90deg) scale(1);
   }
 
   @media (min-width: 500px) {
     transform: rotate(90deg) scale(2);
+  }
+
+  @media (min-width: 600px) {
+    transform: rotate(90deg) scale(1.5);
   }
 `
 

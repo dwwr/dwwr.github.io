@@ -8,7 +8,7 @@ export default {
 } as Meta
 
 const Template: StoryFn = ({ text, stayOn, stayOff, outlineOffHexagons }) => (
-  <div style={{ width: '100vw', height: '100vh', boxSizing: 'border-box' }}>
+  <div style={{ width: '1500px', height: '1500px', boxSizing: 'border-box' }}>
     <Readout2
       text={text}
       stayOn={stayOn}
