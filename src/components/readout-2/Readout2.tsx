@@ -61,10 +61,10 @@ const hexagonOnStyle = css`
     z-index: 2;
     content: '';
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     background-color: red;
   }
@@ -102,7 +102,6 @@ const textStyle = css`
   z-index: 4;
   font-family: 'Helvetica', monospace;
   font-size: 0.75rem;
-  font-weight: bold;
   opacity: 0.8;
   display: inline-block;
   transform: rotate(-90deg);
@@ -111,8 +110,37 @@ const textStyle = css`
   left: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 `
 
+const downTriangleStyle = css`
+  &::before {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 4;
+    content: '▲';
+    position: absolute;
+    top: 42%;
+    left: 68%;
+    transform: rotate(90deg);
+    font-size: 1rem;
+    color: black;
+    filter: blur(0.8px);
+  }
+`
+
+const upTriangleStyle = css`
+  &::after {
+    z-index: 4;
+    content: '▼';
+    position: absolute;
+    bottom: 42%;
+    right: 68%;
+    transform: rotate(90deg);
+    font-size: 1rem;
+    color: black;
+    filter: blur(0.8px);
+  }
+`
 const useHexagonStateAndFlash = (numberOfHexagons: number, range: number = 3) => {
   const [hexagonStates, setHexagonStates] = useState<number[]>(Array(numberOfHexagons).fill(0))
   const [flash, setFlash] = useState(false)
@@ -180,6 +208,8 @@ const Readout2: React.FC<Readout2Props> = ({ numberOfHexagons = 1000 }) => {
       <div css={containerStyle}>
         {hexagonStates.map((_, i) => (
           <div key={i} css={flash || hexagonStates[i] === 1 ? hexagonOnStyle : hexagonOffStyle}>
+            <div css={upTriangleStyle} />
+            <div css={downTriangleStyle} />
             <span css={textStyle}>Emergency</span>
           </div>
         ))}
