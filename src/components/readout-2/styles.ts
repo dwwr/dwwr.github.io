@@ -96,6 +96,7 @@ export const hexagonOffStyle = (outlineOffHexagons: boolean) => css`
   ${hexagonStyle};
   background-color: ${outlineOffHexagons ? 'var(--emergency-color)' : 'black'};
   animation: ${pulse} 1s ease-in-out infinite;
+  color: black;
 
   &::before {
     ${commonHexagonBeforeAfter};
