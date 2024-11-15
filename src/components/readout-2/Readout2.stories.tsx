@@ -7,7 +7,7 @@ export default {
   component: Readout2
 } as Meta
 
-const Template: StoryFn = ({ text, stayOn, stayOff, outlineOffHexagons }) => (
+const Template: StoryFn = ({ text, stayOn, stayOff, outlineOffHexagons, numberOfHexagons }) => (
   <div
     style={{
       width: '500px',
@@ -21,6 +21,7 @@ const Template: StoryFn = ({ text, stayOn, stayOff, outlineOffHexagons }) => (
       stayOn={stayOn}
       stayOff={stayOff}
       outlineOffHexagons={outlineOffHexagons}
+      numberOfHexagons={numberOfHexagons}
     />
   </div>
 )
@@ -50,3 +51,18 @@ StayOff.args = {
   stayOn: false,
   outlineOffHexagons: true
 }
+
+// export const Small = Template.bind({})
+// Small.args = {
+//   text: 'Emergency',
+//   numberOfHexagons: 10,
+//   stayOn: true,
+//   stayOff: false
+// }
+// Small.decorators = [
+//   (Story) => (
+//     <div style={{ width: '400px', height: '400px' }}>
+//       <Story />
+//     </div>
+//   )
+// ]
