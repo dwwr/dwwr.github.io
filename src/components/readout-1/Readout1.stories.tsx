@@ -11,8 +11,12 @@ const Template: StoryFn<typeof Readout1> = (props: Readout1Props) => (
   <div
     style={{
       width: '100%',
-      height: '100%',
+      height: '100vw',
+      minHeight: '500px',
       backgroundColor: 'black',
+      display: 'flex',
+      alignItems: 'start',
+      justifyContent: 'start',
       boxSizing: 'border-box'
     }}
   >
