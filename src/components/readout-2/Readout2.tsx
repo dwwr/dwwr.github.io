@@ -19,7 +19,7 @@ interface Readout2Props {
   outlineOffHexagons?: boolean
 }
 const Readout2: React.FC<Readout2Props> = ({
-  numberOfHexagons = 1000,
+  numberOfHexagons = 50,
   text,
   stayOn,
   stayOff,

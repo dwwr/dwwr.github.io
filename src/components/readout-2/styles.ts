@@ -1,35 +1,44 @@
+// Many thanks to Temani Afif: https://css-tricks.com/hexagons-and-beyond-flexible-responsive-grid-patterns-sans-media-queries/
+
 import { css, keyframes } from '@emotion/react'
 
-const commonHexagonBeforeAfter = css`
-  content: '';
-  position: absolute;
-  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+// Common variables
+const vars = {
+  emergencyColor: 'rgb(215, 0, 6)',
+  size: '100px',
+  ratio: '0.85',
+  hexHeight: '0.25',
+  hexWidth: '0.5',
+  verticalMargin: '2px'
+}
+
+// Common calculations
+const calculations = css`
+  --emergency-color: ${vars.emergencyColor};
+  --s: ${vars.size}; /* size */
+  --r: ${vars.ratio}; /* ratio */
+  --h: ${vars.hexHeight};
+  --v: ${vars.hexWidth};
+  --hc: calc(clamp(0, var(--h), 0.5) * var(--s));
+  --vc: calc(clamp(0, var(--v), 0.5) * var(--s) * var(--r));
+  --mv: ${vars.verticalMargin}; /* vertical margin */
+  --mh: calc(var(--mv) + (var(--s) - 1.75 * var(--hc)) / 2); /* horizontal margin */
+  --f: calc(2 * var(--s) * var(--r) + 4 * var(--mv) - 2 * var(--vc) - 2px);
 `
 
 export const mainStyle = css`
-  height: 100%;
-  width: 100%;
+  ${calculations};
   background-color: black;
   display: flex;
-  transform: rotate(90deg) scale(1);
+  flex-direction: column;
   filter: blur(0.9px);
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  --emergency-color: rgb(215, 0, 6);
-
-  @media (max-width: 499px) {
-    transform: rotate(90deg) scale(1);
-  }
-
-  @media (min-width: 500px) {
-    transform: rotate(90deg) scale(2);
-  }
-
-  @media (min-width: 600px) {
-    transform: rotate(90deg) scale(1.5);
-  }
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 `
 
 export const pulse = keyframes`
@@ -42,25 +51,44 @@ export const pulse = keyframes`
 `
 
 export const containerStyle = css`
-  &::before {
+  ::before {
     content: '';
-    width: 54px;
+    width: calc(var(--s) / 2 + var(--mh));
     float: left;
-    height: 120%;
-    shape-outside: repeating-linear-gradient(#0000 0 174.2px, #000 0 178px);
+    height: 135%;
+    shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 2px), #000 0 var(--f));
   }
 `
 
+const hexagonClipPath = (offset = 0) => css`
+  clip-path: polygon(
+    calc(var(--hc) ${offset ? `- ${offset}px` : ''}) 0,
+    calc(100% - var(--hc) ${offset ? `+ ${offset}px` : ''}) 0,
+    calc(100% ${offset ? `+ ${offset}px` : ''}) var(--vc),
+    calc(100% ${offset ? `+ ${offset}px` : ''}) calc(100% - var(--vc)),
+    calc(100% - var(--hc) ${offset ? `+ ${offset}px` : ''}) 100%,
+    calc(var(--hc) ${offset ? `- ${offset}px` : ''}) 100%,
+    ${offset ? `-${offset}px` : '0'} calc(100% - var(--vc)),
+    ${offset ? `-${offset - 0.5}px` : '0'} var(--vc)
+  );
+`
+
+const hexagonInnerLayer = css`
+  content: '';
+  position: absolute;
+  background-color: black;
+`
+
 export const hexagonStyle = css`
-  width: 100px;
-  margin: 4px;
-  height: 115.47px;
-  display: inline-block;
-  font-size: initial;
-  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: -24.85px;
-  position: relative;
-  vertical-align: top;
+  width: var(--s);
+  margin: var(--mv) var(--mh);
+  height: calc(var(--s) * var(--r));
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+  ${hexagonClipPath()};
+  margin-bottom: calc(var(--mv) - var(--vc));
 `
 
 export const hexagonOnStyle = css`
@@ -70,22 +98,23 @@ export const hexagonOnStyle = css`
   animation: ${pulse} 1s ease-in-out infinite;
 
   &::before {
-    ${commonHexagonBeforeAfter};
-    top: 4px;
-    left: 4px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    background-color: black;
+    ${hexagonInnerLayer};
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    ${hexagonClipPath(2)};
   }
 
   &::after {
-    ${commonHexagonBeforeAfter};
-    top: 5px;
-    left: 5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    ${hexagonInnerLayer};
+    z-index: 1;
+    top: 4.5px;
+    left: 4.5px;
+    width: calc(100% - 9px);
+    height: calc(100% - 9px);
     background-color: var(--emergency-color);
-    box-shadow: 0 0 10px var(--emergency-color);
+    ${hexagonClipPath(3)};
   }
 `
 
@@ -95,62 +124,45 @@ export const hexagonOffStyle = (outlineOffHexagons: boolean) => css`
   animation: ${pulse} 1s ease-in-out infinite;
 
   &::before {
-    ${commonHexagonBeforeAfter};
-    top: 4px;
-    left: 4px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    background-color: black;
-  }
-
-  &::after {
-    ${commonHexagonBeforeAfter};
-    top: 6px;
-    left: 6px;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-    background-color: black;
+    ${hexagonInnerLayer};
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    ${hexagonClipPath(2)};
   }
 `
 
 export const textStyle = css`
-  z-index: 3;
+  z-index: 2;
   font-family: 'Helvetica', monospace;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
+  font-size: 0.65rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04rem;
 `
 
 const commonTriangleStyle = css`
-  position: absolute;
-  transform: rotate(90deg);
-  font-size: 1rem;
-  color: black;
-  filter: blur(0.8px);
-`
-
-export const downTriangleStyle = css`
-  &::before {
-    ${commonTriangleStyle};
-    z-index: 3;
-    content: '▲';
-    top: 42%;
-    left: 68%;
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 0.85rem;
 `
 
 export const upTriangleStyle = css`
   &::after {
     ${commonTriangleStyle};
-    z-index: 4;
+    z-index: 2;
+    content: '▲';
+  }
+`
+export const downTriangleStyle = css`
+  &::before {
+    ${commonTriangleStyle};
+    z-index: 2;
     content: '▼';
-    bottom: 42%;
-    right: 68%;
   }
 `

@@ -8,7 +8,14 @@ export default {
 } as Meta
 
 const Template: StoryFn = ({ text, stayOn, stayOff, outlineOffHexagons }) => (
-  <div style={{ width: '1500px', height: '1500px', boxSizing: 'border-box' }}>
+  <div
+    style={{
+      width: '500px',
+      height: '500px',
+      backgroundColor: 'black',
+      boxSizing: 'border-box'
+    }}
+  >
     <Readout2
       text={text}
       stayOn={stayOn}
@@ -23,8 +30,8 @@ Default.args = {
   text: 'Emergency'
 }
 
-export const OutlineOffHexagons = Template.bind({})
-OutlineOffHexagons.args = {
+export const OutlinedOffHexagons = Template.bind({})
+OutlinedOffHexagons.args = {
   text: 'Emergency',
   outlineOffHexagons: true
 }
