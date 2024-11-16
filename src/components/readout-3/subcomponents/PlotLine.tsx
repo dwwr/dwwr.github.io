@@ -7,14 +7,14 @@ const plotLineStyle = css`
   width: 100%;
   height: 1px;
   background-color: rgb(249, 158, 14);
-  margin: 10px 0;
+  margin-bottom: 10px;
+  transform: skewX(20deg);
 `
 
 const baseTickStyle = css`
   position: absolute;
   width: 1px;
   background-color: #00ff00;
-  margin: 0 5px; // needs to match the chart margin
 `
 
 const bigTickStyle = css`

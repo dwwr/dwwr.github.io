@@ -16,7 +16,7 @@ const tickStyle = css`
   position: absolute;
   width: 1px;
   height: 5px;
-  right: 3px;
+  right: 8px;
   background-color: ${backgroundColor};
 `
 
