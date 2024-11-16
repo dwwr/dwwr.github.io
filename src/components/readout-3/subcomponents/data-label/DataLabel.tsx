@@ -22,12 +22,11 @@ export const glowTextStyle = css`
   color: rgb(249, 158, 14);
   text-transform: uppercase;
   text-shadow: 0 0 2px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
-  text-wrap: nowrap;
 `
 
 export const textStretchStyle = css`
   font-size: clamp(0.5rem, 2vw, 4rem);
-  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.2rem, 0.5vw, 2rem));
+  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.18rem, 0.5vw, 2rem));
 `
 
 export const labelStretchStyle = css`
