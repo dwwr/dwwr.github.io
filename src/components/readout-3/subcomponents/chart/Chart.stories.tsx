@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react'
 import Chart from './Chart'
 
 export default {
-  title: 'Components/Chart',
+  title: 'Components/Readout3/Chart',
   component: Chart
 } as Meta
 

@@ -1,9 +1,8 @@
-/** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
 import DataLabel, { DataLabelProps } from './DataLabel'
 
 export default {
-  title: 'Components/DataLabel',
+  title: 'Components/Readout3/DataLabel',
   component: DataLabel
 } as Meta
 
