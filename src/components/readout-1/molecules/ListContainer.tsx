@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import React from 'react'
 import { ListHeader } from './ListHeader'
 import { Readout1ListItemProps, Readout1ListItem } from './Readout1ListItem'
 import { ListWarningRow } from './ListWarningRow'

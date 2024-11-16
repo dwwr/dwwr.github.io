@@ -1,6 +1,6 @@
+/** @jsxImportSource react */
 import type { Preview } from '@storybook/react'
 import '../src/components/global_styles.css'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react'
 
 const preview: Preview = {
@@ -18,7 +18,7 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
+    (Story: React.FC) => (
       <div>
         <Story />
     </div>
