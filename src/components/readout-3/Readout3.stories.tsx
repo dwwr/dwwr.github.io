@@ -11,13 +11,13 @@ const Template: StoryFn = () => (
   <div
     style={{
       width: '100%',
-      height: '100vh',
-      minHeight: '500px',
+      height: '500px',
       backgroundColor: 'black',
       display: 'flex',
       alignItems: 'start',
       justifyContent: 'start',
       boxSizing: 'border-box',
+      overflow: 'hidden',
       padding: '1rem'
     }}
   >
