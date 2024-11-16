@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-export const borderStyle = (condensed?: boolean) => css`
+export const borderStyle = css`
   position: relative;
   display: inline-flex;
   align-items: start;
@@ -14,7 +14,7 @@ export const borderStyle = (condensed?: boolean) => css`
     rgba(69, 63, 53, 0.05) 50%,
     transparent
   );
-  white-space: nowrap;
+  padding: 0 0.25rem 0 0.25rem;
 `
 
 export const glowTextStyle = css`
@@ -27,13 +27,13 @@ export const glowTextStyle = css`
 
 export const textStretchStyle = css`
   font-size: clamp(0.5rem, 2vw, 4rem);
-  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.2rem, 0.61vw, 2rem));
+  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.2rem, 0.5vw, 2rem));
 `
 
 export const labelStretchStyle = css`
   align-self: center;
   font-size: clamp(0.25rem, 1vw, 2rem);
-  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.1rem, 0.3vw, 1rem));
+  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.1rem, 0.4vw, 2rem));
 `
 
 const condensedStyle = css`
@@ -71,9 +71,7 @@ const DataLabel: React.FC<DataLabelProps> = ({
   condensed
 }) => {
   return (
-    <div
-      css={[borderStyle(condensed), condensed && condensedStyle, shouldFlicker && flickerAnimation]}
-    >
+    <div css={[borderStyle, condensed && condensedStyle, shouldFlicker && flickerAnimation]}>
       <span css={[glowTextStyle, labelStretchStyle]}>{label}</span>
       <span css={[glowTextStyle, textStretchStyle]}>{text}</span>
     </div>
