@@ -16,15 +16,13 @@ const Template: StoryFn<HexagonProps> = ({ isOn, outlineOffHexagons, text }) => 
   <div
     css={mainStyle}
     style={{
-      width: '200px',
-      height: '200px',
+      width: '130px',
+      height: '90px',
       boxSizing: 'border-box',
       display: 'flex',
       alignItems: 'start',
       justifyContent: 'start',
-      // paddingTop: '1rem',
-      marginLeft: '-1.75rem',
-      backgroundColor: 'unset'
+      marginLeft: '-1.75rem'
     }}
   >
     <div css={containerStyle}>
