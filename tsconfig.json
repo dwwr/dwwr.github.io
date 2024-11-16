@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "noEmit": true,
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -12,7 +13,15 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowJs": true
+    "allowJs": true,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": "text-wrap"
+        }
+      }
+    ]
   },
   "include": ["src/**/*", ".storybook/**/*"]
 }
