@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Header } from './subcomponents/Header'
-import { GlowLine } from './subcomponents/GlowLine'
-import { ListContainer } from './subcomponents/ListContainer'
-import { Readout1ListItemProps } from './subcomponents/Readout1ListItem'
+import { Readout1ListItemProps } from './molecules/Readout1ListItem'
+import { Header } from './molecules/Header'
+import { GlowLine } from './molecules/GlowLine'
+import { ListContainer } from './molecules/ListContainer'
 
 const readout1 = css`
   height: 100%;

@@ -4,7 +4,7 @@ import Hexagon, { HexagonProps } from './Hexagon'
 import { containerStyle, mainStyle } from '../../styles'
 
 export default {
-  title: 'Components/Hexagon',
+  title: 'Components/Readout2/Hexagon',
   component: Hexagon,
   argTypes: {
     isOn: { control: 'boolean' },
