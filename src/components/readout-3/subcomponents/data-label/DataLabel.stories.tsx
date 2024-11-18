@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
 import DataLabel, { DataLabelProps } from './DataLabel'
 
