@@ -9,7 +9,7 @@ export const containerStyle = css`
   height: 100%;
   display: flex;
   flex-direction: column;
-  transform: skewX(-20deg);
+  transform: skewX(-29deg);
 `
 
 export const chartStyle = css`
@@ -44,6 +44,7 @@ export const topXAxisStyle = css`
 `
 
 export const plotLineStyle = css`
+  margin-top: 2px;
   transform: scaleX(1.125);
 `
 

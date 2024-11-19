@@ -2,7 +2,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-const backgroundColor = 'rgb(249, 158, 14)'
+const backgroundColor = 'rgb(251, 181, 19)'
 const plotLineStyle = (width: string) => css`
   position: relative;
   width: ${width};
@@ -11,12 +11,12 @@ const plotLineStyle = (width: string) => css`
   }
 `
 
-const tickStyle = css`
+const tickStyle = (width: string) => css`
   transform: rotate(-90deg);
   position: absolute;
-  width: 1px;
-  height: 5px;
-  right: 8px;
+  width: 0.5px;
+  height: 2px;
+  right: calc(${width} + 150%);
   background-color: ${backgroundColor};
 `
 
@@ -27,7 +27,7 @@ interface YAxisProps {
 
 const YAxis: React.FC<YAxisProps> = ({ width, numberOfTicks = 18 }) => {
   const ticks = Array.from({ length: numberOfTicks }, (_, i) => {
-    return <div key={i} css={tickStyle} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
+    return <div key={i} css={tickStyle(width)} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
   })
 
   return <div css={plotLineStyle(width)}>{ticks}</div>

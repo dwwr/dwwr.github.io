@@ -19,7 +19,7 @@ export const borderStyle = css`
 
 export const glowTextStyle = css`
   font-family: 'Helvetica', monospace;
-  color: rgb(249, 158, 14);
+  color: rgb(251, 181, 19);
   text-transform: uppercase;
   text-shadow: 0 0 2px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
 `

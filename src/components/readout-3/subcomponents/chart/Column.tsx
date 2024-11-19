@@ -40,6 +40,7 @@ const Column: React.FC<ColumnProps> = ({
         height: 100%;
         width: ${width};
         position: relative;
+        /* background-color: green; */
       `}
     >
       <div key={key} css={barStyle(width)} />
