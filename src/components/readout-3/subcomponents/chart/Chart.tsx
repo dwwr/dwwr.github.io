@@ -20,7 +20,6 @@ export const chartStyle = css`
   align-items: stretch;
   overflow: hidden;
   position: relative;
-  transform: scaleX(1.125);
 `
 
 export const xAxisStyle = css`
@@ -45,7 +44,6 @@ export const topXAxisStyle = css`
 
 export const plotLineStyle = css`
   margin-top: 2px;
-  transform: scaleX(1.125);
 `
 
 export interface ChartProps {

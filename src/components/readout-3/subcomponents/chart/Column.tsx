@@ -3,9 +3,10 @@ import { css } from '@emotion/react'
 
 import YAxis from './yAxis'
 
-export const barStyle = (width: string) => css`
-  width: ${width};
+export const barStyle = css`
+  width: 100%;
   position: relative;
+  /* background-color: rgb(251, 181, 19); */
 
   &:before {
     content: '';
@@ -24,27 +25,21 @@ export interface ColumnProps {
   key: number
 }
 
-const Column: React.FC<ColumnProps> = ({
-  value,
-  numberOfBars,
-  numberOfColumns,
-  showYAxis = true,
-  key
-}) => {
+const Column: React.FC<ColumnProps> = ({ value, numberOfBars, showYAxis = true, key }) => {
   console.log(value)
-  const width = `${100 / numberOfColumns}%`
   return (
     <div
       css={css`
         display: flex;
         height: 100%;
-        width: ${width};
+        width: 100%;
         position: relative;
         /* background-color: green; */
       `}
     >
-      <div key={key} css={barStyle(width)} />
-      {showYAxis && <YAxis numberOfTicks={numberOfBars} width={width} />}
+      {showYAxis && <YAxis numberOfTicks={numberOfBars} />}
+      <div key={key} css={barStyle} />
+      {/* {showYAxis && <YAxis numberOfTicks={numberOfBars} />} */}
     </div>
   )
 }
