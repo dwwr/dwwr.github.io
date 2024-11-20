@@ -19,6 +19,7 @@ export const textBarStyle = css`
 const chartContainerStyle = css`
   display: flex;
   height: 100%;
+  width: 200%;
   margin: 0.25rem 0;
   overflow: hidden;
 `
@@ -33,7 +34,7 @@ export const Readout3: React.FC<Readout3Props> = () => {
         <DataLabel label="Blood Type:" text="Analyzing" flicker />
       </div>
       <div css={chartContainerStyle}>
-        <Chart numberOfColumns={15} />
+        <Chart numberOfColumns={20} />
       </div>
       <div css={textBarStyle}>
         <DataLabel text="High level energy field approaching" condensed />

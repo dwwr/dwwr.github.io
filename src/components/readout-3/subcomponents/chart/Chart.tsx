@@ -8,8 +8,10 @@ export const containerStyle = css`
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   transform: skewX(-29deg);
+  margin-left: -20%;
 `
 
 export const chartStyle = css`
@@ -55,6 +57,7 @@ const Chart: React.FC<ChartProps> = ({ numberOfColumns }) => {
     <div css={containerStyle}>
       <div css={chartStyle}>
         {[...Array(numberOfColumns)].map((_, i) => (
+          // todo: interpolate segmented columns
           <Column
             key={i}
             value={i}
