@@ -6,7 +6,15 @@ import YAxis from './yAxis'
 export const barStyle = css`
   width: 100%;
   position: relative;
-  /* background-color: rgb(251, 181, 19); */
+  background: rgb(163, 26, 10);
+  background: linear-gradient(
+    180deg,
+    rgb(163, 25, 10) 0%,
+    rgb(105, 217, 28) 30%,
+    rgb(28, 217, 59) 50%,
+    rgb(52, 155, 135) 100%,
+    rgb(75, 170, 143) 100%
+  );
 
   &:before {
     content: '';
