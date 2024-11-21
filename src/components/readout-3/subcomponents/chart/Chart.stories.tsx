@@ -10,21 +10,31 @@ export default {
 const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark }) => (
   <div
     style={{
-      width: '150%',
+      width: '500px',
       height: '500px',
-      backgroundColor: 'black',
-      display: 'flex',
-      // alignItems: 'start',
-      // justifyContent: 'start',
-      boxSizing: 'border-box',
       overflow: 'hidden',
-      padding: '1rem'
+      padding: '1rem',
+      backgroundColor: 'black'
     }}
   >
-    <Chart numberOfColumns={numberOfColumns} benchmark={benchmark} />
+    <div
+      style={{
+        display: 'flex',
+        height: '100%',
+        width: '200%',
+        overflow: 'hidden'
+      }}
+    >
+      <Chart numberOfColumns={numberOfColumns} benchmark={benchmark} />
+    </div>
   </div>
 )
 
+export const Baseline = Template.bind({})
+Baseline.args = {
+  numberOfColumns: 40,
+  benchmark: 0
+}
 export const Low = Template.bind({})
 Low.args = {
   numberOfColumns: 40,

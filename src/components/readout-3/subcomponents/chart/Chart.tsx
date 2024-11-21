@@ -57,7 +57,7 @@ const growColumnValues = (numberOfColumns: number, benchmark?: number) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setColumnValues((prevValues) => {
-        if (benchmark) {
+        if (benchmark || benchmark === 0) {
           return prevValues.map(() => deviateValue(benchmark, 10, 'increment'))
         }
         return prevValues.map((value) =>

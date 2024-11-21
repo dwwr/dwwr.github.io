@@ -9,6 +9,7 @@ const containerStyle = css`
   background-color: black;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `
 
 export const textBarStyle = css`
