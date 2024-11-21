@@ -11,11 +11,11 @@ const plotLineStyle = css`
 `
 
 const tickStyle = css`
+  z-index: 2;
   transform: rotate(-90deg);
   position: absolute;
-  width: 0.5px;
-  height: 2px;
-  /* right: 8px; */
+  width: 1.25px;
+  height: 3px;
   background-color: ${backgroundColor};
 `
 interface YAxisProps {

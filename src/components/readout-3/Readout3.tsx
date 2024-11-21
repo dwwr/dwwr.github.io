@@ -24,9 +24,11 @@ const chartContainerStyle = css`
   overflow: hidden;
 `
 
-export interface Readout3Props {}
+export interface Readout3Props {
+  benchmark?: number
+}
 
-export const Readout3: React.FC<Readout3Props> = () => {
+export const Readout3: React.FC<Readout3Props> = ({ benchmark }) => {
   return (
     <div css={containerStyle}>
       <div css={textBarStyle}>
@@ -34,7 +36,7 @@ export const Readout3: React.FC<Readout3Props> = () => {
         <DataLabel label="Blood Type:" text="Analyzing" flicker />
       </div>
       <div css={chartContainerStyle}>
-        <Chart numberOfColumns={20} />
+        <Chart numberOfColumns={40} benchmark={benchmark} />
       </div>
       <div css={textBarStyle}>
         <DataLabel text="High level energy field approaching" condensed />

@@ -1,13 +1,18 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import Readout3 from './Readout3'
+import Readout3, { Readout3Props } from './Readout3'
 
 export default {
   title: 'Components/Readout3',
-  component: Readout3
+  component: Readout3,
+  argTypes: {
+    benchmark: {
+      control: { type: 'range', min: 0, max: 100 }
+    }
+  }
 } as Meta
 
-const Template: StoryFn = () => (
+const Template: StoryFn<Readout3Props> = ({ benchmark }) => (
   <div
     style={{
       width: '100%',
@@ -21,9 +26,11 @@ const Template: StoryFn = () => (
       padding: '1rem'
     }}
   >
-    <Readout3 />
+    <Readout3 benchmark={benchmark} />
   </div>
 )
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+  benchmark: 50
+}

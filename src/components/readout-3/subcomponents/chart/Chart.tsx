@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { useEffect, useState } from 'react'
 import XAxis from './xAxis'
 import Column from './Column'
 import PlotLine from '../PlotLine'
@@ -48,11 +49,42 @@ export const plotLineStyle = css`
   margin-top: 2px;
 `
 
-export interface ChartProps {
-  numberOfColumns: number
+const growColumnValues = (numberOfColumns: number, benchmark?: number) => {
+  const [columnValues, setColumnValues] = useState<number[]>(
+    Array(numberOfColumns).fill(benchmark ?? 0)
+  )
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColumnValues((prevValues) => {
+        if (benchmark) {
+          return prevValues.map(() => deviateValue(benchmark, 10, 'increment'))
+        }
+        return prevValues.map((value) =>
+          value < 100 ? deviateValue(value, 10, 'increment') : deviateValue(value, 10, 'decrement')
+        )
+      })
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [numberOfColumns, benchmark])
+
+  return columnValues
 }
 
-const Chart: React.FC<ChartProps> = ({ numberOfColumns }) => {
+const deviateValue = (value: number, range: number, direction: 'increment' | 'decrement') => {
+  const deviation = Math.floor(Math.random() * range)
+  return direction === 'increment' ? value + deviation : value - deviation
+}
+
+export interface ChartProps {
+  numberOfColumns: number
+  benchmark?: number
+}
+
+const Chart: React.FC<ChartProps> = ({ numberOfColumns, benchmark }) => {
+  const columnValues = growColumnValues(numberOfColumns, benchmark)
+
   return (
     <div css={containerStyle}>
       <div css={chartStyle}>
@@ -60,17 +92,17 @@ const Chart: React.FC<ChartProps> = ({ numberOfColumns }) => {
           // todo: interpolate segmented columns
           <Column
             key={i}
-            value={i}
+            value={columnValues[i]}
             numberOfBars={17}
-            // showYAxis={i === 0 || i % 6 === 0}
+            showYAxis={i === 0 || i % 2 === 0}
             numberOfColumns={numberOfColumns}
           />
         ))}
         <div css={xAxisStyle}>
-          <XAxis numberOfTicks={numberOfColumns * 6} />
+          <XAxis numberOfTicks={numberOfColumns * 3} />
         </div>
         <div css={topXAxisStyle}>
-          <XAxis numberOfTicks={numberOfColumns * 6} />
+          <XAxis numberOfTicks={numberOfColumns * 3} />
         </div>
       </div>
       <div css={plotLineStyle}>
