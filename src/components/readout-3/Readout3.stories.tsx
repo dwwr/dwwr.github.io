@@ -32,5 +32,5 @@ const Template: StoryFn<Readout3Props> = ({ benchmark }) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  benchmark: 50
+  // benchmark: 50
 }

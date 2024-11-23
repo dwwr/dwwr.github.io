@@ -31,7 +31,7 @@ const chartContainerStyle = css`
 
 const overlayContainerStyle = css`
   position: absolute;
-  right: 1rem;
+  right: 0;
   top: 13%;
   transform: scale(0.66);
   transform-origin: top right;
@@ -50,7 +50,7 @@ export const Readout3: React.FC<Readout3Props> = ({ benchmark }) => {
           <DataLabel label="Blood Type:" text="Analyzing" flicker />
         </div>
         <div css={chartContainerStyle}>
-          <Chart numberOfColumns={40} benchmark={benchmark} />
+          <Chart numberOfColumns={40} benchmark={benchmark} flicker />
         </div>
         <div css={textBarStyle}>
           <DataLabel text="High level energy field approaching" condensed />
