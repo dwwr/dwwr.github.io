@@ -42,6 +42,7 @@ const plotLineStyle = css`
 export interface ChartProps {
   numberOfColumns: number
   benchmark?: number
+  flicker?: boolean
 }
 
 const deviateValue = (value: number, range: number, direction: 'increment' | 'decrement') => {
@@ -49,13 +50,15 @@ const deviateValue = (value: number, range: number, direction: 'increment' | 'de
   return direction === 'increment' ? value + deviation : value - deviation
 }
 
-const useColumnValues = (numberOfColumns: number, benchmark?: number) => {
+const useColumnValues = (numberOfColumns: number, benchmark?: number, flicker?: boolean) => {
   const [columnValues, setColumnValues] = useState<number[]>(
     Array(numberOfColumns).fill(benchmark ?? 0)
   )
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (!flicker) return
+
       setColumnValues((prevValues) => {
         if (benchmark || benchmark === 0) {
           return prevValues.map(() => deviateValue(benchmark, 10, 'increment'))
@@ -67,13 +70,13 @@ const useColumnValues = (numberOfColumns: number, benchmark?: number) => {
     }, 100)
 
     return () => clearInterval(interval)
-  }, [numberOfColumns, benchmark])
+  }, [numberOfColumns, benchmark, flicker])
 
   return columnValues
 }
 
-const Chart: React.FC<ChartProps> = ({ numberOfColumns, benchmark }) => {
-  const columnValues = useColumnValues(numberOfColumns, benchmark)
+const Chart: React.FC<ChartProps> = ({ numberOfColumns, benchmark, flicker }) => {
+  const columnValues = useColumnValues(numberOfColumns, benchmark, flicker)
 
   return (
     <div css={chartStyle}>
@@ -95,7 +98,7 @@ const Chart: React.FC<ChartProps> = ({ numberOfColumns, benchmark }) => {
         </div>
       </div>
       <div css={plotLineStyle}>
-        <PlotLine numberOfTicks={numberOfColumns * 12} />
+        <PlotLine numberOfTicks={numberOfColumns * 6} />
       </div>
     </div>
   )

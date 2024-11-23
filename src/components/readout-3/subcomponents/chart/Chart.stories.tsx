@@ -7,7 +7,7 @@ export default {
   component: Chart
 } as Meta
 
-const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark }) => (
+const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark, flicker }) => (
   <div
     style={{
       width: '100%',
@@ -25,28 +25,42 @@ const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark }) => (
         overflow: 'hidden'
       }}
     >
-      <Chart numberOfColumns={numberOfColumns} benchmark={benchmark} />
+      <Chart numberOfColumns={numberOfColumns} benchmark={benchmark} flicker={flicker} />
     </div>
   </div>
 )
+const baseArgs = {
+  numberOfColumns: 40,
+  flicker: true
+}
 
 export const Baseline = Template.bind({})
 Baseline.args = {
-  numberOfColumns: 40,
+  ...baseArgs,
   benchmark: 0
 }
+
 export const Low = Template.bind({})
 Low.args = {
-  numberOfColumns: 40,
+  ...baseArgs,
   benchmark: 25
 }
+
 export const Medium = Template.bind({})
 Medium.args = {
-  numberOfColumns: 40,
+  ...baseArgs,
   benchmark: 50
 }
+
 export const High = Template.bind({})
 High.args = {
-  numberOfColumns: 40,
-  benchmark: 80
+  ...baseArgs,
+  benchmark: 90
+}
+
+export const NoFlicker = Template.bind({})
+NoFlicker.args = {
+  ...baseArgs,
+  benchmark: 50,
+  flicker: false
 }
