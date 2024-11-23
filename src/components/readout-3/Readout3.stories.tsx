@@ -16,7 +16,7 @@ const Template: StoryFn<Readout3Props> = ({ benchmark }) => (
   <div
     style={{
       width: '100%',
-      height: '500px',
+      height: '600px',
       backgroundColor: 'black',
       display: 'flex',
       alignItems: 'start',

@@ -2,7 +2,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-const backgroundColor = 'rgb(251, 181, 19)'
 const plotLineStyle = css`
   position: relative;
   & > *:first-child {
@@ -11,12 +10,11 @@ const plotLineStyle = css`
 `
 
 const tickStyle = css`
-  z-index: 2;
   transform: rotate(-90deg);
   position: absolute;
   width: 1.25px;
   height: 3px;
-  background-color: ${backgroundColor};
+  background-color: rgb(251, 181, 19);
 `
 interface YAxisProps {
   numberOfTicks?: number

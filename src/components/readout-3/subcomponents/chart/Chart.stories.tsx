@@ -10,8 +10,8 @@ export default {
 const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark }) => (
   <div
     style={{
-      width: '500px',
-      height: '500px',
+      width: '100%',
+      height: '600px',
       overflow: 'hidden',
       padding: '1rem',
       backgroundColor: 'black'

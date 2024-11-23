@@ -5,7 +5,7 @@ import XAxis from './xAxis'
 import Column from './Column'
 import PlotLine from '../PlotLine'
 
-export const containerStyle = css`
+const chartStyle = css`
   width: 100%;
   height: 100%;
   display: flex;
@@ -15,18 +15,13 @@ export const containerStyle = css`
   margin-left: -20%;
 `
 
-export const chartStyle = css`
-  width: 100%;
-  height: 100%;
+const columnContainerStyle = css`
   flex: 1;
   display: flex;
-  align-items: stretch;
-  overflow: hidden;
   position: relative;
 `
 
-export const xAxisStyle = css`
-  width: 100%;
+const bottomXAxisStyle = css`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -34,22 +29,27 @@ export const xAxisStyle = css`
   z-index: 1;
 `
 
-export const topXAxisStyle = css`
-  width: 100%;
-  height: 0px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+const topXAxisStyle = css`
+  ${bottomXAxisStyle};
+  bottom: auto;
   transform: scaleY(-1);
 `
 
-export const plotLineStyle = css`
+const plotLineStyle = css`
   margin-top: 2px;
 `
 
-const growColumnValues = (numberOfColumns: number, benchmark?: number) => {
+export interface ChartProps {
+  numberOfColumns: number
+  benchmark?: number
+}
+
+const deviateValue = (value: number, range: number, direction: 'increment' | 'decrement') => {
+  const deviation = Math.floor(Math.random() * range)
+  return direction === 'increment' ? value + deviation : value - deviation
+}
+
+const useColumnValues = (numberOfColumns: number, benchmark?: number) => {
   const [columnValues, setColumnValues] = useState<number[]>(
     Array(numberOfColumns).fill(benchmark ?? 0)
   )
@@ -72,36 +72,25 @@ const growColumnValues = (numberOfColumns: number, benchmark?: number) => {
   return columnValues
 }
 
-const deviateValue = (value: number, range: number, direction: 'increment' | 'decrement') => {
-  const deviation = Math.floor(Math.random() * range)
-  return direction === 'increment' ? value + deviation : value - deviation
-}
-
-export interface ChartProps {
-  numberOfColumns: number
-  benchmark?: number
-}
-
 const Chart: React.FC<ChartProps> = ({ numberOfColumns, benchmark }) => {
-  const columnValues = growColumnValues(numberOfColumns, benchmark)
+  const columnValues = useColumnValues(numberOfColumns, benchmark)
 
   return (
-    <div css={containerStyle}>
-      <div css={chartStyle}>
+    <div css={chartStyle}>
+      <div css={columnContainerStyle}>
+        <div css={topXAxisStyle}>
+          <XAxis numberOfTicks={numberOfColumns * 3} />
+        </div>
         {[...Array(numberOfColumns)].map((_, i) => (
-          // todo: interpolate segmented columns
           <Column
             key={i}
             value={columnValues[i]}
             numberOfBars={17}
-            showYAxis={i === 0 || i % 2 === 0}
+            showYAxis={i === 0 || i % 4 === 0}
             numberOfColumns={numberOfColumns}
           />
         ))}
-        <div css={xAxisStyle}>
-          <XAxis numberOfTicks={numberOfColumns * 3} />
-        </div>
-        <div css={topXAxisStyle}>
+        <div css={bottomXAxisStyle}>
           <XAxis numberOfTicks={numberOfColumns * 3} />
         </div>
       </div>
