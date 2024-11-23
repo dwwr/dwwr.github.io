@@ -13,12 +13,13 @@ export const columnStyle = css`
     rgb(52, 155, 135) 100%,
     rgb(75, 170, 143) 100%
   );
-  margin: -1px;
+  margin: 0px -1px;
 `
 
 export const negativeFillStyle = (height: number) => css`
   height: ${Math.abs(height - 100)}%;
   background: black;
+  margin: 0px -1px;
 `
 
 export interface ColumnProps {
