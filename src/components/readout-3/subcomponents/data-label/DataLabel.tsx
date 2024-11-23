@@ -5,7 +5,7 @@ export const borderStyle = css`
   position: relative;
   display: inline-flex;
   align-items: start;
-  height: clamp(1.5rem, 5.75vw, 9rem);
+  height: clamp(1.9rem, 5.75vw, 9rem);
   border: 1px solid rgb(249, 158, 14);
   border-radius: 7px;
   background: linear-gradient(
@@ -19,9 +19,10 @@ export const borderStyle = css`
 
 export const glowTextStyle = css`
   font-family: 'Helvetica', monospace;
-  color: rgb(249, 158, 14);
+  color: rgb(251, 181, 19);
   text-transform: uppercase;
   text-shadow: 0 0 2px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
+  text-wrap: nowrap;
 `
 
 export const textStretchStyle = css`

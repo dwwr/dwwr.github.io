@@ -8,18 +8,20 @@ const plotLineStyle = css`
   height: 1px;
   background-color: rgb(249, 158, 14);
   margin-bottom: 10px;
-  transform: skewX(20deg);
+  transform: skewX(29deg);
 `
 
 const baseTickStyle = css`
   position: absolute;
   width: 1px;
-  background-color: #00ff00;
+  background-color: rgb(131, 232, 160);
 `
 
 const bigTickStyle = css`
   ${baseTickStyle}
+  width: 1px;
   height: 10px;
+  top: 1px;
 `
 
 const semiTickStyle = css`
@@ -45,7 +47,6 @@ interface PlotLineProps {
 }
 
 const PlotLine: React.FC<PlotLineProps> = ({ numberOfTicks }) => {
-  // Pattern length is 11 (big small small mid small small semi small small mid small small)
   const pattern = [
     bigTickStyle,
     smallTickStyle,

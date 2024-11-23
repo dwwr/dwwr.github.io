@@ -6,8 +6,6 @@ const backgroundColor = 'rgb(249, 158, 14)'
 const plotLineStyle = css`
   position: relative;
   width: 100%;
-  height: 1px;
-  background-color: ${backgroundColor};
 `
 
 const baseTickStyle = css`
@@ -18,19 +16,20 @@ const baseTickStyle = css`
 
 const bigTickStyle = css`
   ${baseTickStyle}
-  height: 12px;
-  top: -12.5px;
+  width: 1.5px;
+  height: 10px;
+  top: -10px;
 `
 const midTickStyle = css`
   ${baseTickStyle}
-  height: 7px;
-  top: -7.5px;
+  height: 8px;
+  top: -8px;
 `
 
 const smallTickStyle = css`
   ${baseTickStyle}
   height: 5px;
-  top: -5.5px;
+  top: -6px;
 `
 
 interface XAxisProps {
