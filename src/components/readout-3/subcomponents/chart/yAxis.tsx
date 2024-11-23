@@ -10,6 +10,7 @@ const plotLineStyle = css`
 `
 
 const tickStyle = css`
+  z-index: 1;
   transform: rotate(-90deg);
   position: absolute;
   width: 1.25px;
