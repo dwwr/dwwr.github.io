@@ -8,6 +8,8 @@ const segmentedColumnContainerStyle = css`
   display: flex;
   justify-content: center;
   justify-items: center;
+  margin-left: 2px;
+  padding-right: 1px;
 `
 
 export const segmentedColumnStyle = css`

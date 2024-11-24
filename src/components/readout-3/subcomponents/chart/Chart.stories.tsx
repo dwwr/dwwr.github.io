@@ -7,7 +7,12 @@ export default {
   component: Chart
 } as Meta
 
-const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark, flicker }) => (
+const Template: StoryFn<ChartProps> = ({
+  columnGroupCount,
+  columnGroupSize,
+  benchmark,
+  flicker
+}) => (
   <div
     style={{
       width: '100%',
@@ -25,12 +30,18 @@ const Template: StoryFn<ChartProps> = ({ numberOfColumns, benchmark, flicker }) 
         overflow: 'hidden'
       }}
     >
-      <Chart numberOfColumns={numberOfColumns} benchmark={benchmark} flicker={flicker} />
+      <Chart
+        columnGroupCount={columnGroupCount}
+        columnGroupSize={columnGroupSize}
+        benchmark={benchmark}
+        flicker={flicker}
+      />
     </div>
   </div>
 )
 const baseArgs = {
-  numberOfColumns: 40,
+  columnGroupCount: 3,
+  columnGroupSize: 8,
   flicker: true
 }
 
