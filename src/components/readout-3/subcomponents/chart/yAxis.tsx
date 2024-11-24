@@ -7,23 +7,26 @@ const plotLineStyle = css`
   & > *:first-child {
     display: none;
   }
+  height: 100%;
+  z-index: 3;
 `
 
-const tickStyle = css`
+const tickStyle = (wide?: boolean) => css`
   z-index: 1;
   transform: rotate(-90deg);
   position: absolute;
-  width: 1.25px;
-  height: 3px;
-  background-color: rgb(251, 181, 19);
+  width: ${wide ? '1px' : '1.5px'};
+  height: ${wide ? '5px' : '3px'};
+  background-color: rgb(249, 202, 14);
 `
 interface YAxisProps {
-  numberOfTicks?: number
+  numberOfTicks: number
+  wide?: boolean
 }
 
-const YAxis: React.FC<YAxisProps> = ({ numberOfTicks = 18 }) => {
+const YAxis: React.FC<YAxisProps> = ({ numberOfTicks, wide }) => {
   const ticks = Array.from({ length: numberOfTicks }, (_, i) => {
-    return <div key={i} css={tickStyle} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
+    return <div key={i} css={tickStyle(wide)} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
   })
 
   return <div css={plotLineStyle}>{ticks}</div>
