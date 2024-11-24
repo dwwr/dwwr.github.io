@@ -7,7 +7,7 @@ export default {
   component: ColumnGroup
 } as Meta
 
-const Template: StoryFn<ColumnGroupProps> = ({ numberOfColumns, benchmark, flicker }) => (
+const Template: StoryFn<ColumnGroupProps> = ({ numberOfColumns, values }) => (
   <div
     style={{
       width: '100%',
@@ -25,43 +25,13 @@ const Template: StoryFn<ColumnGroupProps> = ({ numberOfColumns, benchmark, flick
         overflow: 'hidden'
       }}
     >
-      <ColumnGroup numberOfColumns={numberOfColumns} benchmark={benchmark} flicker={flicker} />
+      <ColumnGroup numberOfColumns={numberOfColumns} values={values} />
     </div>
   </div>
 )
 
-const baseArgs = {
+export const Default = Template.bind({})
+Default.args = {
   numberOfColumns: 8,
-  flicker: true
-}
-
-export const Baseline = Template.bind({})
-Baseline.args = {
-  ...baseArgs,
-  benchmark: 0
-}
-
-export const Low = Template.bind({})
-Low.args = {
-  ...baseArgs,
-  benchmark: 25
-}
-
-export const Medium = Template.bind({})
-Medium.args = {
-  ...baseArgs,
-  benchmark: 50
-}
-
-export const High = Template.bind({})
-High.args = {
-  ...baseArgs,
-  benchmark: 90
-}
-
-export const NoFlicker = Template.bind({})
-NoFlicker.args = {
-  ...baseArgs,
-  benchmark: 50,
-  flicker: false
+  values: [10, 20, 30, 40, 50, 60, 70, 80]
 }
