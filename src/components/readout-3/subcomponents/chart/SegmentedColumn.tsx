@@ -2,13 +2,21 @@
 import { css } from '@emotion/react'
 import YAxis from './yAxis'
 
-export const segmentedColumnStyle = css`
+const segmentedColumnContainerStyle = css`
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  justify-items: center;
+`
+
+export const segmentedColumnStyle = css`
+  width: 90%;
+  height: 100%;
+  display: flex;
   flex-direction: column;
-  margin: 0 2px;
   background-color: black;
+  z-index: 2;
 `
 
 const gradientBar = css`
@@ -16,8 +24,6 @@ const gradientBar = css`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  width: 100%;
-  gap: 2px;
 `
 
 const styleIncrementor = (i: number, currentNumber: number) => {
@@ -27,6 +33,8 @@ const styleIncrementor = (i: number, currentNumber: number) => {
     flex: 1;
     min-height: 0;
     border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 1px;
     /* border: ${i > currentNumber ? '1px solid rgba(251, 181, 19, 0.2)' : 'none'};
     box-shadow: ${i <= currentNumber ? '0 0 5px rgba(251, 181, 19, 0.5)' : 'none'}; */
   `
@@ -40,8 +48,14 @@ export interface SegmentedColumnProps {
 const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }) => {
   const scaledValue = Math.floor((value / 100) * 17)
   return (
-    <>
-      <YAxis numberOfTicks={numberOfBars} />
+    <div css={segmentedColumnContainerStyle}>
+      <div
+        css={css`
+          margin-left: 5px;
+        `}
+      >
+        <YAxis numberOfTicks={numberOfBars} />
+      </div>
       <div css={segmentedColumnStyle}>
         <div css={gradientBar}>
           {[...Array(17)].map((_, i) => (
@@ -49,8 +63,14 @@ const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }
           ))}
         </div>
       </div>
-      <YAxis numberOfTicks={numberOfBars} />
-    </>
+      <div
+        css={css`
+          margin-right: 5px;
+        `}
+      >
+        <YAxis numberOfTicks={numberOfBars} />
+      </div>
+    </div>
   )
 }
 

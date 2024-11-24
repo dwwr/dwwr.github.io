@@ -10,23 +10,14 @@ export default {
 const Template: StoryFn<SegmentedColumnProps> = ({ value, numberOfBars }) => (
   <div
     style={{
-      width: '100px',
+      width: '150px',
       height: '600px',
       overflow: 'hidden',
       padding: '1rem',
       backgroundColor: 'black'
     }}
   >
-    <div
-      style={{
-        display: 'flex',
-        height: '100%',
-        width: '100%',
-        overflow: 'hidden'
-      }}
-    >
-      <SegmentedColumn value={value} numberOfBars={numberOfBars} />
-    </div>
+    <SegmentedColumn value={value} numberOfBars={numberOfBars} />
   </div>
 )
 
