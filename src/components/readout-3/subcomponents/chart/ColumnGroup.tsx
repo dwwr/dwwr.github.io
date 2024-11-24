@@ -12,6 +12,8 @@ const columnContainerStyle = css`
 const segmentedColumnContainerStyle = css`
   width: 100%;
   height: 100%;
+  z-index: 1;
+  background-color: black;
 `
 
 export const columnGroupStyle = css`
