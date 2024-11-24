@@ -23,11 +23,18 @@ export interface ChartProps {
   columnGroupCount: number
   columnGroupSize: number
   benchmark?: number
-  flicker?: boolean
+  deviate?: boolean
+  loop?: boolean
 }
 
-const Chart: React.FC<ChartProps> = ({ columnGroupCount, columnGroupSize, benchmark, flicker }) => {
-  const columnValues = useColumnValues(columnGroupSize, benchmark, flicker)
+const Chart: React.FC<ChartProps> = ({
+  columnGroupCount,
+  columnGroupSize,
+  benchmark,
+  deviate,
+  loop
+}) => {
+  const columnValues = useColumnValues(columnGroupSize, benchmark, deviate, loop)
 
   return (
     <div css={chartStyle}>

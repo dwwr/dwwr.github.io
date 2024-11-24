@@ -50,7 +50,7 @@ export const Readout3: React.FC<Readout3Props> = ({ benchmark }) => {
           <DataLabel label="Blood Type:" text="Analyzing" flicker />
         </div>
         <div css={chartContainerStyle}>
-          <Chart numberOfColumns={40} benchmark={benchmark} flicker />
+          <Chart columnGroupSize={8} columnGroupCount={4} benchmark={benchmark} deviate loop />
         </div>
         <div css={textBarStyle}>
           <DataLabel text="High level energy field approaching" condensed />

@@ -12,6 +12,7 @@ const columnGroupStyle = css`
   position: relative;
   width: 100%;
   height: 100%;
+  background-color: black;
 `
 
 const columnContainerStyle = css`
@@ -25,9 +26,7 @@ const columnContainerStyle = css`
 const segmentedColumnContainerStyle = css`
   width: 200%;
   height: 100%;
-  z-index: 1;
   margin-left: -4px;
-  /* background-color: black; */
 `
 
 const xAxisStyle = css`

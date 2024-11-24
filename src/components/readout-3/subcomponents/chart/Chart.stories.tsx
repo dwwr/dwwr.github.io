@@ -11,7 +11,8 @@ const Template: StoryFn<ChartProps> = ({
   columnGroupCount,
   columnGroupSize,
   benchmark,
-  flicker
+  deviate,
+  loop
 }) => (
   <div
     style={{
@@ -34,7 +35,8 @@ const Template: StoryFn<ChartProps> = ({
         columnGroupCount={columnGroupCount}
         columnGroupSize={columnGroupSize}
         benchmark={benchmark}
-        flicker={flicker}
+        deviate={deviate}
+        loop={loop}
       />
     </div>
   </div>
@@ -42,7 +44,7 @@ const Template: StoryFn<ChartProps> = ({
 const baseArgs = {
   columnGroupCount: 3,
   columnGroupSize: 8,
-  flicker: true
+  deviate: true
 }
 
 export const Baseline = Template.bind({})
@@ -69,9 +71,9 @@ High.args = {
   benchmark: 90
 }
 
-export const NoFlicker = Template.bind({})
-NoFlicker.args = {
+export const NoDeviation = Template.bind({})
+NoDeviation.args = {
   ...baseArgs,
   benchmark: 50,
-  flicker: false
+  deviate: false
 }

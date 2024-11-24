@@ -5,27 +5,46 @@ const deviateValue = (value: number, range: number, direction: 'increment' | 'de
   return direction === 'increment' ? value + deviation : value - deviation
 }
 
-export const useColumnValues = (numberOfColumns: number, benchmark?: number, flicker?: boolean) => {
+export const useColumnValues = (
+  numberOfColumns: number,
+  benchmark?: number,
+  deviate?: boolean,
+  loop?: boolean
+) => {
   const [columnValues, setColumnValues] = useState<number[]>(
     Array(numberOfColumns).fill(benchmark ?? 0)
   )
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!flicker) return
+    let deviateInterval: NodeJS.Timeout
+    let resetInterval: NodeJS.Timeout
 
-      setColumnValues((prevValues) => {
-        if (benchmark || benchmark === 0) {
-          return prevValues.map(() => deviateValue(benchmark, 10, 'increment'))
-        }
-        return prevValues.map((value) =>
-          value < 100 ? deviateValue(value, 20, 'increment') : deviateValue(value, 20, 'decrement')
-        )
-      })
-    }, 100)
+    if (deviate) {
+      deviateInterval = setInterval(() => {
+        setColumnValues((prevValues) => {
+          if (benchmark || benchmark === 0) {
+            return prevValues.map(() => deviateValue(benchmark, 10, 'increment'))
+          }
+          return prevValues.map((value) =>
+            value < 100
+              ? deviateValue(value, 20, 'increment')
+              : deviateValue(value, 20, 'decrement')
+          )
+        })
+      }, 100)
+    }
 
-    return () => clearInterval(interval)
-  }, [numberOfColumns, benchmark, flicker])
+    if (loop) {
+      resetInterval = setInterval(() => {
+        setColumnValues(Array(numberOfColumns).fill(benchmark ?? 0))
+      }, 2000)
+    }
+
+    return () => {
+      clearInterval(deviateInterval)
+      clearInterval(resetInterval)
+    }
+  }, [numberOfColumns, benchmark, deviate, loop])
 
   return columnValues
 }
