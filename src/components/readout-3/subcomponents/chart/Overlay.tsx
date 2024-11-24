@@ -7,6 +7,7 @@ const overlayStyle = css`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  height: 100%;
 `
 export interface OverlayProps {
   labels: DataLabelProps[]

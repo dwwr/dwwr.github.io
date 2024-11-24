@@ -5,7 +5,7 @@ export const borderStyle = css`
   position: relative;
   display: inline-flex;
   align-items: start;
-  height: clamp(1.9rem, 5.75vw, 9rem);
+  height: 100%;
   border: 1px solid rgb(249, 158, 14);
   border-radius: 7px;
   background: linear-gradient(
@@ -26,14 +26,14 @@ export const glowTextStyle = css`
 `
 
 export const textStretchStyle = css`
-  font-size: clamp(0.5rem, 2vw, 4rem);
-  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.18rem, 0.5vw, 2rem));
+  font-size: 1.25rem;
+  transform: scaleY(3) scaleX(0.95) translateY(0.25rem);
 `
 
 export const labelStretchStyle = css`
   align-self: center;
-  font-size: clamp(0.25rem, 1vw, 2rem);
-  transform: scaleY(3) scaleX(0.95) translateY(clamp(0.1rem, 0.4vw, 2rem));
+  font-size: 0.75rem;
+  transform: scaleY(3) scaleX(0.95) translateY(0.2rem);
 `
 
 const condensedStyle = css`

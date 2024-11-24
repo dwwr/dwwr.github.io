@@ -30,7 +30,7 @@ const gradientBar = css`
 
 const styleIncrementor = (i: number, currentNumber: number) => {
   return css`
-    background: ${i > currentNumber ? 'none' : 'rgb(251, 181, 19)'};
+    background: ${i > currentNumber || currentNumber === 0 ? 'none' : 'rgb(251, 181, 19)'};
     width: 100%;
     flex: 1;
     min-height: 0;
@@ -49,6 +49,7 @@ export interface SegmentedColumnProps {
 
 const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }) => {
   const scaledValue = Math.floor((value / 100) * 17)
+  console.log(scaledValue)
   return (
     <div css={segmentedColumnContainerStyle}>
       <div
