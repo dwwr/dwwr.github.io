@@ -12,13 +12,23 @@ const containerStyle = css`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* filter: blur(0.3px); */
+  /* filter: blur(1px); */
 `
 
-export const textBarStyle = css`
+const topTextBarStyle = css`
   display: flex;
   justify-content: space-between;
-  height: 10%;
+  min-height: 10%;
+  align-items: end;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  gap: 1rem;
+`
+
+const bottomTextBarStyle = css`
+  ${topTextBarStyle}
+  align-items: start;
 `
 
 const chartContainerStyle = css`
@@ -32,8 +42,9 @@ const chartContainerStyle = css`
 const overlayContainerStyle = css`
   position: absolute;
   right: 0;
-  top: 13%;
+  top: 15%;
   transform: scale(0.66);
+  height: 110px;
   transform-origin: top right;
 `
 
@@ -43,30 +54,28 @@ export interface Readout3Props {
 
 export const Readout3: React.FC<Readout3Props> = ({ benchmark }) => {
   return (
-    <>
-      <div css={containerStyle}>
-        <div css={textBarStyle}>
-          <DataLabel text="Energy Observational Data" />
-          <DataLabel label="Blood Type:" text="Analyzing" flicker />
-        </div>
-        <div css={chartContainerStyle}>
-          <Chart numberOfColumns={40} benchmark={benchmark} flicker />
-        </div>
-        <div css={textBarStyle}>
-          <DataLabel text="High level energy field approaching" condensed />
-          <DataLabel label="Generating point:" text="Terminal Dogma: Point 00" />
-          <DataLabel label="Observed by:" text="Magi" />
-        </div>
-        <div css={overlayContainerStyle}>
-          <Overlay
-            labels={[
-              { label: 'Radioactivity', text: 'Negative' },
-              { label: 'Radiant Heat', text: 'Negative', flicker: true }
-            ]}
-          />
-        </div>
+    <div css={containerStyle}>
+      <div css={topTextBarStyle}>
+        <DataLabel text="Energy Observational Data" />
+        <DataLabel label="Blood Type:" text="Analyzing" flicker />
       </div>
-    </>
+      <div css={chartContainerStyle}>
+        <Chart columnGroupSize={8} columnGroupCount={4} benchmark={benchmark} deviate loop />
+      </div>
+      <div css={bottomTextBarStyle}>
+        <DataLabel text="High level energy field approaching" condensed />
+        <DataLabel label="Generating point:" text="Terminal Dogma: Point 00" />
+        <DataLabel label="Observed by:" text="Magi" />
+      </div>
+      <div css={overlayContainerStyle}>
+        <Overlay
+          labels={[
+            { label: 'Radioactivity', text: 'Negative' },
+            { label: 'Radiant Heat', text: 'Negative', flicker: true }
+          ]}
+        />
+      </div>
+    </div>
   )
 }
 

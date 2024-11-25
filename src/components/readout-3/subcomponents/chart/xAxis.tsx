@@ -2,28 +2,26 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-const backgroundColor = 'rgb(249, 158, 14)'
 const plotLineStyle = css`
   position: relative;
-  width: 100%;
 `
 
 const baseTickStyle = css`
   position: absolute;
   width: 1px;
-  background-color: ${backgroundColor};
+  background-color: rgb(249, 202, 14);
 `
 
 const bigTickStyle = css`
   ${baseTickStyle}
   width: 1.5px;
-  height: 10px;
-  top: -10px;
+  height: 15px;
+  top: -15px;
 `
 const midTickStyle = css`
   ${baseTickStyle}
-  height: 8px;
-  top: -8px;
+  height: 10px;
+  top: -10px;
 `
 
 const smallTickStyle = css`

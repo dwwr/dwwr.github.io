@@ -33,7 +33,7 @@ export interface ColumnProps {
 const Column: React.FC<ColumnProps> = ({ value, numberOfBars, showYAxis = true, key }) => {
   return (
     <>
-      {showYAxis && <YAxis numberOfTicks={numberOfBars} />}
+      {showYAxis && <YAxis numberOfTicks={numberOfBars} wide />}
       <div key={key} css={columnStyle}>
         <div css={negativeFillStyle(value)} />
       </div>
