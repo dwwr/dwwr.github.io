@@ -10,15 +10,11 @@ export default {
 const Template: StoryFn<DataLabelProps> = ({ label, text, flicker, condensed }) => (
   <div
     style={{
-      width: '100%',
-      height: '100vh',
-      minHeight: '500px',
+      // width: '100%',
+      height: '57px',
       backgroundColor: 'black',
       display: 'flex',
-      alignItems: 'start',
-      justifyContent: 'start',
-      boxSizing: 'border-box',
-      padding: '1rem'
+      boxSizing: 'border-box'
     }}
   >
     <DataLabel label={label} text={text} flicker={flicker} condensed={condensed} />

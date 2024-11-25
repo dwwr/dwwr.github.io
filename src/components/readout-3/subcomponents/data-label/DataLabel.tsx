@@ -2,9 +2,9 @@
 import { css } from '@emotion/react'
 
 export const borderStyle = css`
-  position: relative;
   display: inline-flex;
-  align-items: start;
+  align-items: end;
+  justify-content: end;
   height: 100%;
   border: 1px solid rgb(249, 158, 14);
   border-radius: 7px;
@@ -21,19 +21,18 @@ export const glowTextStyle = css`
   font-family: 'Helvetica', monospace;
   color: rgb(251, 181, 19);
   text-transform: uppercase;
-  text-shadow: 0 0 2px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
+  text-shadow: 0 0 1px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
   text-wrap: nowrap;
+  margin-bottom: 0.65rem;
+  transform: scaleY(3) scaleX(0.95);
 `
 
 export const textStretchStyle = css`
-  font-size: 1.25rem;
-  transform: scaleY(3) scaleX(0.95) translateY(0.25rem);
+  font-size: 1.1rem;
 `
 
 export const labelStretchStyle = css`
-  align-self: center;
-  font-size: 0.75rem;
-  transform: scaleY(3) scaleX(0.95) translateY(0.2rem);
+  font-size: 0.6rem;
 `
 
 const condensedStyle = css`
