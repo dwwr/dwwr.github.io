@@ -4,6 +4,7 @@ import { Header } from './molecules/Header'
 import { GlowLine } from './molecules/GlowLine'
 import { ListContainer } from './molecules/ListContainer'
 import { Readout1ListItemProps } from './molecules/list-item/Readout1ListItem'
+import { flicker, scanline } from '../animations'
 
 const readout1Style = css`
   height: 100%;
@@ -26,29 +27,8 @@ const readout1Style = css`
     width: 100%;
     height: 100%;
     background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.15) 50%, transparent 100%);
-    animation: scanline 0.167s linear infinite, flicker 0.167s infinite;
+    animation: ${scanline} 0.167s linear infinite, ${flicker} 0.167s infinite;
     pointer-events: none;
-  }
-
-  @keyframes flicker {
-    0% {
-      opacity: 0.9;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 0.9;
-    }
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(100%);
-    }
   }
 `
 

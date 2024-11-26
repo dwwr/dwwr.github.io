@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { flicker } from '../animations'
+import { scanline } from '../animations'
 
 export const containerStyle = css`
   width: 100%;
@@ -10,6 +12,18 @@ export const containerStyle = css`
   flex-direction: column;
   overflow: hidden;
   filter: blur(0.4px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.15) 50%, transparent 100%);
+    animation: ${scanline} 0.167s linear infinite, ${flicker} 0.167s infinite;
+    pointer-events: none;
+  }
 `
 
 export const topTextBarStyle = css`
