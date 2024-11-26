@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import Column from './Column'
 import SegmentedColumn from './SegmentedColumn'
 import XAxis from './xAxis'
-import PlotLine from '../PlotLine'
+import PlotLine from './PlotLine'
 
 const columnGroupStyle = css`
   flex: 1;
