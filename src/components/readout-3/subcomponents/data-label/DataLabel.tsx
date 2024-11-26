@@ -32,7 +32,7 @@ export const textStretchStyle = css`
 `
 
 export const labelStretchStyle = css`
-  font-size: 0.6rem;
+  font-size: 0.55rem;
 `
 
 const condensedStyle = css`

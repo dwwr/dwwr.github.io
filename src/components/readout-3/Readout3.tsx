@@ -12,7 +12,7 @@ const containerStyle = css`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* filter: blur(1px); */
+  filter: blur(0.4px);
 `
 
 const topTextBarStyle = css`
@@ -23,6 +23,10 @@ const topTextBarStyle = css`
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
   gap: 1rem;
 `
 
