@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import YAxis from './yAxis'
+import { YAxis } from './yAxis'
 
 const segmentedColumnContainerStyle = css`
   width: 100%;
@@ -47,7 +47,7 @@ export interface SegmentedColumnProps {
   numberOfBars: number
 }
 
-const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }) => {
+export const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }) => {
   const scaledValue = Math.floor((value / 100) * 17)
   console.log(scaledValue)
   return (
@@ -76,5 +76,3 @@ const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }
     </div>
   )
 }
-
-export default SegmentedColumn

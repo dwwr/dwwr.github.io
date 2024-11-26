@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import ColumnGroup from './ColumnGroup'
+import { ColumnGroup } from './ColumnGroup'
 import { useColumnValues } from './useColumnValues'
 
 const chartStyle = css`
@@ -27,7 +27,7 @@ export interface ChartProps {
   loop?: boolean
 }
 
-const Chart: React.FC<ChartProps> = ({
+export const Chart: React.FC<ChartProps> = ({
   columnGroupCount,
   columnGroupSize,
   benchmark,
@@ -46,5 +46,3 @@ const Chart: React.FC<ChartProps> = ({
     </div>
   )
 }
-
-export default Chart

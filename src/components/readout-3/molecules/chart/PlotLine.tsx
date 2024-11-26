@@ -46,7 +46,7 @@ interface PlotLineProps {
   numberOfTicks: number
 }
 
-const PlotLine: React.FC<PlotLineProps> = ({ numberOfTicks }) => {
+export const PlotLine: React.FC<PlotLineProps> = ({ numberOfTicks }) => {
   const pattern = [
     bigTickStyle,
     smallTickStyle,
@@ -69,5 +69,3 @@ const PlotLine: React.FC<PlotLineProps> = ({ numberOfTicks }) => {
 
   return <div css={plotLineStyle}>{ticks}</div>
 }
-
-export default PlotLine

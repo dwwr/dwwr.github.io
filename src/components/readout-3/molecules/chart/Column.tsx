@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import YAxis from './yAxis'
+import { YAxis } from './yAxis'
 
 export const columnStyle = css`
   width: 100%;
@@ -30,7 +30,7 @@ export interface ColumnProps {
   key: number
 }
 
-const Column: React.FC<ColumnProps> = ({ value, numberOfBars, showYAxis = true, key }) => {
+export const Column: React.FC<ColumnProps> = ({ value, numberOfBars, showYAxis = true, key }) => {
   return (
     <>
       {showYAxis && <YAxis numberOfTicks={numberOfBars} wide />}
@@ -40,5 +40,3 @@ const Column: React.FC<ColumnProps> = ({ value, numberOfBars, showYAxis = true, 
     </>
   )
 }
-
-export default Column

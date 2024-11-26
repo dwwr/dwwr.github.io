@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import Column from './Column'
-import SegmentedColumn from './SegmentedColumn'
-import XAxis from './xAxis'
-import PlotLine from './PlotLine'
+import { Column } from './Column'
+import { SegmentedColumn } from './SegmentedColumn'
+import { XAxis } from './xAxis'
+import { PlotLine } from './PlotLine'
 
 const columnGroupStyle = css`
   flex: 1;
@@ -52,7 +52,7 @@ export interface ColumnGroupProps {
   values: number[]
 }
 
-const ColumnGroup: React.FC<ColumnGroupProps> = ({ numberOfColumns, values }) => {
+export const ColumnGroup: React.FC<ColumnGroupProps> = ({ numberOfColumns, values }) => {
   return (
     <div css={columnGroupStyle}>
       <div css={columnContainerStyle}>
@@ -83,5 +83,3 @@ const ColumnGroup: React.FC<ColumnGroupProps> = ({ numberOfColumns, values }) =>
     </div>
   )
 }
-
-export default ColumnGroup

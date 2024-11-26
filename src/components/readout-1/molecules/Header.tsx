@@ -24,6 +24,14 @@ const stretch = css`
   text-transform: uppercase;
 `
 
+export interface HeaderProps {
+  title: string
+  kpi1Key: string
+  kpi1Value: string
+  kpi2Key: string
+  kpi2Value: string
+}
+
 export const Header: React.FC<HeaderProps> = ({
   title,
   kpi1Key,
@@ -44,12 +52,4 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
     </div>
   )
-}
-
-export interface HeaderProps {
-  title: string
-  kpi1Key: string
-  kpi1Value: string
-  kpi2Key: string
-  kpi2Value: string
 }

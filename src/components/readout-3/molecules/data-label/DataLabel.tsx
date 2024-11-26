@@ -63,7 +63,7 @@ export interface DataLabelProps {
   condensed?: boolean
 }
 
-const DataLabel: React.FC<DataLabelProps> = ({
+export const DataLabel: React.FC<DataLabelProps> = ({
   label,
   text,
   flicker: shouldFlicker,
@@ -76,5 +76,3 @@ const DataLabel: React.FC<DataLabelProps> = ({
     </div>
   )
 }
-
-export default DataLabel

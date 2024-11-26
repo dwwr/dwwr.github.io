@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import ColumnGroup, { ColumnGroupProps } from './ColumnGroup'
+import { ColumnGroup, ColumnGroupProps } from './ColumnGroup'
 
 export default {
   title: 'Components/Readout3/ColumnGroup',

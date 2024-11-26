@@ -14,7 +14,7 @@ export interface HexagonProps {
   text: string
 }
 
-const Hexagon: React.FC<HexagonProps> = ({ isOn, outlineOffHexagons, text }) => {
+export const Hexagon: React.FC<HexagonProps> = ({ isOn, outlineOffHexagons, text }) => {
   console.log('isOn', isOn)
   return (
     <div css={isOn ? hexagonOnStyle : hexagonOffStyle(outlineOffHexagons)}>
@@ -24,5 +24,3 @@ const Hexagon: React.FC<HexagonProps> = ({ isOn, outlineOffHexagons, text }) => 
     </div>
   )
 }
-
-export default Hexagon

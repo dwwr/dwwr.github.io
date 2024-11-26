@@ -24,12 +24,10 @@ interface YAxisProps {
   wide?: boolean
 }
 
-const YAxis: React.FC<YAxisProps> = ({ numberOfTicks, wide }) => {
+export const YAxis: React.FC<YAxisProps> = ({ numberOfTicks, wide }) => {
   const ticks = Array.from({ length: numberOfTicks }, (_, i) => {
     return <div key={i} css={tickStyle(wide)} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
   })
 
   return <div css={plotLineStyle}>{ticks}</div>
 }
-
-export default YAxis

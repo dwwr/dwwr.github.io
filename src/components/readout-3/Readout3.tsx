@@ -6,9 +6,9 @@ import {
   bottomTextBarStyle,
   overlayContainerStyle
 } from './styles'
-import DataLabel from './molecules/data-label/DataLabel'
-import Chart from './molecules/chart/Chart'
-import Overlay from './molecules/overlay/Overlay'
+import { DataLabel } from './molecules/data-label/DataLabel'
+import { Chart } from './molecules/chart/Chart'
+import { Overlay } from './molecules/overlay/Overlay'
 
 export interface Readout3Props {
   benchmark?: number
@@ -40,5 +40,3 @@ export const Readout3: React.FC<Readout3Props> = ({ benchmark }) => {
     </div>
   )
 }
-
-export default Readout3

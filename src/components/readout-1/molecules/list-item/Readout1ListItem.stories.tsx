@@ -28,26 +28,42 @@ const Template: StoryFn<typeof Readout1ListItem> = (props: Readout1ListItemProps
   </div>
 )
 
-export const Default = Template.bind({})
-Default.args = {
+export const Empty = Template.bind({})
+Empty.args = {
   subject: 'subject',
   subjectNumber: '00',
-  subjectLabel: 'TEST.C',
-  value: 20
+  subjectLabel: 'EMPTY.C',
+  value: 0
 }
 
-export const LowValue = Template.bind({})
-LowValue.args = {
-  subject: 'subject',
-  subjectNumber: '02',
-  subjectLabel: 'LOW.C',
-  value: 15
-}
-
-export const HighValue = Template.bind({})
-HighValue.args = {
+export const Quarter = Template.bind({})
+Quarter.args = {
   subject: 'subject',
   subjectNumber: '01',
-  subjectLabel: 'HIGH.C',
-  value: 80
+  subjectLabel: 'QUARTER.C',
+  value: 25
+}
+
+export const Half = Template.bind({})
+Half.args = {
+  subject: 'subject',
+  subjectNumber: '02',
+  subjectLabel: 'HALF.C',
+  value: 50
+}
+
+export const ThreeQuarters = Template.bind({})
+ThreeQuarters.args = {
+  subject: 'subject',
+  subjectNumber: '03',
+  subjectLabel: 'THREE.C',
+  value: 75
+}
+
+export const Full = Template.bind({})
+Full.args = {
+  subject: 'subject',
+  subjectNumber: '04',
+  subjectLabel: 'FULL.C',
+  value: 100
 }

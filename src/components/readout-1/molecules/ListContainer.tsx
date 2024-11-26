@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { ListHeader } from './ListHeader'
-import { Readout1ListItemProps, Readout1ListItem } from './Readout1ListItem'
+import { Readout1ListItem, Readout1ListItemProps } from './list-item/Readout1ListItem'
 import { ListWarningRow } from './ListWarningRow'
 
 const listContainer = css`
@@ -36,6 +36,11 @@ const loadingItem = css`
   border-radius: 4px;
 `
 
+interface ListContainerProps {
+  items: Readout1ListItemProps[]
+  isLoading?: boolean
+}
+
 export const ListContainer: React.FC<ListContainerProps> = ({ items, isLoading = false }) => {
   if (isLoading) {
     return (
@@ -59,9 +64,4 @@ export const ListContainer: React.FC<ListContainerProps> = ({ items, isLoading =
       ))}
     </div>
   )
-}
-
-interface ListContainerProps {
-  items: Readout1ListItemProps[]
-  isLoading?: boolean
 }

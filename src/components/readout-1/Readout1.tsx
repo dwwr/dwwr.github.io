@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Readout1ListItemProps } from './molecules/Readout1ListItem'
 import { Header } from './molecules/Header'
 import { GlowLine } from './molecules/GlowLine'
 import { ListContainer } from './molecules/ListContainer'
+import { Readout1ListItemProps } from './molecules/list-item/Readout1ListItem'
 
-const readout1 = css`
+const readout1Style = css`
   height: 100%;
   width: 100%;
   background-color: black;
@@ -73,7 +73,7 @@ export interface Readout1Props {
   isLoading?: boolean
 }
 
-const Readout1: React.FC<Readout1Props> = ({
+export const Readout1: React.FC<Readout1Props> = ({
   title,
   kpi1Key,
   kpi1Value,
@@ -83,7 +83,7 @@ const Readout1: React.FC<Readout1Props> = ({
   isLoading = false
 }) => {
   return (
-    <div css={[readout1, glowText]}>
+    <div css={[readout1Style, glowText]}>
       <Header
         title={title}
         kpi1Key={kpi1Key}
@@ -96,5 +96,3 @@ const Readout1: React.FC<Readout1Props> = ({
     </div>
   )
 }
-
-export default Readout1
