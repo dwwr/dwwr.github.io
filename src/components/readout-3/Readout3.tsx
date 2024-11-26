@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import DataLabel from './subcomponents/data-label/DataLabel'
-import Chart from './subcomponents/chart/Chart'
-import Overlay from './subcomponents/chart/Overlay'
+import DataLabel from './molecules/data-label/DataLabel'
+import Chart from './molecules/chart/Chart'
+import Overlay from './molecules/chart/Overlay'
 
 const containerStyle = css`
   width: 100%;
