@@ -8,7 +8,7 @@ import {
 } from './styles'
 import DataLabel from './molecules/data-label/DataLabel'
 import Chart from './molecules/chart/Chart'
-import Overlay from './molecules/chart/Overlay'
+import Overlay from './molecules/overlay/Overlay'
 
 export interface Readout3Props {
   benchmark?: number
