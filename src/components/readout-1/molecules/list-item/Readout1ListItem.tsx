@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { useState, useEffect } from 'react'
-import { glowText } from '../Readout1'
+import { glowText } from '../../Readout1'
 
 const listItem = css`
   display: contents;
@@ -73,6 +73,13 @@ const styleIncrementor = (i: number, currentNumber: number) => {
   `
 }
 
+export interface Readout1ListItemProps {
+  subject: string
+  subjectNumber: string
+  subjectLabel: string
+  value: number
+}
+
 export const Readout1ListItem: React.FC<Readout1ListItemProps> = ({
   subject,
   subjectNumber,
@@ -95,11 +102,4 @@ export const Readout1ListItem: React.FC<Readout1ListItemProps> = ({
       </div>
     </div>
   )
-}
-
-export interface Readout1ListItemProps {
-  subject: string
-  subjectNumber: string
-  subjectLabel: string
-  value: number
 }

@@ -34,7 +34,7 @@ interface XAxisProps {
   numberOfTicks: number
 }
 
-const XAxis: React.FC<XAxisProps> = ({ numberOfTicks }) => {
+export const XAxis: React.FC<XAxisProps> = ({ numberOfTicks }) => {
   const pattern = [
     bigTickStyle,
     smallTickStyle,
@@ -51,5 +51,3 @@ const XAxis: React.FC<XAxisProps> = ({ numberOfTicks }) => {
 
   return <div css={plotLineStyle}>{ticks}</div>
 }
-
-export default XAxis

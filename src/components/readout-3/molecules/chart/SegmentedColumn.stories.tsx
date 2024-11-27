@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import SegmentedColumn, { SegmentedColumnProps } from './SegmentedColumn'
+import { SegmentedColumn, SegmentedColumnProps } from './SegmentedColumn'
 
 export default {
   title: 'Components/Readout3/SegmentedColumn',

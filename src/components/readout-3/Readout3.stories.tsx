@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import Readout3, { Readout3Props } from './Readout3'
+import { Readout3, Readout3Props } from './Readout3'
 
 export default {
   title: 'Components/Readout3',

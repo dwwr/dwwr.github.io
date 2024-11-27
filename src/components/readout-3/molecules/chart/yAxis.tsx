@@ -18,18 +18,18 @@ const tickStyle = (wide?: boolean) => css`
   width: ${wide ? '1px' : '1.5px'};
   height: ${wide ? '5px' : '3px'};
   background-color: rgb(249, 202, 14);
+  box-shadow: 0 0 2px rgb(249, 202, 14), 0 0 4px rgb(249, 202, 14);
 `
+
 interface YAxisProps {
   numberOfTicks: number
   wide?: boolean
 }
 
-const YAxis: React.FC<YAxisProps> = ({ numberOfTicks, wide }) => {
+export const YAxis: React.FC<YAxisProps> = ({ numberOfTicks, wide }) => {
   const ticks = Array.from({ length: numberOfTicks }, (_, i) => {
     return <div key={i} css={tickStyle(wide)} style={{ top: `${(i / numberOfTicks) * 100}%` }} />
   })
 
   return <div css={plotLineStyle}>{ticks}</div>
 }
-
-export default YAxis

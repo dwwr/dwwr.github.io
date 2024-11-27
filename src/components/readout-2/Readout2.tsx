@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useHexagonStateAndFlash } from './useHexagonStateAndFlash'
 import { containerStyle, mainStyle, pulse } from './styles'
-import Hexagon from './molecules/hexagon/Hexagon'
+import { Hexagon } from './molecules/hexagon/Hexagon'
 
 interface Readout2Props {
   text: string
@@ -11,7 +11,7 @@ interface Readout2Props {
   outlineOffHexagons?: boolean
 }
 
-const Readout2: React.FC<Readout2Props> = ({
+export const Readout2: React.FC<Readout2Props> = ({
   numberOfHexagons = 50,
   text,
   stayOn,
@@ -31,5 +31,3 @@ const Readout2: React.FC<Readout2Props> = ({
     </div>
   )
 }
-
-export default Readout2

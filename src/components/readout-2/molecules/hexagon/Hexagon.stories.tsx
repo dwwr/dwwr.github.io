@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { Meta, StoryFn } from '@storybook/react'
-import Hexagon, { HexagonProps } from './Hexagon'
+import { Hexagon, HexagonProps } from './Hexagon'
 import { containerStyle, mainStyle } from '../../styles'
 
 export default {

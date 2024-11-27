@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import DataLabel from '../data-label/DataLabel'
-import { DataLabelProps } from '../data-label/DataLabel'
+import { DataLabel, DataLabelProps } from '../data-label/DataLabel'
 
 const overlayStyle = css`
   display: flex;
@@ -13,7 +12,7 @@ export interface OverlayProps {
   labels: DataLabelProps[]
 }
 
-const Overlay: React.FC<OverlayProps> = ({ labels }) => {
+export const Overlay: React.FC<OverlayProps> = ({ labels }) => {
   return (
     <div css={overlayStyle}>
       {labels.map((label) => (
@@ -22,5 +21,3 @@ const Overlay: React.FC<OverlayProps> = ({ labels }) => {
     </div>
   )
 }
-
-export default Overlay

@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import Chart, { ChartProps } from './Chart'
+import { Chart, ChartProps } from './Chart'
 
 export default {
   title: 'Components/Readout3/Chart',

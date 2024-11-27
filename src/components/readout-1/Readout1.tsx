@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { Readout1ListItemProps } from './molecules/Readout1ListItem'
 import { Header } from './molecules/Header'
 import { GlowLine } from './molecules/GlowLine'
 import { ListContainer } from './molecules/ListContainer'
+import { Readout1ListItemProps } from './molecules/list-item/Readout1ListItem'
+import { flicker, scanline } from '../animations'
 
-const readout1 = css`
+const readout1Style = css`
   height: 100%;
   width: 100%;
   background-color: black;
@@ -26,29 +27,8 @@ const readout1 = css`
     width: 100%;
     height: 100%;
     background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.15) 50%, transparent 100%);
-    animation: scanline 0.167s linear infinite, flicker 0.167s infinite;
+    animation: ${scanline} 0.167s linear infinite, ${flicker} 0.167s infinite;
     pointer-events: none;
-  }
-
-  @keyframes flicker {
-    0% {
-      opacity: 0.9;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 0.9;
-    }
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(100%);
-    }
   }
 `
 
@@ -73,7 +53,7 @@ export interface Readout1Props {
   isLoading?: boolean
 }
 
-const Readout1: React.FC<Readout1Props> = ({
+export const Readout1: React.FC<Readout1Props> = ({
   title,
   kpi1Key,
   kpi1Value,
@@ -83,7 +63,7 @@ const Readout1: React.FC<Readout1Props> = ({
   isLoading = false
 }) => {
   return (
-    <div css={[readout1, glowText]}>
+    <div css={[readout1Style, glowText]}>
       <Header
         title={title}
         kpi1Key={kpi1Key}
@@ -96,5 +76,3 @@ const Readout1: React.FC<Readout1Props> = ({
     </div>
   )
 }
-
-export default Readout1
