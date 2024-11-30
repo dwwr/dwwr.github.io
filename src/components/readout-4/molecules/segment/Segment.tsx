@@ -9,23 +9,21 @@ const container = css`
   gap: 0;
 `
 const barContainer = css`
-  width: 100%;
-  height: 100%;
+  min-width: 110px;
+  min-height: 20px;
   background-color: white;
   border-radius: 5px;
 `
 
 const bar = css`
-  min-width: 120px;
-  min-height: 20px;
+  ${barContainer}
   background-color: rgba(214, 63, 43, 0.95);
-  border-radius: 5px;
   box-shadow: 0 0 10px rgba(214, 63, 43, 0.4), 0 0 10px rgba(214, 63, 43, 0.3),
     0 0 10px rgba(201, 43, 22, 0.2), 0 0 10px rgba(201, 43, 22, 0.1);
 `
 
 const glowText = css`
-  font-size: clamp(1rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgba(196, 106, 65, 0.8);
@@ -35,7 +33,7 @@ const glowText = css`
 `
 const numberText = css`
   ${glowText}
-  font-size: clamp(1.2rem, 3vw, 1.2rem);
+  font-size: clamp(1rem, 3vw, 1rem);
 `
 
 export interface SegmentProps {}
