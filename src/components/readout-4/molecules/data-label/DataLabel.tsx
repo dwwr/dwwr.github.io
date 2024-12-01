@@ -1,6 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
+const labelContainer = css`
+  display: flex;
+`
+
+const glowBox = css`
+  margin-left: 0.5rem;
+  width: 25px;
+  height: 100%;
+  background-color: rgba(214, 63, 43, 0.95);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(214, 63, 43, 0.4), 0 0 20px rgba(214, 63, 43, 0.3),
+    0 0 20px rgba(201, 43, 22, 0.2), 0 0 20px rgba(201, 43, 22, 0.1);
+`
+
 export const label = css`
   border: 3px solid orange;
   border-radius: 5px;
@@ -51,20 +65,29 @@ export interface DataLabelProps {
   text: string
   bottomText?: string
   squeeze?: boolean
+  showIndicator?: boolean
 }
 
-export const DataLabel: React.FC<DataLabelProps> = ({ text, bottomText, squeeze }) => {
+export const DataLabel: React.FC<DataLabelProps> = ({
+  text,
+  bottomText,
+  squeeze,
+  showIndicator
+}) => {
   return (
-    <div css={label}>
-      {bottomText ? (
-        <>
-          <span css={[glowText, squeezeText, boldText]}>{text}</span>
-          <div css={divider} />
-          <span css={[glowText, squeeze && squeezeText, boldText, spacedText]}>{bottomText}</span>
-        </>
-      ) : (
-        <span css={[glowText, squeeze && squeezeText, boldText]}>{text}</span>
-      )}
+    <div css={labelContainer}>
+      <div css={label}>
+        {bottomText ? (
+          <>
+            <span css={[glowText, squeezeText, boldText]}>{text}</span>
+            <div css={divider} />
+            <span css={[glowText, squeeze && squeezeText, boldText, spacedText]}>{bottomText}</span>
+          </>
+        ) : (
+          <span css={[glowText, squeeze && squeezeText, boldText]}>{text}</span>
+        )}
+      </div>
+      {showIndicator && <div css={glowBox} />}
     </div>
   )
 }
