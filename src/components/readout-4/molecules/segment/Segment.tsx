@@ -36,14 +36,16 @@ const numberText = css`
   font-size: clamp(1rem, 3vw, 1rem);
 `
 
-export interface SegmentProps {}
+export interface SegmentProps {
+  number: number
+}
 
-export const Segment: React.FC<SegmentProps> = () => {
+export const Segment: React.FC<SegmentProps> = ({ number }) => {
   return (
     <div css={container}>
       <div>
         <span css={glowText}>Seg. </span>
-        <span css={numberText}>2</span>
+        <span css={numberText}>{number}</span>
       </div>
       <div css={barContainer}>
         <div css={bar} />
