@@ -3,11 +3,15 @@ import { css } from '@emotion/react'
 
 const labelContainer = css`
   display: flex;
+  align-items: stretch;
+  > * {
+    flex-shrink: 0;
+  }
 `
 
 const glowBox = css`
   margin-left: 0.5rem;
-  width: 25px;
+  min-width: 25px;
   height: 100%;
   background-color: rgba(214, 63, 43, 0.95);
   border-radius: 4px;
