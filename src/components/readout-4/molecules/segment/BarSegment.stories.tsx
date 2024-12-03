@@ -1,14 +1,14 @@
 /** @jsxImportSource react */
 import { Meta, StoryFn } from '@storybook/react'
-import { Segment, SegmentProps } from './Segment'
+import { BarSegment, BarSegmentProps } from './BarSegment'
 
 export default {
-  title: 'Components/Readout4/Segment',
-  component: Segment,
+  title: 'Components/Readout4/BarSegment',
+  component: BarSegment,
   argTypes: {}
 } as Meta
 
-const Template: StoryFn<SegmentProps> = (props) => (
+const Template: StoryFn<BarSegmentProps> = (props) => (
   <div
     style={{
       width: '100%',
@@ -22,7 +22,7 @@ const Template: StoryFn<SegmentProps> = (props) => (
       padding: '1rem'
     }}
   >
-    <Segment {...props} />
+    <BarSegment {...props} />
   </div>
 )
 

@@ -9,7 +9,7 @@ const container = css`
   gap: 0;
 `
 const barContainer = css`
-  min-width: 110px;
+  min-width: 130px;
   min-height: 20px;
   background-color: white;
   border-radius: 5px;
@@ -23,7 +23,7 @@ const bar = css`
 `
 
 const glowText = css`
-  font-size: clamp(0.8rem, 2vw, 0.8rem);
+  font-size: clamp(1rem, 2vw, 1rem);
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgba(196, 106, 65, 0.8);
@@ -33,14 +33,14 @@ const glowText = css`
 `
 const numberText = css`
   ${glowText}
-  font-size: clamp(1rem, 3vw, 1rem);
+  font-size: clamp(1.2rem, 3vw, 1.2rem);
 `
 
-export interface SegmentProps {
+export interface BarSegmentProps {
   number: number
 }
 
-export const Segment: React.FC<SegmentProps> = ({ number }) => {
+export const BarSegment: React.FC<BarSegmentProps> = ({ number }) => {
   return (
     <div css={container}>
       <div>
