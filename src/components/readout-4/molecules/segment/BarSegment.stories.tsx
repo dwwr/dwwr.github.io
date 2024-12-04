@@ -8,7 +8,7 @@ export default {
   argTypes: {}
 } as Meta
 
-const Template: StoryFn<BarSegmentProps> = (props) => (
+const Template: StoryFn<BarSegmentProps> = ({ number }) => (
   <div
     style={{
       width: '100%',
@@ -22,9 +22,11 @@ const Template: StoryFn<BarSegmentProps> = (props) => (
       padding: '1rem'
     }}
   >
-    <BarSegment {...props} />
+    <BarSegment number={number} />
   </div>
 )
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+  number: 1
+}
