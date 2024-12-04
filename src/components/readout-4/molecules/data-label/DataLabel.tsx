@@ -31,9 +31,8 @@ export const label = css`
 
 export const glowText = css`
   font-family: 'Helvetica', monospace;
-  font-size: 1.8rem;
+  font-size: 2rem;
   line-height: 1.2;
-  letter-spacing: 0.1rem;
   color: rgb(251, 181, 19);
   text-transform: uppercase;
   text-shadow: 0 0 1px #ff0000, 0 0 4px #ff0000, 0 0 6px #ff0000;
@@ -45,9 +44,8 @@ export const glowText = css`
 
 export const squeezeText = css`
   word-spacing: -0.1rem;
-  width: 118%;
-  letter-spacing: 0.05rem;
-  transform: scaleX(0.85);
+  width: 125%;
+  transform: scaleX(0.8);
   transform-origin: left;
 `
 
@@ -61,7 +59,7 @@ const spacedText = css`
 const divider = css`
   border-top: 2px solid rgb(251, 181, 19);
   align-self: center;
-  width: 93%;
+  width: 96%;
   height: 0px;
 `
 
