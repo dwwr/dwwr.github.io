@@ -6,11 +6,10 @@ const container = css`
   filter: blur(0.5px);
   display: flex;
   flex-direction: column;
-  gap: 0;
 `
 const barContainer = css`
-  min-width: 130px;
-  min-height: 20px;
+  min-width: 160px;
+  min-height: 30px;
   background-color: white;
   border-radius: 5px;
 `
@@ -23,17 +22,17 @@ const bar = css`
 `
 
 const glowText = css`
-  font-size: clamp(1rem, 2vw, 1rem);
+  font-size: clamp(1.1rem, 2vw, 1.1rem);
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgba(196, 106, 65, 0.8);
   text-shadow: 0 0 10px #ff3300, 0 0 10px #ff3300, 0 0 10px #ff3300;
   text-transform: uppercase;
-  line-height: 1;
+  line-height: 1.3;
 `
 const numberText = css`
   ${glowText}
-  font-size: clamp(1.2rem, 3vw, 1.2rem);
+  font-size: clamp(1.3rem, 3vw, 1.3rem);
 `
 
 export interface BarSegmentProps {
