@@ -6,7 +6,7 @@ export const borderStyle = css`
   align-items: end;
   justify-content: end;
   height: 100%;
-  border: 1px solid rgb(249, 158, 14);
+  border: 3px solid rgb(249, 158, 14);
   border-radius: 7px;
   background: linear-gradient(
     to bottom,

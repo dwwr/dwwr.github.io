@@ -28,7 +28,7 @@ const glowText = css`
   color: rgba(196, 106, 65, 0.8);
   text-shadow: 0 0 10px #ff3300, 0 0 10px #ff3300, 0 0 10px #ff3300;
   text-transform: uppercase;
-  line-height: 1.3;
+  line-height: 1.1;
 `
 const numberText = css`
   ${glowText}
