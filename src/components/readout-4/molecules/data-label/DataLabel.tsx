@@ -1,5 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
+import { flickerAnimation } from '../../../animations'
+
+const boxFlicker = css`
+  animation: ${flickerAnimation} 0.167s infinite;
+`
 
 const labelContainer = css`
   display: flex;
@@ -9,7 +14,7 @@ const labelContainer = css`
   }
 `
 
-const glowBox = css`
+const glowBox = (flicker?: boolean) => css`
   margin-left: 0.5rem;
   min-width: 25px;
   height: 100%;
@@ -17,6 +22,7 @@ const glowBox = css`
   border-radius: 4px;
   box-shadow: 0 0 20px rgba(214, 63, 43, 0.4), 0 0 20px rgba(214, 63, 43, 0.3),
     0 0 20px rgba(201, 43, 22, 0.2), 0 0 20px rgba(201, 43, 22, 0.1);
+  ${flicker && boxFlicker}
 `
 
 export const label = css`
@@ -68,13 +74,15 @@ export interface DataLabelProps {
   bottomText?: string
   squeeze?: boolean
   showIndicator?: boolean
+  flicker?: boolean
 }
 
 export const DataLabel: React.FC<DataLabelProps> = ({
   text,
   bottomText,
   squeeze,
-  showIndicator
+  showIndicator,
+  flicker
 }) => {
   return (
     <div css={labelContainer}>
@@ -89,7 +97,7 @@ export const DataLabel: React.FC<DataLabelProps> = ({
           <span css={[glowText, squeeze && squeezeText, boldText]}>{text}</span>
         )}
       </div>
-      {showIndicator && <div css={glowBox} />}
+      {showIndicator && <div css={glowBox(flicker)} />}
     </div>
   )
 }
