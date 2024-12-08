@@ -5,21 +5,18 @@ import { Readout4, Readout4Props } from './Readout4'
 export default {
   title: 'Components/Readout4',
   component: Readout4,
+  parameters: {
+    layout: 'fullscreen'
+  },
   argTypes: {}
 } as Meta
 
 const Template: StoryFn<Readout4Props> = (props) => (
   <div
     style={{
-      width: '100%',
-      height: '100%',
-      // backgroundColor: 'black',
-      display: 'flex',
-      alignItems: 'start',
-      justifyContent: 'start',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      padding: '1rem'
+      width: '100vw',
+      height: '100vh',
+      overflow: 'hidden'
     }}
   >
     <Readout4 {...props} />
