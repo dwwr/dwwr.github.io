@@ -11,7 +11,7 @@ const borderLine = css`
   height: 4px;
   background-color: #00ffff;
   margin: 1.5rem 0;
-  filter: blur(1px);
+  filter: blur(0.25px);
 `
 
 const label = css`
