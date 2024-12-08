@@ -7,7 +7,7 @@ const plotlineSegment = css`
   flex-direction: column;
   color: #5ff7ff;
   font-family: 'Helvetica';
-  font-size: 1.2rem;
+  font-size: clamp(0.5rem, 2vw, 1.2rem);
   font-weight: 600;
 `
 
@@ -29,7 +29,7 @@ const number = css`
 
 const bigLine = css`
   height: 2px;
-  width: 20px;
+  width: clamp(10px, 3vw, 20px);
   background-color: #5ff7ff;
 `
 
@@ -43,7 +43,7 @@ const smallLineContainer = css`
 
 const smallLine = css`
   height: 2px;
-  width: 10px;
+  width: clamp(5px, 1.5vw, 10px);
   background-color: #5ff7ff;
 `
 

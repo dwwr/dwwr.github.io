@@ -27,8 +27,8 @@ const container = (flicker?: boolean) =>
   `
 
 const barContainer = css`
-  min-width: 160px;
-  min-height: 30px;
+  width: clamp(60px, 12vw, 140px);
+  height: clamp(10px, 5vh, 30px);
   background-color: white;
   border-radius: 5px;
 `
@@ -42,18 +42,19 @@ const bar = (green?: boolean) => css`
 `
 
 const glowText = (green?: boolean) => css`
-  font-size: clamp(1.1rem, 2vw, 1.1rem);
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
   font-family: 'Helvetica', monospace;
   font-weight: bold;
   color: rgba(196, 106, 65, 0.8);
   text-shadow: 0 0 10px #ff3300, 0 0 10px #ff3300, 0 0 10px #ff3300;
   text-transform: uppercase;
   line-height: 1.1;
+  white-space: nowrap;
   ${green && greenText}
 `
 const numberText = (green?: boolean) => css`
   ${glowText(green)}
-  font-size: clamp(1.3rem, 3vw, 1.3rem);
+  font-size: clamp(1rem, 3vw, 1.3rem);
 `
 
 export interface BarSegmentProps {
@@ -65,7 +66,11 @@ export interface BarSegmentProps {
 export const BarSegment: React.FC<BarSegmentProps> = ({ number, flicker, green }) => {
   return (
     <div css={container(flicker)}>
-      <div>
+      <div
+        css={css`
+          display: inline-block;
+        `}
+      >
         <span css={glowText(green)}>Seg. </span>
         <span css={numberText(green)}>{number}</span>
       </div>

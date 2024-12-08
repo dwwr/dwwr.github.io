@@ -20,10 +20,10 @@ const labelStyles = css`
   left: 50%;
   transform: translate(-50%, -50%) scaleX(1.5);
   letter-spacing: 0.05rem;
-  background-color: #000;
-  padding: 0 1.25rem;
+  background-color: black;
+  padding: 0 clamp(0.25rem, 1vw, 1.25rem);
   color: #00ffff;
-  font-size: clamp(1.4rem, 2vw, 1.4rem);
+  font-size: clamp(0.8rem, 2vw, 1.4rem);
   font-family: 'Helvetica';
   font-weight: bold;
   text-transform: uppercase;

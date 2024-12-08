@@ -26,9 +26,9 @@ const glowBox = (flicker?: boolean) => css`
 `
 
 export const label = css`
-  border: 3px solid orange;
+  border: 2px solid orange;
   border-radius: 5px;
-  width: 400px;
+  width: clamp(160px, 32vw, 400px);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -37,7 +37,7 @@ export const label = css`
 
 export const glowText = css`
   font-family: 'Helvetica', monospace;
-  font-size: 2rem;
+  font-size: clamp(0.8rem, 2.5vw, 2rem);
   line-height: 1.2;
   color: rgb(251, 181, 19);
   text-transform: uppercase;
@@ -50,7 +50,7 @@ export const glowText = css`
 
 export const squeezeText = css`
   word-spacing: -0.1rem;
-  width: 125%;
+  width: clamp(125%, 10vw, 125%);
   transform: scaleX(0.8);
   transform-origin: left;
 `
@@ -65,7 +65,7 @@ const spacedText = css`
 const divider = css`
   border-top: 2px solid rgb(251, 181, 19);
   align-self: center;
-  width: 96%;
+  width: clamp(96%, 10vw, 96%);
   height: 0px;
 `
 
