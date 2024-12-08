@@ -14,16 +14,13 @@ export default {
 const Template: StoryFn = () => (
   <div
     style={{
-      width: '100vw',
       height: '100vh',
       backgroundColor: 'black',
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'start',
-      justifyContent: 'start',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-      padding: '5rem',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '1rem',
       gap: '1rem'
     }}
   >
