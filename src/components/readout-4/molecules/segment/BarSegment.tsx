@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react'
 import { css } from '@emotion/react'
 import { flickerAnimation } from '../../../animations'
 
@@ -12,19 +11,19 @@ const greenText = css`
   text-shadow: 0 0 10px rgba(180, 247, 163, 0.95), 0 0 10px rgba(180, 247, 163, 0.95),
     0 0 10px rgba(180, 247, 163, 0.95);
 `
+
 const greenBar = css`
   background-color: rgba(180, 247, 163, 0.95);
   box-shadow: 0 0 10px rgba(180, 247, 163, 0.4), 0 0 10px rgba(180, 247, 163, 0.3),
     0 0 10px rgba(180, 247, 163, 0.2), 0 0 10px rgba(180, 247, 163, 0.1);
 `
 
-const container = (flicker?: boolean) =>
-  css`
-    filter: blur(0.5px);
-    display: flex;
-    flex-direction: column;
-    ${flicker && barSegmentFlicker}
-  `
+const container = (flicker?: boolean) => css`
+  filter: blur(0.5px);
+  display: flex;
+  flex-direction: column;
+  ${flicker && barSegmentFlicker}
+`
 
 const barContainer = css`
   width: clamp(60px, 12vw, 140px);
@@ -52,6 +51,7 @@ const glowText = (green?: boolean) => css`
   white-space: nowrap;
   ${green && greenText}
 `
+
 const numberText = (green?: boolean) => css`
   ${glowText(green)}
   font-size: clamp(1rem, 3vw, 1.3rem);
@@ -63,20 +63,14 @@ export interface BarSegmentProps {
   green?: boolean
 }
 
-export const BarSegment: React.FC<BarSegmentProps> = ({ number, flicker, green }) => {
-  return (
-    <div css={container(flicker)}>
-      <div
-        css={css`
-          display: inline-block;
-        `}
-      >
-        <span css={glowText(green)}>Seg. </span>
-        <span css={numberText(green)}>{number}</span>
-      </div>
-      <div css={barContainer}>
-        <div css={bar(green)} />
-      </div>
+export const BarSegment = ({ number, flicker, green }: BarSegmentProps) => (
+  <div css={container(flicker)}>
+    <div>
+      <span css={glowText(green)}>Seg. </span>
+      <span css={numberText(green)}>{number}</span>
     </div>
-  )
-}
+    <div css={barContainer}>
+      <div css={bar(green)} />
+    </div>
+  </div>
+)

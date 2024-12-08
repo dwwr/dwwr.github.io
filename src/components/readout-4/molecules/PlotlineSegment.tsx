@@ -7,11 +7,11 @@ const plotlineSegment = css`
   flex-direction: column;
   color: #5ff7ff;
   font-family: 'Helvetica';
-  font-size: clamp(0.5rem, 2vw, 1.2rem);
+  font-size: clamp(0.6rem, 3vw, 1.2rem);
   font-weight: 600;
 `
 
-const container = css`
+const textContainer = css`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -19,7 +19,6 @@ const container = css`
 `
 
 const sign = css`
-  color: #5ff7ff;
   margin-bottom: 2px;
 `
 
@@ -27,13 +26,13 @@ const number = css`
   margin-right: 0.25rem;
 `
 
-const bigLine = css`
+const line = (small?: boolean) => css`
   height: 2px;
-  width: clamp(10px, 3vw, 20px);
+  width: clamp(${small ? '5px, 1.5vw, 10px' : '10px, 3vw, 20px'});
   background-color: #5ff7ff;
 `
 
-const smallLineContainer = css`
+const lineContainer = css`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -41,32 +40,24 @@ const smallLineContainer = css`
   height: 50%;
 `
 
-const smallLine = css`
-  height: 2px;
-  width: clamp(5px, 1.5vw, 10px);
-  background-color: #5ff7ff;
-`
-
-export interface PlotlineSegmentProps {
+interface PlotlineSegmentProps {
   value: number
   hide?: boolean
 }
 
-export const PlotlineSegment: React.FC<PlotlineSegmentProps> = ({ value, hide }) => {
-  return (
-    <div css={plotlineSegment}>
-      <div css={smallLineContainer}>
-        <div css={smallLine}></div>
-      </div>
-      <div css={container}>
-        {!hide && (
-          <>
-            <span css={sign}>+</span>
-            <span css={number}>{value.toString().padStart(2, '0')}</span>
-            <div css={bigLine}></div>
-          </>
-        )}
-      </div>
+export const PlotlineSegment = ({ value, hide }: PlotlineSegmentProps) => (
+  <div css={plotlineSegment}>
+    <div css={lineContainer}>
+      <div css={line(true)} />
     </div>
-  )
-}
+    <div css={textContainer}>
+      {!hide && (
+        <>
+          <span css={sign}>+</span>
+          <span css={number}>{value.toString().padStart(2, '0')}</span>
+          <div css={line()} />
+        </>
+      )}
+    </div>
+  </div>
+)

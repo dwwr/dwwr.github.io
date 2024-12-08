@@ -5,15 +5,17 @@ import { DataLabel } from './DataLabel'
 export default {
   title: 'Components/Readout4/DataLabel',
   component: DataLabel,
-  // parameters: {
-  //   layout: 'centered'
-  // },
+  parameters: {
+    layout: 'fullscreen'
+  },
   argTypes: {}
 } as Meta
 
 const Template: StoryFn = () => (
   <div
     style={{
+      width: '100vw',
+      height: '100vh',
       backgroundColor: 'black',
       display: 'flex',
       flexDirection: 'column',

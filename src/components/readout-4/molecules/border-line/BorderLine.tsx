@@ -5,7 +5,7 @@ interface BorderLineProps {
   text: string
 }
 
-const borderLineStyles = css`
+const borderLine = css`
   position: relative;
   width: 100%;
   height: 4px;
@@ -14,7 +14,7 @@ const borderLineStyles = css`
   filter: blur(1px);
 `
 
-const labelStyles = css`
+const label = css`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -31,10 +31,8 @@ const labelStyles = css`
   border-radius: 6px;
 `
 
-export const BorderLine: React.FC<BorderLineProps> = ({ text }) => {
-  return (
-    <div css={borderLineStyles}>
-      <span css={labelStyles}>{text}</span>
-    </div>
-  )
-}
+export const BorderLine: React.FC<BorderLineProps> = ({ text }) => (
+  <div css={borderLine}>
+    <span css={label}>{text}</span>
+  </div>
+)

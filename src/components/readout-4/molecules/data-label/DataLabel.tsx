@@ -25,7 +25,7 @@ const glowBox = (flicker?: boolean) => css`
   ${flicker && boxFlicker}
 `
 
-export const label = css`
+const label = css`
   border: 2px solid orange;
   border-radius: 5px;
   width: clamp(160px, 32vw, 400px);
@@ -35,7 +35,7 @@ export const label = css`
   filter: blur(0.75px);
 `
 
-export const glowText = css`
+const glowText = css`
   font-family: 'Helvetica', monospace;
   font-size: clamp(0.8rem, 2.5vw, 2rem);
   line-height: 1.2;
@@ -48,7 +48,7 @@ export const glowText = css`
   word-spacing: 0.1rem;
 `
 
-export const squeezeText = css`
+const squeezeText = css`
   word-spacing: -0.1rem;
   width: clamp(125%, 10vw, 125%);
   transform: scaleX(0.8);
@@ -58,6 +58,7 @@ export const squeezeText = css`
 const boldText = css`
   font-weight: bold;
 `
+
 const spacedText = css`
   transform: scaleX(1.1);
 `
@@ -66,10 +67,10 @@ const divider = css`
   border-top: 2px solid rgb(251, 181, 19);
   align-self: center;
   width: clamp(96%, 10vw, 96%);
-  height: 0px;
+  height: 0;
 `
 
-export interface DataLabelProps {
+interface DataLabelProps {
   text: string
   bottomText?: string
   squeeze?: boolean
@@ -77,27 +78,25 @@ export interface DataLabelProps {
   flicker?: boolean
 }
 
-export const DataLabel: React.FC<DataLabelProps> = ({
+export const DataLabel = ({
   text,
   bottomText,
   squeeze,
   showIndicator,
   flicker
-}) => {
-  return (
-    <div css={labelContainer}>
-      <div css={label}>
-        {bottomText ? (
-          <>
-            <span css={[glowText, squeezeText, boldText]}>{text}</span>
-            <div css={divider} />
-            <span css={[glowText, squeeze && squeezeText, boldText, spacedText]}>{bottomText}</span>
-          </>
-        ) : (
-          <span css={[glowText, squeeze && squeezeText, boldText]}>{text}</span>
-        )}
-      </div>
-      {showIndicator && <div css={glowBox(flicker)} />}
+}: DataLabelProps) => (
+  <div css={labelContainer}>
+    <div css={label}>
+      {bottomText ? (
+        <>
+          <span css={[glowText, squeezeText, boldText]}>{text}</span>
+          <div css={divider} />
+          <span css={[glowText, squeeze && squeezeText, boldText, spacedText]}>{bottomText}</span>
+        </>
+      ) : (
+        <span css={[glowText, squeeze && squeezeText, boldText]}>{text}</span>
+      )}
     </div>
-  )
-}
+    {showIndicator && <div css={glowBox(flicker)} />}
+  </div>
+)

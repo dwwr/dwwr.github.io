@@ -11,14 +11,9 @@ export default {
 const Template: StoryFn<BarSegmentProps> = ({ number }) => (
   <div
     style={{
-      width: '100%',
-      height: '600px',
+      width: '100vw',
+      height: '100vh',
       backgroundColor: 'black',
-      display: 'flex',
-      alignItems: 'start',
-      justifyContent: 'start',
-      boxSizing: 'border-box',
-      overflow: 'hidden',
       padding: '1rem'
     }}
   >
