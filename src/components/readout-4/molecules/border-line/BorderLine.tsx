@@ -8,7 +8,7 @@ interface BorderLineProps {
 const borderLine = css`
   position: relative;
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: #00ffff;
   margin: 1.5rem 0;
   filter: blur(0.25px);
