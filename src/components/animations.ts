@@ -1,6 +1,6 @@
 import { keyframes } from '@emotion/react'
 
-export const flicker = keyframes`
+export const flickerAnimation = keyframes`
   0% {
     opacity: 0.9;
   }
@@ -12,7 +12,7 @@ export const flicker = keyframes`
   }
 `
 
-export const scanline = keyframes`
+export const scanlineAnimation = keyframes`
   0% {
     transform: translateY(-100%);
   }

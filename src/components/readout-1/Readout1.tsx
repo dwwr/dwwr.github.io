@@ -4,7 +4,7 @@ import { Header } from './molecules/Header'
 import { GlowLine } from './molecules/GlowLine'
 import { ListContainer } from './molecules/ListContainer'
 import { Readout1ListItemProps } from './molecules/list-item/Readout1ListItem'
-import { flicker, scanline } from '../animations'
+import { flickerAnimation, scanlineAnimation } from '../animations'
 
 const readout1Style = css`
   height: 100%;
@@ -27,7 +27,7 @@ const readout1Style = css`
     width: 100%;
     height: 100%;
     background: linear-gradient(transparent 0%, rgba(255, 0, 0, 0.15) 50%, transparent 100%);
-    animation: ${scanline} 0.167s linear infinite, ${flicker} 0.167s infinite;
+    animation: ${scanlineAnimation} 0.167s linear infinite, ${flickerAnimation} 0.167s infinite;
     pointer-events: none;
   }
 `
