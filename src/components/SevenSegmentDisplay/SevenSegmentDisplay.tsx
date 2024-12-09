@@ -19,7 +19,7 @@ const horizontalSegment = css`
 
 const verticalSegment = css`
   width: 14%;
-  height: 44%;
+  height: 44.5%;
   clip-path: polygon(0% 10%, 50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%);
 `
 
@@ -30,7 +30,7 @@ const segmentA = css`
 
 const segmentG = css`
   ${horizontalSegment}
-  top: 46%;
+  top: 45.7%;
 `
 
 const segmentD = css`
