@@ -11,16 +11,16 @@ const segment = css`
 `
 
 const horizontalSegment = css`
-  width: 65%;
-  height: 8%;
-  left: 16.5%;
-  clip-path: polygon(0% 50%, 9% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%);
+  width: 66%;
+  height: 9%;
+  left: 16%;
+  clip-path: polygon(0% 51%, 10% 0%, 90% 0%, 100% 50%, 89% 100%, 10% 100%);
 `
 
 const verticalSegment = css`
-  width: 12%;
+  width: 14%;
   height: 44%;
-  clip-path: polygon(0% 8%, 50% 0%, 100% 8%, 100% 92%, 50% 100%, 0% 92%);
+  clip-path: polygon(0% 10%, 50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%);
 `
 
 const segmentA = css`
@@ -45,15 +45,15 @@ const rightSegments = css`
 
 const leftSegments = css`
   ${verticalSegment}
-  left: 8%;
+  left: 7%;
 `
 
 const topSegments = css`
-  top: 5%;
+  top: 5.4%;
 `
 
 const bottomSegments = css`
-  bottom: 5.5%;
+  bottom: 5%;
 `
 
 const numbers: Record<number, string> = {
