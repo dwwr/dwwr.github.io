@@ -4,5 +4,7 @@ export const formatMilliseconds = (ms: number) => {
   const tenths = Math.floor((ms % 1000) / 100)
   const hundredths = Math.floor((ms % 100) / 10)
 
-  return `${minutes}${seconds}${tenths}${hundredths}`
+  const paddedSeconds = seconds.toString().padStart(2, '0')
+
+  return `${minutes}${paddedSeconds}${tenths}${hundredths}`
 }

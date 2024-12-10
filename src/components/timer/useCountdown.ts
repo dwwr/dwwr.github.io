@@ -5,7 +5,7 @@ export const useCountdown = (milliseconds: number) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prevTime) => prevTime - 10)
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 10 : 0))
     }, 10)
 
     return () => clearInterval(interval)
