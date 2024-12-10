@@ -9,7 +9,7 @@ const digit = css`
 
 const segment = css`
   position: absolute;
-  transition: background-color 0.2s;
+  /* transition: background-color 0.2s; */
 `
 
 const horizontalSegment = css`
@@ -83,7 +83,7 @@ const numbers: Record<number, string> = {
 
 export interface SevenSegmentDisplayProps {
   number: number
-  color?: string
+  color: string
 }
 
 export const SevenSegmentDisplay: React.FC<SevenSegmentDisplayProps> = ({ number, color }) => {
