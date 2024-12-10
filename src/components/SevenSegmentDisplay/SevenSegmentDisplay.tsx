@@ -3,6 +3,8 @@ import { css } from '@emotion/react'
 
 const digit = css`
   position: relative;
+  width: 100%;
+  height: 100%;
 `
 
 const segment = css`
@@ -23,17 +25,17 @@ const verticalSegment = css`
   clip-path: polygon(0% 10%, 50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%);
 `
 
-const segmentA = css`
+const a = css`
   ${horizontalSegment}
   top: 0;
 `
 
-const segmentG = css`
+const g = css`
   ${horizontalSegment}
   top: 45.7%;
 `
 
-const segmentD = css`
+const d = css`
   ${horizontalSegment}
   bottom: 0;
 `
@@ -56,6 +58,16 @@ const bottomSegments = css`
   bottom: 5%;
 `
 
+// ----a---
+// |       |
+// f       b
+// |       |
+// |---g---|
+// |       |
+// e       c
+// |       |
+// ----d----
+
 const numbers: Record<number, string> = {
   0: 'abcdef',
   1: 'bc',
@@ -71,50 +83,26 @@ const numbers: Record<number, string> = {
 
 export interface SevenSegmentDisplayProps {
   number: number
-  size?: number
-  activeColor?: string
-  inactiveColor?: string
+  color?: string
 }
 
-export const SevenSegmentDisplay: React.FC<SevenSegmentDisplayProps> = ({
-  number,
-  size = 1,
-  activeColor = '#ff0000',
-  inactiveColor = 'rgba(255, 0, 0, 0.2)'
-}) => {
+export const SevenSegmentDisplay: React.FC<SevenSegmentDisplayProps> = ({ number, color }) => {
   const segments = numbers[number] || ''
 
-  const getSegmentStyle = (segment: string) => ({
-    backgroundColor: segments.includes(segment) ? activeColor : inactiveColor
+  const getSegmentStyles = (segmentId: string, ...styles: any[]) => ({
+    css: [segment, ...styles],
+    style: { backgroundColor: segments.includes(segmentId) ? color : undefined }
   })
 
   return (
-    <div
-      css={digit}
-      style={{
-        width: `${100 * size}px`,
-        height: `${180 * size}px`
-      }}
-    >
-      <div css={[segment, segmentA]} style={getSegmentStyle('a')} />
-      <div
-        css={[segment, verticalSegment, rightSegments, topSegments]}
-        style={getSegmentStyle('b')}
-      />
-      <div
-        css={[segment, verticalSegment, rightSegments, bottomSegments]}
-        style={getSegmentStyle('c')}
-      />
-      <div css={[segment, segmentD]} style={getSegmentStyle('d')} />
-      <div
-        css={[segment, verticalSegment, leftSegments, bottomSegments]}
-        style={getSegmentStyle('e')}
-      />
-      <div
-        css={[segment, verticalSegment, leftSegments, topSegments]}
-        style={getSegmentStyle('f')}
-      />
-      <div css={[segment, segmentG]} style={getSegmentStyle('g')} />
+    <div css={digit}>
+      <div {...getSegmentStyles('a', a)} />
+      <div {...getSegmentStyles('b', verticalSegment, rightSegments, topSegments)} />
+      <div {...getSegmentStyles('c', verticalSegment, rightSegments, bottomSegments)} />
+      <div {...getSegmentStyles('d', d)} />
+      <div {...getSegmentStyles('e', verticalSegment, leftSegments, bottomSegments)} />
+      <div {...getSegmentStyles('f', verticalSegment, leftSegments, topSegments)} />
+      <div {...getSegmentStyles('g', g)} />
     </div>
   )
 }
