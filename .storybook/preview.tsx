@@ -14,7 +14,6 @@ const preview: Preview = {
     layout: 'fullscreen',
     backgrounds: {
       disable: true,
-      default: 'transparent',
     },
   },
   decorators: [
