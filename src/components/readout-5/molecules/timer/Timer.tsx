@@ -5,15 +5,15 @@ import { SevenSegmentDisplay } from '../SevenSegmentDisplay/SevenSegmentDisplay'
 import { useCountdown } from './useCountdown'
 import { formatMilliseconds } from './utils'
 
-const colon = (color: string, small?: boolean) => css`
+const colon = (color: string) => css`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
 
   div {
-    width: ${small ? '6px' : '8px'};
-    height: ${small ? '6px' : '8px'};
+    width: 8px;
+    height: 8px;
     background-color: ${color};
     border-radius: 3px;
   }
@@ -75,7 +75,7 @@ export const Timer: React.FC<TimerProps> = ({
       </div>
 
       <div css={smallerNumberContainer}>
-        <div css={colon(color, true)}>
+        <div css={colon(color)}>
           <div></div>
           <div></div>
         </div>
