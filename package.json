@@ -33,6 +33,7 @@
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
     "@chromatic-com/storybook": "^3.2.2",
+    "@newhighsco/storybook-addon-svgr": "^2.0.56",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
