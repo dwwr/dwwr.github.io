@@ -10,12 +10,14 @@ const colon = (color: string) => css`
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+  width: 10%;
 
   div {
-    width: 8px;
-    height: 8px;
+    width: 100%;
+    height: 5%;
     background-color: ${color};
     border-radius: 3px;
+    z-index: 1;
   }
 `
 
