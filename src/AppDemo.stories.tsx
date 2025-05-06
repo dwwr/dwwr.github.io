@@ -1,4 +1,6 @@
 /** @jsxImportSource react */
+import Zdog from 'zdog'
+import React from 'react'
 import { Meta, StoryFn } from '@storybook/react'
 import App from './App'
 import { contents, SIDE_LENGTH } from './content/contents'
@@ -21,36 +23,38 @@ export default {
 } as Meta
 
 const Template: StoryFn<{}> = () => (
-  <div className="app-demo-container">
-    <div style={{ height: '500px' }}>
-      <CubeScene contents={contents} sideLength={SIDE_LENGTH} />
+  <WaitForFonts>
+    <div className="app-demo-container">
+      <div style={{ height: '500px', width: '50%' }}>
+        <CubeScene contents={contents} sideLength={SIDE_LENGTH} />
+      </div>
+      <div>
+        <Readout1 {...readout1Args} />
+      </div>
+      <div style={{ height: '600px' }}>
+        <Readout2 {...readout2Args} />
+      </div>
+      <div style={{ height: '600px' }}>
+        <Readout3 />
+      </div>
+      <div
+        style={{
+          height: '100%',
+          marginTop: '0px',
+          marginBottom: '0px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <ColumnGroupDefault numberOfColumns={8} values={[10, 20, 30, 40, 50, 60, 70, 80]} />
+        <DataLabelDefault />
+      </div>
+      <div style={{ height: '600px' }}>
+        <Readout4 />
+      </div>
     </div>
-    <div>
-      <Readout1 {...readout1Args} />
-    </div>
-    <div style={{ height: '600px' }}>
-      <Readout2 {...readout2Args} />
-    </div>
-    <div style={{ height: '600px' }}>
-      <Readout3 />
-    </div>
-    <div
-      style={{
-        height: '100%',
-        marginTop: '0px',
-        marginBottom: '0px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
-      <ColumnGroupDefault numberOfColumns={8} values={[10, 20, 30, 40, 50, 60, 70, 80]} />
-      <DataLabelDefault />
-    </div>
-    <div style={{ height: '600px' }}>
-      <Readout4 />
-    </div>
-  </div>
+  </WaitForFonts>
 )
 
 export const Default = Template.bind({})
@@ -73,4 +77,15 @@ const readout2Args = {
   text: 'Emergency',
   outlineOffHexagons: true,
   numberOfHexagons: 77
+}
+
+const WaitForFonts: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [ready, setReady] = React.useState(false)
+  console.log('waiting for fonts', ready)
+  React.useEffect(() => {
+    Zdog.waitForFonts().then(() => setReady(true))
+  }, [])
+
+  if (!ready) return null // or a loading spinner
+  return <>{children}</>
 }
