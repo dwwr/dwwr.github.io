@@ -3,6 +3,7 @@
 import { css } from '@emotion/react'
 import { Timer } from './molecules/timer/Timer'
 import { ReactComponent as TimerMask } from './timer-mask.svg'
+import { TimerLabel } from './molecules/TimerLabel'
 
 const orangeYellow = 'rgb(246, 183, 48)'
 const container = css`
@@ -30,7 +31,7 @@ const content = css`
   display: flex;
   flex-direction: column;
   height: 433px;
-  width: 800px;
+  width: 900px;
 `
 
 const header = css`
@@ -210,22 +211,12 @@ export const Readout5 = (props: Readout5Props) => (
           completedColor={'rgb(209, 7, 10)'}
         />
         <div css={labelColumn}>
-          <div css={labelContainer}>
-            <div css={label}>
-              <div css={kanjiLabelLarge}>内部</div>
-              <div
-                css={labelText}
-                style={{
-                  marginLeft: '0.5rem',
-                  transform: 'scaleX(0.9)',
-                  transformOrigin: 'bottom left'
-                }}
-              >
-                Internal
-              </div>
-            </div>
-            <div css={striped} />
-          </div>
+          <TimerLabel japaneseText="内部" englishText="Internal" showIndicator={true} />
+          <TimerLabel
+            japaneseText="主電源供給システム"
+            englishText="Main Energy Supply System"
+            small
+          />
           <div css={labelContainer}>
             <div css={label}>
               <div css={[kanjiLabelSmall, squished]}>主電源供給システム</div>
