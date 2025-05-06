@@ -49,7 +49,7 @@ export interface SegmentedColumnProps {
 
 export const SegmentedColumn: React.FC<SegmentedColumnProps> = ({ value, numberOfBars }) => {
   const scaledValue = Math.floor((value / 100) * 17)
-  console.log(scaledValue)
+
   return (
     <div css={segmentedColumnContainerStyle}>
       <div

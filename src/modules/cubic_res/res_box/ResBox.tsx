@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box } from 'react-zdog'
 import { ColorMap } from '../../../content/types'
 
@@ -6,10 +7,7 @@ interface ResumeBoxProps {
   readonly colorMap: ColorMap
 }
 
-export const ResumeBox: React.FC<ResumeBoxProps> = ({
-  sideLength,
-  colorMap,
-}) => {
+export const ResumeBox: React.FC<ResumeBoxProps> = ({ sideLength, colorMap }) => {
   return (
     <Box
       width={sideLength}
