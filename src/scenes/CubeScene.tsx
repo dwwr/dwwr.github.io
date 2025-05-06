@@ -16,17 +16,14 @@ const rgbToHex = (r: number, g: number, b: number) => {
   return ((r << 16) | (g << 8) | b).toString(16)
 }
 
-export const CubeScene: React.FC<CubeSceneProps> = ({
-  contents,
-  sideLength,
-}) => {
+export const CubeScene: React.FC<CubeSceneProps> = ({ contents, sideLength }) => {
   const colorMap: Record<Face, string> = {
     front: contents.front.color,
     right: contents.right.color,
     back: contents.back.color,
     left: contents.left.color,
     top: contents.top.color,
-    bottom: contents.bottom.color,
+    bottom: contents.bottom.color
   }
 
   const backwardColorMap: Record<string, string> = Object.fromEntries(
@@ -37,12 +34,10 @@ export const CubeScene: React.FC<CubeSceneProps> = ({
     const canvas = document.getElementsByTagName('canvas')[0]
     canvas?.addEventListener(
       'click',
-      e => {
+      (e) => {
         const rect = canvas.getBoundingClientRect()
-        const x =
-          ((e.clientX - rect.left) / (rect.right - rect.left)) * canvas.width
-        const y =
-          ((e.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height
+        const x = ((e.clientX - rect.left) / (rect.right - rect.left)) * canvas.width
+        const y = ((e.clientY - rect.top) / (rect.bottom - rect.top)) * canvas.height
         var c = canvas.getContext('2d')
         var p = c!.getImageData(x, y, 1, 1).data
 

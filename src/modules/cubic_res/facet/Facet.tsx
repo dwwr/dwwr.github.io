@@ -10,12 +10,7 @@ export interface FacetProps {
   content: ZTextProps
 }
 
-export const Facet: React.FC<FacetProps> = ({
-  sideLength,
-  xRotate,
-  yRotate,
-  content,
-}) => {
+export const Facet: React.FC<FacetProps> = ({ sideLength, xRotate, yRotate, content }) => {
   return (
     <Group rotate={{ x: Zdog.TAU / xRotate, y: Zdog.TAU / yRotate }}>
       <Group translate={{ z: sideLength / 2 }}>
