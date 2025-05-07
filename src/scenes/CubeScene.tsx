@@ -9,6 +9,7 @@ import { Contents, Face } from '../content/types'
 export interface CubeSceneProps {
   contents: Contents
   sideLength: number
+  rotate?: boolean
 }
 
 // const rgbToHex = (r: number, g: number, b: number) => {
@@ -16,7 +17,7 @@ export interface CubeSceneProps {
 //   return ((r << 16) | (g << 8) | b).toString(16)
 // }
 
-export const CubeScene: React.FC<CubeSceneProps> = ({ contents, sideLength }) => {
+export const CubeScene: React.FC<CubeSceneProps> = ({ contents, sideLength, rotate }) => {
   const colorMap: Record<Face, string> = {
     front: contents.front.color,
     right: contents.right.color,
@@ -63,7 +64,7 @@ export const CubeScene: React.FC<CubeSceneProps> = ({ contents, sideLength }) =>
         canvas.onclick = null
       }}
     >
-      <BoxGroup>
+      <BoxGroup rotate={rotate}>
         <ResumeBox sideLength={sideLength} colorMap={colorMap} />
         <FacetAnchor sideLength={sideLength} contents={contents} />
       </BoxGroup>
