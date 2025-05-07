@@ -44,7 +44,7 @@ export const contents: Contents = {
     face: 'front'
   },
   top: {
-    text: 'Top \nTier \nEngineering',
+    text: 'Top Tier \nEngineering',
     fontSize,
     font,
     color: '#e0a3f5',
