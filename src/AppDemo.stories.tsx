@@ -25,7 +25,7 @@ export default {
 const Template: StoryFn<{}> = () => (
   <WaitForFonts>
     <div className="app-demo-container">
-      <div style={{ height: '500px', width: '50%' }}>
+      <div style={{ height: '500px', width: '75%' }}>
         <CubeScene contents={contents} sideLength={SIDE_LENGTH} />
       </div>
       <div>

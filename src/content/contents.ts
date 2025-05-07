@@ -6,10 +6,10 @@ import NotoSans from '../assets/NotoSans-Regular.ttf'
 
 Zfont.init(Zdog)
 const font: Zdog.Font = new Zdog.Font({
-  src: NotoSans,
+  src: NotoSans
 })
 
-export const SIDE_LENGTH = window.innerWidth < 400 ? 250 : 300
+export const SIDE_LENGTH = window.innerWidth < 400 ? 225 : 300
 
 const fontSize = window.innerWidth < 400 ? 30 : 40
 
@@ -20,41 +20,41 @@ export const contents: Contents = {
     fontSize,
     font,
     color: '#f5e0a3',
-    face: 'front',
+    face: 'front'
   },
   right: {
     text: 'Contributions \nIn \nVolume',
     fontSize,
     font,
     color: '#a3a3f5',
-    face: 'front',
+    face: 'front'
   },
   back: {
     text: 'Expertise \nIn \nBackend',
     fontSize,
     font,
     color: '#a3e0f5',
-    face: 'front',
+    face: 'front'
   },
   left: {
     text: 'Dimensions \nOf \nCreativity',
     fontSize,
     font,
     color: '#a3f5a3',
-    face: 'front',
+    face: 'front'
   },
   top: {
     text: 'Top \nTier \nEngineering',
     fontSize,
     font,
     color: '#e0a3f5',
-    face: 'front',
+    face: 'front'
   },
   bottom: {
     text: 'Bottom \nLine \nOriented',
     fontSize,
     font,
     color: '#f5a3a3',
-    face: 'front',
-  },
+    face: 'front'
+  }
 }
