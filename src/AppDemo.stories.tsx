@@ -9,9 +9,9 @@ import './storybook.css'
 import { Readout1 } from './components/readout-1/Readout1'
 import { Readout2 } from './components/readout-2/Readout2'
 import { Readout3 } from './components/readout-3/Readout3'
-import { Default as ColumnGroupDefault } from './components/readout-3/molecules/chart/ColumnGroup.stories'
 import { Default as DataLabelDefault } from './components/readout-4/molecules/data-label/DataLabel.stories'
 import { Readout4 } from './components/readout-4/Readout4'
+import { ColumnGroup } from './components/readout-3/molecules/chart/ColumnGroup'
 
 export default {
   title: 'Components/App Demo',
@@ -26,7 +26,7 @@ const Template: StoryFn<{}> = () => (
   <WaitForFonts>
     <div className="app-demo-container">
       <div style={{ height: '500px', width: '75%' }}>
-        <CubeScene contents={contents} sideLength={SIDE_LENGTH} />
+        <CubeScene contents={contents} sideLength={SIDE_LENGTH} rotate />
       </div>
       <div>
         <Readout1 {...readout1Args} />
@@ -39,7 +39,7 @@ const Template: StoryFn<{}> = () => (
       </div>
       <div
         style={{
-          height: '100%',
+          height: '400px',
           marginTop: '0px',
           marginBottom: '0px',
           display: 'flex',
@@ -47,10 +47,10 @@ const Template: StoryFn<{}> = () => (
           justifyContent: 'center'
         }}
       >
-        <ColumnGroupDefault numberOfColumns={8} values={[10, 20, 30, 40, 50, 60, 70, 80]} />
+        <ColumnGroup numberOfColumns={8} values={[10, 20, 30, 40, 50, 60, 70, 80]} />
         <DataLabelDefault />
       </div>
-      <div style={{ height: '600px' }}>
+      <div style={{ height: '600px', overflowX: 'scroll' }}>
         <Readout4 />
       </div>
     </div>
@@ -76,7 +76,7 @@ const readout1Args = {
 const readout2Args = {
   text: 'Emergency',
   outlineOffHexagons: true,
-  numberOfHexagons: 77
+  numberOfHexagons: 100
 }
 
 const WaitForFonts: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -86,6 +86,6 @@ const WaitForFonts: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     Zdog.waitForFonts().then(() => setReady(true))
   }, [])
 
-  if (!ready) return null // or a loading spinner
+  if (!ready) return null
   return <>{children}</>
 }
