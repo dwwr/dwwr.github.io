@@ -20,6 +20,7 @@ export const Facet: React.FC<FacetProps> = ({ sideLength, xRotate, yRotate, cont
           font={content.font}
           color={content.color}
           textAlign="center"
+          textBaseline="middle"
         />
       </Group>
     </Group>

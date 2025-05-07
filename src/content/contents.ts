@@ -9,9 +9,9 @@ const font: Zdog.Font = new Zdog.Font({
   src: NotoSans
 })
 
-export const SIDE_LENGTH = window.innerWidth < 400 ? 225 : 300
+export const SIDE_LENGTH = window.innerWidth < 400 ? 150 : 300
 
-const fontSize = window.innerWidth < 400 ? 30 : 40
+const fontSize = window.innerWidth < 400 ? 22 : 40
 
 // 'multifaceted'
 export const contents: Contents = {
