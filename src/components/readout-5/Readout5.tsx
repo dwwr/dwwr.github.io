@@ -30,8 +30,9 @@ const content = css`
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 433px;
+  height: 500px;
   width: 900px;
+  /* background-color: red; */
 `
 
 const header = css`
@@ -54,7 +55,7 @@ const kanjiLabel = css`
   width: fit-content;
   color: ${orangeYellow};
   border-radius: 10px;
-  font-size: 60px;
+  font-size: 66px;
   font-family: 'Eva-Matisse_Classic', sans-serif;
   z-index: 0;
   word-spacing: 0.1rem;
@@ -73,9 +74,13 @@ const timerContainer = css`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 80%;
-  margin-top: -4rem;
-  margin-left: 4rem;
+  height: 70%;
+  /* width: 100%; */
+  /* width: 100%; */
+  margin-top: -3rem;
+  margin-left: 4.5rem;
+  /* background-color: red; */
+  z-index: 100;
 `
 
 const labelText = css`
@@ -86,7 +91,7 @@ const labelText = css`
   text-wrap: nowrap;
   align-self: flex-end;
   /* margin-left: 1rem; */
-  letter-spacing: 0rem;
+  letter-spacing: -3px;
   z-index: 3;
 `
 
@@ -118,7 +123,6 @@ const modeItemText = css`
   font-family: 'Helvetica';
   text-transform: uppercase;
   font-size: 22px;
-  /* font-weight: 500; */
   transform-origin: top left;
   transform: scaleY(1.5);
   line-height: 1;
@@ -137,49 +141,11 @@ const labelColumn = css`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 220px;
+  width: 200px;
   margin-right: 1rem;
-`
-
-const labelContainer = css`
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid ${orangeYellow};
-  border-radius: 2px;
-  z-index: 1;
-  height: fit-content;
-  margin-bottom: 1rem;
-`
-
-const label = css`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  color: ${orangeYellow};
-  font-family: 'Helvetica';
-  text-transform: uppercase;
-  font-size: 22px;
-  letter-spacing: -0.05rem;
-  z-index: 0;
-  text-wrap: nowrap;
-  line-height: 1;
-`
-
-const kanjiLabelLarge = css`
-  ${kanjiLabel};
-  font-size: 80px;
-`
-
-const striped = css`
-  background-color: red;
-  width: 50px;
-  z-index: 100;
-`
-
-const squished = css`
-  transform: scaleX(0.66);
-  transform-origin: bottom left;
-  line-height: 1;
+  & > * {
+    margin-bottom: 1rem;
+  }
 `
 
 export interface Readout5Props {}
@@ -211,18 +177,12 @@ export const Readout5 = (props: Readout5Props) => (
           completedColor={'rgb(209, 7, 10)'}
         />
         <div css={labelColumn}>
-          <TimerLabel japaneseText="内部" englishText="Internal" showIndicator={true} />
+          <TimerLabel japaneseText="内部" englishText="Internal" showIndicator />
           <TimerLabel
             japaneseText="主電源供給システム"
             englishText="Main Energy Supply System"
             small
           />
-          <div css={labelContainer}>
-            <div css={label}>
-              <div css={[kanjiLabelSmall, squished]}>主電源供給システム</div>
-              <div css={squished}>Main Energy Supply System</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
