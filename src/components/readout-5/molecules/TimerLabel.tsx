@@ -11,71 +11,83 @@ interface TimerLabelProps {
 
 const orangeYellow = 'rgb(246, 183, 48)'
 
-const labelContainer = css`
+const container = css`
   display: flex;
   justify-content: space-between;
   border: 1px solid ${orangeYellow};
   border-radius: 2px;
-  z-index: 1;
   height: fit-content;
-  margin-bottom: 1rem;
+  text-wrap: nowrap;
 `
 
-const label = css`
+const content = css`
   display: flex;
   flex-direction: column;
   align-items: start;
-  color: ${orangeYellow};
-  font-family: 'Helvetica';
-  text-transform: uppercase;
-  font-size: 22px;
   letter-spacing: -0.05rem;
   z-index: 0;
-  text-wrap: nowrap;
   line-height: 1;
+  width: 80%;
 `
 
-const kanjiText = css`
-  display: flex;
-  width: fit-content;
-  color: ${orangeYellow};
-  border-radius: 10px;
-  font-size: 60px;
-  font-family: 'Eva-Matisse_Classic', sans-serif;
-  z-index: 0;
-  word-spacing: 0.1rem;
-  letter-spacing: -0.25rem;
-  line-height: 1.2;
-  /* text-wrap: nowrap; */
-`
-
-const labelText = css`
+const textBaseStyle = css`
   color: ${orangeYellow};
   font-family: 'Helvetica';
   text-transform: uppercase;
-  font-size: 32px;
-  text-wrap: nowrap;
-  align-self: flex-end;
-  /* margin-left: 1rem; */
-  letter-spacing: 0rem;
-  z-index: 3;
+  letter-spacing: -0.1rem;
 `
 
-const kanjiTextLarge = css`
-  ${kanjiText};
+const kanji = css`
+  ${textBaseStyle};
+  font-family: 'Eva-Matisse_Classic', sans-serif;
+`
+
+const english = css`
+  ${textBaseStyle};
+  font-size: 36px;
+  padding-left: 0.25rem;
+  transform: scaleX(0.9);
+  transform-origin: bottom left;
+`
+
+const kanjiLarge = css`
+  ${kanji};
   font-size: 80px;
 `
 
-const indicator = css`
-  background-color: red;
-  width: 50px;
-  z-index: 100;
+const kanjiSmall = css`
+  ${kanji};
+  font-size: 40px;
 `
 
-const squished = css`
-  transform: scaleX(0.66);
+const squishedBase = css`
   transform-origin: bottom left;
-  line-height: 1;
+`
+
+const squishedKanji = css`
+  ${squishedBase};
+  transform: scaleX(0.56);
+  padding-left: 3px;
+`
+
+const squishedText = css`
+  ${english};
+  ${squishedBase};
+  font-size: 22px;
+  font-weight: 600;
+  transform: scaleX(0.6);
+  padding-left: 13px;
+`
+
+const indicator = css`
+  background-image: repeating-linear-gradient(
+    135deg,
+    red,
+    red 16px,
+    transparent 16px,
+    transparent 32px
+  );
+  width: 20%;
 `
 
 export const TimerLabel = ({
@@ -84,24 +96,14 @@ export const TimerLabel = ({
   showIndicator,
   small
 }: TimerLabelProps) => {
+  const kanjiStyle = small ? [kanjiSmall, squishedKanji] : kanjiLarge
+  const englishStyle = small ? squishedText : english
+
   return (
-    <div css={labelContainer}>
-      <div css={label}>
-        <div css={small ? kanjiText : kanjiTextLarge}>{japaneseText}</div>
-        <div
-          css={labelText}
-          style={
-            small
-              ? {}
-              : {
-                  marginLeft: '0.5rem',
-                  transform: 'scaleX(0.9)',
-                  transformOrigin: 'bottom left'
-                }
-          }
-        >
-          <span css={squished}>{englishText}</span>
-        </div>
+    <div css={container}>
+      <div css={content}>
+        <div css={kanjiStyle}>{japaneseText}</div>
+        <div css={englishStyle}>{englishText}</div>
       </div>
       {showIndicator && <div css={indicator} />}
     </div>
