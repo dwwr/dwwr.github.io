@@ -36,7 +36,7 @@ const content = css`
 `
 
 const header = css`
-  display: flex;
+  /* display: flex; */
 `
 
 const kanjiLabelContainer = css`
@@ -96,12 +96,12 @@ const labelText = css`
 `
 
 const modeContainer = css`
-  /* width: 70%; */
+  width: 60%;
   margin-top: 2rem;
   margin-left: 4rem;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 `
 
 const modeItem = css`
@@ -144,8 +144,25 @@ const labelColumn = css`
   width: 200px;
   margin-right: 1rem;
   & > * {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
+  & > *:last-child {
+    margin-top: auto;
+  }
+`
+
+const spacer = css`
+  /* height: 1px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const point = css`
+  height: 5px;
+  width: 2px;
+  background-color: rgb(214, 242, 182);
 `
 
 export interface Readout5Props {}
@@ -177,12 +194,16 @@ export const Readout5 = (props: Readout5Props) => (
           completedColor={'rgb(209, 7, 10)'}
         />
         <div css={labelColumn}>
+          <Spacer />
           <TimerLabel japaneseText="内部" englishText="Internal" showIndicator />
+          <Spacer />
           <TimerLabel
             japaneseText="主電源供給システム"
             englishText="Main Energy Supply System"
             small
           />
+          <Spacer />
+          <Spacer />
         </div>
       </div>
     </div>
@@ -205,4 +226,11 @@ export const Readout5 = (props: Readout5Props) => (
       </div>
     </div>
   </div>
+)
+
+const Spacer = () => (
+  <span css={spacer}>
+    <div css={point} />
+    <div css={point} />
+  </span>
 )
