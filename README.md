@@ -16,4 +16,11 @@ npm run build
 npm run preview
 ```
 
+## Storybook
+
+```bash
+npm run storybook
+npm run build-storybook
+```
+
 Pushes to `main` deploy the production build to GitHub Pages.
