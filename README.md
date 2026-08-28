@@ -1,12 +1,19 @@
-# N. Design System
-- A react component library inspired by the essential anime `Neon Genesis Evangelion`.
-- Storybook available at dwwr.github.io
-- These idiosyncratic design elements have been recreated in pure, functional React/HTML/CSS.
-- Designed to push the boundary of what UX is possible in web 2.0, and challenge accepted design language
-- The original stated purpose:
-  - Accomplish development of highly complex components that do not follow typical web design principles, standards, or aesthetics
-  - Define new design principles, standards, and aesthetics based on the anime’s art direction
-  - Improve front end development abilities through tackling massive UX challenges
-  - Develop a library of components and organize a storybook
-- This repository also includes some WIP components that utilize [Zdog](https://zzz.dog/), [react-zdog](https://github.com/drcmda/react-zdog), and [Zfont](https://jaames.github.io/zfont/).
-  - Of special note is a declarative abstraction of Zfont for use in react-zdog apps.
+# dwwr.github.io
+
+Personal site, rebuilt as a React + Vite app.
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Pushes to `main` deploy the production build to GitHub Pages.

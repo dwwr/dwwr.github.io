@@ -1,0 +1,20 @@
+.app {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.app h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.app p {
+  margin: 0;
+  color: #6b7280;
+}

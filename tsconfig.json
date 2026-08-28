@@ -1,27 +1,7 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "lib": ["DOM", "ESNext"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-    "noEmit": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "lint": {
-          "validProperties": "text-wrap"
-        }
-      }
-    ]
-  },
-  "include": ["src/**/*", ".storybook/**/*"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
