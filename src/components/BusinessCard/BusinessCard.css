@@ -1,0 +1,32 @@
+.business-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.business-card__photo {
+  display: block;
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.business-card__name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.business-card__role,
+.business-card__location,
+.business-card__email {
+  margin: 0;
+}
+
+.business-card__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}

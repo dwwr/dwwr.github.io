@@ -1,0 +1,38 @@
+.project-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-out;
+}
+
+.project-drawer--open {
+  grid-template-rows: 1fr;
+}
+
+.project-drawer__inner {
+  overflow: hidden;
+}
+
+.project-drawer__content {
+  padding: 0 0 1rem;
+  border-bottom: 1px solid currentColor;
+}
+
+.project-drawer__header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.project-drawer__close {
+  cursor: pointer;
+}
+
+.project-drawer__screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-drawer__summary {
+  margin: 1rem 0 0;
+}
