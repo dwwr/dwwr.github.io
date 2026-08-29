@@ -1,12 +1,24 @@
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { PageShell } from './components/PageShell/PageShell'
+import { SiteFooter } from './components/SiteFooter/SiteFooter'
+import { copy } from './content/copy'
+import { ContactPage } from './pages/ContactPage'
+import { HomePage } from './pages/HomePage'
+import { LicensePage } from './pages/LicensePage'
+import { PrivacyPage } from './pages/PrivacyPage'
 
-function App() {
+export default function App() {
   return (
-    <main className="app">
-      <h1>dwwr.github.io</h1>
-      <p>Fresh React + Vite starter.</p>
-    </main>
+    <BrowserRouter>
+      <PageShell>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/license" element={<LicensePage />} />
+        </Routes>
+        <SiteFooter footer={copy.footer} />
+      </PageShell>
+    </BrowserRouter>
   )
 }
-
-export default App

@@ -1,0 +1,21 @@
+.legal-page__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+.legal-page__section + .legal-page__section {
+  margin-top: 1.5rem;
+}
+
+.legal-page__heading {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+}
+
+.legal-page__paragraph {
+  margin: 0 0 0.75rem;
+}
+
+.legal-page__paragraph:last-child {
+  margin-bottom: 0;
+}
