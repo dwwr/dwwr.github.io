@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { MemoryRouter } from 'react-router-dom'
-import { copy } from '../../content/copy'
 import { SiteFooter } from './SiteFooter'
 
 const meta = {
@@ -23,8 +22,4 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  args: {
-    footer: copy.footer,
-  },
-}
+export const Default: Story = {}

@@ -8,6 +8,12 @@ export const copy = {
     description: 'Portfolio of Derek Warner Reyes.',
   },
 
+  a11y: {
+    businessCard: 'Business card',
+    projectLinks: '{title} links',
+    projectDetails: '{title} details',
+  },
+
   businessCard: {
     name: 'Derek Warner Reyes',
     role: 'Software Engineer',
@@ -18,7 +24,9 @@ export const copy = {
     photoAlt: 'Portrait of Derek Warner Reyes',
   },
 
-  projectsHeading: 'Projects',
+  home: {
+    projectsHeading: 'Projects',
+  },
 
   projects: [
     {
@@ -53,7 +61,8 @@ export const copy = {
   },
 
   privacy: {
-    metaTitle: 'Privacy',
+    metaTitle: 'Privacy · dwwr.github.io',
+    metaDescription: 'Privacy policy for dwwr.github.io.',
     title: 'Privacy',
     sections: [
       {
@@ -68,7 +77,8 @@ export const copy = {
   },
 
   contact: {
-    metaTitle: 'Contact',
+    metaTitle: 'Contact · dwwr.github.io',
+    metaDescription: 'How to reach Derek Warner Reyes.',
     title: 'Contact',
     sections: [
       {
@@ -83,7 +93,8 @@ export const copy = {
   },
 
   license: {
-    metaTitle: 'License',
+    metaTitle: 'License · dwwr.github.io',
+    metaDescription: 'License information for dwwr.github.io.',
     title: 'License',
     sections: [
       {
@@ -99,3 +110,11 @@ export const copy = {
 } satisfies PortfolioCopy
 
 export type Copy = typeof copy
+
+/** Replace `{key}` placeholders in copy templates. */
+export function formatCopy(template: string, values: Record<string, string>): string {
+  return Object.entries(values).reduce(
+    (result, [key, value]) => result.replaceAll(`{${key}}`, value),
+    template,
+  )
+}

@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom'
-import type { PortfolioCopy } from '../../content/types'
+import { copy } from '../../content'
 import './SiteFooter.css'
 
-export interface SiteFooterProps {
-  readonly footer: PortfolioCopy['footer']
-}
+export function SiteFooter() {
+  const footer = copy.footer
 
-export function SiteFooter({ footer }: SiteFooterProps) {
   return (
     <footer className="site-footer">
       <p className="site-footer__note">{footer.note}</p>

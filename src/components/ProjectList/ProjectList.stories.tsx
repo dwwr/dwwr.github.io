@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { copy } from '../../content/copy'
+import { copy } from '../../content'
 import { ProjectList } from './ProjectList'
 
 const meta = {
@@ -8,20 +8,6 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof ProjectList>
-
-export default meta
-type Story = StoryObj<typeof meta>
-
-const defaultArgs = {
-  heading: copy.projectsHeading,
-  projects: copy.projects,
-  labels: copy.projectCard,
-  drawerCloseLabel: copy.projectDrawer.closeButton,
-}
-
-export const Default: Story = {
-  args: defaultArgs,
   decorators: [
     (Story) => (
       <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem 1rem' }}>
@@ -29,12 +15,15 @@ export const Default: Story = {
       </div>
     ),
   ],
-}
+} satisfies Meta<typeof ProjectList>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {}
 
 export const SingleProject: Story = {
   args: {
-    ...defaultArgs,
     projects: [copy.projects[0]],
   },
-  decorators: Default.decorators,
 }

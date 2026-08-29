@@ -1,13 +1,11 @@
-import type { BusinessCardContent } from '../../content/types'
+import { copy } from '../../content'
 import './BusinessCard.css'
 
-export interface BusinessCardProps {
-  readonly content: BusinessCardContent
-}
+export function BusinessCard() {
+  const content = copy.businessCard
 
-export function BusinessCard({ content }: BusinessCardProps) {
   return (
-    <section className="business-card" aria-label="Business card">
+    <section className="business-card" aria-label={copy.a11y.businessCard}>
       <img
         className="business-card__photo"
         src={content.photoSrc}

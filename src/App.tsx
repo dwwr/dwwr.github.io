@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { PageShell } from './components/PageShell/PageShell'
 import { SiteFooter } from './components/SiteFooter/SiteFooter'
-import { copy } from './content/copy'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
 import { LicensePage } from './pages/LicensePage'
@@ -17,7 +16,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/license" element={<LicensePage />} />
         </Routes>
-        <SiteFooter footer={copy.footer} />
+        <SiteFooter />
       </PageShell>
     </BrowserRouter>
   )

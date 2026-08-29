@@ -1,23 +1,15 @@
 import { useState } from 'react'
-import { copy } from '../../content/copy'
+import { copy } from '../../content'
 import type { Project } from '../../content/types'
 import { ProjectCard } from '../ProjectCard/ProjectCard'
 import { ProjectDrawer } from '../ProjectDrawer/ProjectDrawer'
 import './ProjectList.css'
 
 export interface ProjectListProps {
-  readonly heading: string
-  readonly projects: readonly Project[]
-  readonly labels: typeof copy.projectCard
-  readonly drawerCloseLabel: string
+  readonly projects?: readonly Project[]
 }
 
-export function ProjectList({
-  heading,
-  projects,
-  labels,
-  drawerCloseLabel,
-}: ProjectListProps) {
+export function ProjectList({ projects = copy.projects }: ProjectListProps) {
   const [openProjectId, setOpenProjectId] = useState<string | null>(null)
 
   const toggleDetails = (project: Project) => {
@@ -27,7 +19,7 @@ export function ProjectList({
   return (
     <section className="project-list" aria-labelledby="projects-heading">
       <h2 id="projects-heading" className="project-list__heading">
-        {heading}
+        {copy.home.projectsHeading}
       </h2>
       <ul className="project-list__items">
         {projects.map((project) => {
@@ -35,18 +27,8 @@ export function ProjectList({
 
           return (
             <li key={project.id} className="project-list__item">
-              <ProjectCard
-                project={project}
-                labels={labels}
-                isOpen={isOpen}
-                onToggleDetails={toggleDetails}
-              />
-              <ProjectDrawer
-                project={project}
-                isOpen={isOpen}
-                closeLabel={drawerCloseLabel}
-                onClose={() => setOpenProjectId(null)}
-              />
+              <ProjectCard project={project} isOpen={isOpen} onToggleDetails={toggleDetails} />
+              <ProjectDrawer project={project} isOpen={isOpen} onClose={() => setOpenProjectId(null)} />
             </li>
           )
         })}

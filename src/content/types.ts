@@ -32,6 +32,7 @@ export interface LegalSection {
 
 export interface LegalPageContent {
   readonly metaTitle: string
+  readonly metaDescription: string
   readonly title: string
   readonly sections: readonly LegalSection[]
 }
@@ -41,8 +42,15 @@ export interface PortfolioCopy {
     readonly title: string
     readonly description: string
   }
+  readonly a11y: {
+    readonly businessCard: string
+    readonly projectLinks: string
+    readonly projectDetails: string
+  }
   readonly businessCard: BusinessCardContent
-  readonly projectsHeading: string
+  readonly home: {
+    readonly projectsHeading: string
+  }
   readonly projects: readonly Project[]
   readonly projectCard: {
     readonly detailsButton: string
@@ -59,4 +67,9 @@ export interface PortfolioCopy {
   readonly privacy: LegalPageContent
   readonly contact: LegalPageContent
   readonly license: LegalPageContent
+}
+
+export interface PageMeta {
+  readonly title: string
+  readonly description?: string
 }

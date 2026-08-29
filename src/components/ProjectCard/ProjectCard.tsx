@@ -1,24 +1,24 @@
+import { copy, formatCopy } from '../../content'
 import type { Project } from '../../content/types'
 import './ProjectCard.css'
 
-export interface ProjectCardLabels {
-  readonly detailsButton: string
-  readonly storybookLink: string
-}
-
 export interface ProjectCardProps {
   readonly project: Project
-  readonly labels: ProjectCardLabels
   readonly isOpen: boolean
   readonly onToggleDetails: (project: Project) => void
 }
 
-export function ProjectCard({ project, labels, isOpen, onToggleDetails }: ProjectCardProps) {
+export function ProjectCard({ project, isOpen, onToggleDetails }: ProjectCardProps) {
+  const labels = copy.projectCard
+
   return (
     <article className="project-card">
       <header className="project-card__header">
         <h2 className="project-card__title">{project.title}</h2>
-        <nav className="project-card__links" aria-label={`${project.title} links`}>
+        <nav
+          className="project-card__links"
+          aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
+        >
           <a href={project.liveHref} target="_blank" rel="noopener noreferrer">
             {project.liveLabel}
           </a>

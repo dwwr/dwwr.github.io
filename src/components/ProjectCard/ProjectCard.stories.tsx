@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { copy } from '../../content/copy'
+import { copy } from '../../content'
 import { ProjectCard } from './ProjectCard'
 
 const meta = {
@@ -13,39 +13,40 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-const defaultArgs = {
-  project: copy.projects[0],
-  labels: copy.projectCard,
-  isOpen: false,
-  onToggleDetails: () => {},
-}
+const decorator = [
+  (Story: React.ComponentType) => (
+    <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem 1rem' }}>
+      <Story />
+    </div>
+  ),
+]
 
 export const Default: Story = {
-  args: defaultArgs,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem 1rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
+  args: {
+    project: copy.projects[0],
+    isOpen: false,
+    onToggleDetails: () => {},
+  },
+  decorators: decorator,
 }
 
 export const WithStorybook: Story = {
   args: {
-    ...defaultArgs,
     project: {
       ...copy.projects[0],
       storybookHref: 'https://example.com/storybook',
     },
+    isOpen: false,
+    onToggleDetails: () => {},
   },
-  decorators: Default.decorators,
+  decorators: decorator,
 }
 
 export const DetailsOpen: Story = {
   args: {
-    ...defaultArgs,
+    project: copy.projects[0],
     isOpen: true,
+    onToggleDetails: () => {},
   },
-  decorators: Default.decorators,
+  decorators: decorator,
 }

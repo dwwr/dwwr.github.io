@@ -1,17 +1,15 @@
-import { copy } from '../content/copy'
+import { copy } from '../content'
+import { usePageMeta } from '../hooks/usePageMeta'
 import { BusinessCard } from '../components/BusinessCard/BusinessCard'
 import { ProjectList } from '../components/ProjectList/ProjectList'
 
 export function HomePage() {
+  usePageMeta(copy.meta)
+
   return (
     <>
-      <BusinessCard content={copy.businessCard} />
-      <ProjectList
-        heading={copy.projectsHeading}
-        projects={copy.projects}
-        labels={copy.projectCard}
-        drawerCloseLabel={copy.projectDrawer.closeButton}
-      />
+      <BusinessCard />
+      <ProjectList />
     </>
   )
 }

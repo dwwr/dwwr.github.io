@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { copy } from '../../content/copy'
+import { copy } from '../../content'
 import { ProjectDrawer } from './ProjectDrawer'
 
 const meta = {
@@ -24,7 +24,6 @@ export const Open: Story = {
   args: {
     project: copy.projects[0],
     isOpen: true,
-    closeLabel: copy.projectDrawer.closeButton,
     onClose: () => {},
   },
 }
@@ -33,7 +32,6 @@ export const Closed: Story = {
   args: {
     project: copy.projects[0],
     isOpen: false,
-    closeLabel: copy.projectDrawer.closeButton,
     onClose: () => {},
   },
 }
