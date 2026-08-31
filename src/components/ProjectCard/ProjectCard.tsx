@@ -6,6 +6,7 @@ import './ProjectCard.css'
 
 export interface ProjectCardProps {
   readonly project: Project
+  readonly defaultDetailsOpen?: boolean
 }
 
 function hasTextLinks(project: Project): boolean {
@@ -27,11 +28,11 @@ function DetailsChevronIcon() {
   )
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, defaultDetailsOpen = false }: ProjectCardProps) {
   const labels = copy.projectCard
   const links = project.links
   const showLinks = hasTextLinks(project)
-  const [detailsOpen, setDetailsOpen] = useState(false)
+  const [detailsOpen, setDetailsOpen] = useState(defaultDetailsOpen)
   const hasDetails = project.details.length > 0
   const [leftDetails, rightDetails] = splitDetails(project.details)
 
