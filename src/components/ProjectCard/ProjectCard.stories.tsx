@@ -13,6 +13,8 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const qudian = copy.projects.find((p) => p.id === 'qudian')!
+
 const decorator = [
   (Story: React.ComponentType) => (
     <div style={{ maxWidth: '48rem', margin: '0 auto', padding: '2rem 1rem' }}>
@@ -23,18 +25,22 @@ const decorator = [
 
 export const Default: Story = {
   args: {
-    project: copy.projects[0],
+    project: qudian,
     isOpen: false,
     onToggleDetails: () => {},
   },
   decorators: decorator,
 }
 
-export const WithStorybook: Story = {
+export const AllLinks: Story = {
   args: {
     project: {
-      ...copy.projects[0],
-      storybookHref: 'https://example.com/storybook',
+      ...qudian,
+      links: {
+        github: 'https://github.com/dwwr/qudian',
+        live: 'https://example.com',
+        storybook: 'https://example.com/storybook',
+      },
     },
     isOpen: false,
     onToggleDetails: () => {},
@@ -44,7 +50,7 @@ export const WithStorybook: Story = {
 
 export const DetailsOpen: Story = {
   args: {
-    project: copy.projects[0],
+    project: qudian,
     isOpen: true,
     onToggleDetails: () => {},
   },

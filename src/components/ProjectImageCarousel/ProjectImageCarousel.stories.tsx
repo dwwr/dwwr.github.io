@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { copy } from '../../content'
-import { ProjectDrawer } from './ProjectDrawer'
+import { ProjectImageCarousel } from './ProjectImageCarousel'
 
 const meta = {
-  title: 'Portfolio/ProjectDrawer',
-  component: ProjectDrawer,
+  title: 'Portfolio/ProjectImageCarousel',
+  component: ProjectImageCarousel,
   parameters: {
     layout: 'fullscreen',
   },
@@ -15,7 +15,7 @@ const meta = {
       </div>
     ),
   ],
-} satisfies Meta<typeof ProjectDrawer>
+} satisfies Meta<typeof ProjectImageCarousel>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -23,18 +23,16 @@ type Story = StoryObj<typeof meta>
 const qudian = copy.projects.find((p) => p.id === 'qudian')!
 const instrumental = copy.projects.find((p) => p.id === 'instrumental')!
 
-export const Open: Story = {
+export const SingleImage: Story = {
   args: {
-    project: instrumental,
-    isOpen: true,
-    onClose: () => {},
+    title: qudian.title,
+    images: qudian.images,
   },
 }
 
-export const Closed: Story = {
+export const MultipleImages: Story = {
   args: {
-    project: qudian,
-    isOpen: false,
-    onClose: () => {},
+    title: instrumental.title,
+    images: instrumental.images,
   },
 }

@@ -23,14 +23,22 @@ export interface BioCardContent {
   readonly content: string
 }
 
+export interface ProjectImage {
+  readonly src: string
+  readonly alt: string
+}
+
+export interface ProjectLinks {
+  readonly github?: string
+  readonly live?: string
+  readonly storybook?: string
+}
+
 export interface Project {
   readonly id: string
   readonly title: string
-  readonly liveHref: string
-  readonly liveLabel: string
-  readonly storybookHref?: string
-  readonly screenshotSrc: string
-  readonly screenshotAlt: string
+  readonly links?: ProjectLinks
+  readonly images: readonly ProjectImage[]
   readonly summary: string
 }
 
@@ -57,6 +65,7 @@ export interface PortfolioCopy {
     readonly businessCard: string
     readonly projectLinks: string
     readonly projectDetails: string
+    readonly projectCarousel: string
   }
   readonly bioCard: BioCardContent
   readonly businessCard: BusinessCardContent
@@ -67,7 +76,14 @@ export interface PortfolioCopy {
   readonly projects: readonly Project[]
   readonly projectCard: {
     readonly detailsButton: string
+    readonly githubLink: string
+    readonly liveLink: string
     readonly storybookLink: string
+  }
+  readonly projectCarousel: {
+    readonly previous: string
+    readonly next: string
+    readonly counter: string
   }
   readonly projectDrawer: {
     readonly closeButton: string

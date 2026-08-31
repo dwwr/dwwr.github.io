@@ -1,5 +1,6 @@
 import { copy, formatCopy } from '../../content'
 import type { Project } from '../../content/types'
+import { ProjectImageCarousel } from '../ProjectImageCarousel/ProjectImageCarousel'
 import './ProjectDrawer.css'
 
 export interface ProjectDrawerProps {
@@ -23,11 +24,7 @@ export function ProjectDrawer({ project, isOpen, onClose }: ProjectDrawerProps) 
               {copy.projectDrawer.closeButton}
             </button>
           </div>
-          <img
-            className="project-drawer__screenshot"
-            src={project.screenshotSrc}
-            alt={project.screenshotAlt}
-          />
+          <ProjectImageCarousel title={project.title} images={project.images} />
           <p className="project-drawer__summary">{project.summary}</p>
         </div>
       </div>

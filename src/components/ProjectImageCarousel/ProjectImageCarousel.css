@@ -1,0 +1,22 @@
+.project-image-carousel__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-image-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.project-image-carousel__button {
+  cursor: pointer;
+}
+
+.project-image-carousel__counter {
+  flex: 1;
+  text-align: center;
+}

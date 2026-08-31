@@ -20,10 +20,12 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const qudian = copy.projects.find((p) => p.id === 'qudian')!
+
 export const Default: Story = {}
 
 export const SingleProject: Story = {
   args: {
-    projects: [copy.projects[0]],
+    projects: [qudian],
   },
 }

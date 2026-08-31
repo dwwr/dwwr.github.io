@@ -27,12 +27,6 @@
   cursor: pointer;
 }
 
-.project-drawer__screenshot {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .project-drawer__summary {
   margin: 1rem 0 0;
 }
