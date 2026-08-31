@@ -5,27 +5,44 @@ import type { PortfolioCopy } from './types'
 export const copy = {
   meta: {
     title: 'dwwr.github.io',
-    description: 'Portfolio of Derek Warner Reyes.',
+    description: 'Portfolio of Derek Warner Reyes.'
   },
 
   a11y: {
+    bioCard: 'Bio card',
     businessCard: 'Business card',
     projectLinks: '{title} links',
-    projectDetails: '{title} details',
+    projectDetails: '{title} details'
+  },
+
+  bioCard: {
+    content:
+      'I am a software engineer with a passion for building user-friendly and efficient web applications.'
   },
 
   businessCard: {
     name: 'Derek Warner Reyes',
-    role: 'Software Engineer',
-    location: 'California',
-    email: 'derek@example.com',
-    links: [{ label: 'GitHub', href: 'https://github.com/dwwr' }] as const,
+    columns: [
+      {
+        items: [
+          { kind: 'text', text: 'Software Engineer' },
+          { kind: 'email', email: 'derek@example.com' }
+        ]
+      },
+      {
+        items: [
+          { kind: 'text', text: 'California' },
+          { kind: 'link', label: 'GitHub', href: 'https://github.com/dwwr' }
+        ]
+      }
+    ] as const,
     photoSrc: '/images/headshot.webp',
-    photoAlt: 'Portrait of Derek Warner Reyes',
+    photoAlt: 'Portrait of Derek Warner Reyes'
   },
 
   home: {
-    projectsHeading: 'Projects',
+    bioCardHeading: 'Bio',
+    projectsHeading: 'Projects'
   },
 
   projects: [
@@ -36,18 +53,17 @@ export const copy = {
       liveLabel: 'GitHub',
       screenshotSrc: '/images/projects/qudian.png',
       screenshotAlt: 'Qudian theme in VS Code and Terminal',
-      summary:
-        'Dark teal editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
-    },
+      summary: 'Dark teal editor and terminal color themes for VS Code, Cursor, and macOS Terminal.'
+    }
   ] as const,
 
   projectCard: {
     detailsButton: 'Details',
-    storybookLink: 'Storybook',
+    storybookLink: 'Storybook'
   },
 
   projectDrawer: {
-    closeButton: 'Close',
+    closeButton: 'Close'
   },
 
   footer: {
@@ -56,8 +72,8 @@ export const copy = {
     legalNav: [
       { href: '/privacy', label: 'Privacy' },
       { href: '/contact', label: 'Contact' },
-      { href: '/license', label: 'License' },
-    ] as const,
+      { href: '/license', label: 'License' }
+    ] as const
   },
 
   privacy: {
@@ -70,10 +86,10 @@ export const copy = {
         heading: 'Overview',
         paragraphs: [
           'This site is a static portfolio. It does not use analytics or advertising trackers in the MVP.',
-          'If that changes, this page will be updated before new tracking is enabled.',
-        ],
-      },
-    ],
+          'If that changes, this page will be updated before new tracking is enabled.'
+        ]
+      }
+    ]
   },
 
   contact: {
@@ -84,12 +100,9 @@ export const copy = {
       {
         id: 'reach',
         heading: 'Reach out',
-        paragraphs: [
-          'Email: derek@example.com',
-          'GitHub: https://github.com/dwwr',
-        ],
-      },
-    ],
+        paragraphs: ['Email: derek@example.com', 'GitHub: https://github.com/dwwr']
+      }
+    ]
   },
 
   license: {
@@ -102,11 +115,11 @@ export const copy = {
         heading: 'Site content',
         paragraphs: [
           'Portfolio site content is © Derek Warner Reyes unless otherwise noted.',
-          'Individual projects may use their own licenses — see each project repository.',
-        ],
-      },
-    ],
-  },
+          'Individual projects may use their own licenses — see each project repository.'
+        ]
+      }
+    ]
+  }
 } satisfies PortfolioCopy
 
 export type Copy = typeof copy
@@ -115,6 +128,6 @@ export type Copy = typeof copy
 export function formatCopy(template: string, values: Record<string, string>): string {
   return Object.entries(values).reduce(
     (result, [key, value]) => result.replaceAll(`{${key}}`, value),
-    template,
+    template
   )
 }
