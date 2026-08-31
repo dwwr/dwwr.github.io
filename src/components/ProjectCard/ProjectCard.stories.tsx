@@ -27,8 +27,6 @@ const decorator = [
 export const Default: Story = {
   args: {
     project: qudian,
-    isOpen: false,
-    onToggleDetails: () => {},
   },
   decorators: decorator,
 }
@@ -36,17 +34,6 @@ export const Default: Story = {
 export const AllLinks: Story = {
   args: {
     project: sortega,
-    isOpen: false,
-    onToggleDetails: () => {},
-  },
-  decorators: decorator,
-}
-
-export const DetailsOpen: Story = {
-  args: {
-    project: qudian,
-    isOpen: true,
-    onToggleDetails: () => {},
   },
   decorators: decorator,
 }

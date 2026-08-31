@@ -12,7 +12,6 @@ export const copy = {
     bioCard: 'Bio card',
     businessCard: 'Business card',
     projectLinks: '{title} links',
-    projectDetails: '{title} details',
     projectCarousel: '{title} screenshots',
   },
 
@@ -126,10 +125,20 @@ export const copy = {
       summary:
         'Dark teal editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
     },
+    {
+      id: 'portfolio',
+      title: 'dwwr.github.io',
+      links: {
+        live: 'https://dwwr.github.io/',
+        github: 'https://github.com/dwwr/dwwr.github.io',
+        storybook: 'https://dwwr.github.io/',
+      },
+      images: [],
+      summary: 'This portfolio site — React, Vite, TypeScript, and GitHub Pages.',
+    },
   ] as const,
 
   projectCard: {
-    detailsButton: 'Details',
     githubLink: 'GitHub',
     liveLink: 'Live',
     storybookCta: 'Open Storybook',
@@ -139,10 +148,6 @@ export const copy = {
     previous: 'Previous image',
     next: 'Next image',
     counter: '{current} of {total}',
-  },
-
-  projectDrawer: {
-    closeButton: 'Close',
   },
 
   footer: {

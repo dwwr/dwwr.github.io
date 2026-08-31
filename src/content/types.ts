@@ -64,7 +64,6 @@ export interface PortfolioCopy {
     readonly bioCard: string
     readonly businessCard: string
     readonly projectLinks: string
-    readonly projectDetails: string
     readonly projectCarousel: string
   }
   readonly bioCard: BioCardContent
@@ -75,7 +74,6 @@ export interface PortfolioCopy {
   }
   readonly projects: readonly Project[]
   readonly projectCard: {
-    readonly detailsButton: string
     readonly githubLink: string
     readonly liveLink: string
     readonly storybookCta: string
@@ -84,9 +82,6 @@ export interface PortfolioCopy {
     readonly previous: string
     readonly next: string
     readonly counter: string
-  }
-  readonly projectDrawer: {
-    readonly closeButton: string
   }
   readonly footer: {
     readonly note: string

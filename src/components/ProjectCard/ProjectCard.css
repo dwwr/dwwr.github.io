@@ -10,22 +10,31 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .project-card__title-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
+  width: 100%;
 }
 
 .project-card__title {
   margin: 0;
   font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+  min-width: 0;
 }
 
 .project-card__storybook {
   flex-shrink: 0;
+  margin-left: auto;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   background-color: #fcd34d;
@@ -39,12 +48,6 @@
   background-color: #fde68a;
 }
 
-.project-card__links {
-  display: flex;
-  gap: 1rem;
-}
-
-.project-card__details {
-  align-self: flex-start;
-  cursor: pointer;
+.project-card__summary {
+  margin: 0;
 }

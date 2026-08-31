@@ -28,26 +28,29 @@ function ChevronRightIcon() {
 
 export function ProjectImageCarousel({ title, images }: ProjectImageCarouselProps) {
   const [index, setIndex] = useState(0)
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false)
   const image = images[index]
   const hasMultiple = images.length > 1
 
   const goPrevious = () => {
+    setAutoPlayEnabled(true)
     setIndex((current) => (current === 0 ? images.length - 1 : current - 1))
   }
 
   const goNext = () => {
+    setAutoPlayEnabled(true)
     setIndex((current) => (current === images.length - 1 ? 0 : current + 1))
   }
 
   useEffect(() => {
-    if (!hasMultiple) return
+    if (!hasMultiple || !autoPlayEnabled) return
 
     const intervalId = window.setInterval(() => {
       setIndex((current) => (current === images.length - 1 ? 0 : current + 1))
     }, AUTO_ADVANCE_MS)
 
     return () => window.clearInterval(intervalId)
-  }, [hasMultiple, images.length, index])
+  }, [autoPlayEnabled, hasMultiple, images.length, index])
 
   if (!image) return null
 

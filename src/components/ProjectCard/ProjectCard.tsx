@@ -1,11 +1,10 @@
 import { copy, formatCopy } from '../../content'
 import type { Project } from '../../content/types'
+import { ProjectImageCarousel } from '../ProjectImageCarousel/ProjectImageCarousel'
 import './ProjectCard.css'
 
 export interface ProjectCardProps {
   readonly project: Project
-  readonly isOpen: boolean
-  readonly onToggleDetails: (project: Project) => void
 }
 
 function hasTextLinks(project: Project): boolean {
@@ -14,7 +13,7 @@ function hasTextLinks(project: Project): boolean {
   return Boolean(links.live || links.github)
 }
 
-export function ProjectCard({ project, isOpen, onToggleDetails }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const labels = copy.projectCard
   const links = project.links
   const showLinks = hasTextLinks(project)
@@ -24,6 +23,25 @@ export function ProjectCard({ project, isOpen, onToggleDetails }: ProjectCardPro
       <header className="project-card__header">
         <div className="project-card__title-row">
           <h2 className="project-card__title">{project.title}</h2>
+
+          {showLinks ? (
+            <nav
+              className="project-card__links"
+              aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
+            >
+              {links?.live ? (
+                <a href={links.live} target="_blank" rel="noopener noreferrer">
+                  {labels.liveLink}
+                </a>
+              ) : null}
+              {links?.github ? (
+                <a href={links.github} target="_blank" rel="noopener noreferrer">
+                  {labels.githubLink}
+                </a>
+              ) : null}
+            </nav>
+          ) : null}
+
           {links?.storybook ? (
             <a
               className="project-card__storybook"
@@ -35,33 +53,12 @@ export function ProjectCard({ project, isOpen, onToggleDetails }: ProjectCardPro
             </a>
           ) : null}
         </div>
-        {showLinks ? (
-          <nav
-            className="project-card__links"
-            aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
-          >
-            {links?.live ? (
-              <a href={links.live} target="_blank" rel="noopener noreferrer">
-                {labels.liveLink}
-              </a>
-            ) : null}
-            {links?.github ? (
-              <a href={links.github} target="_blank" rel="noopener noreferrer">
-                {labels.githubLink}
-              </a>
-            ) : null}
-          </nav>
-        ) : null}
       </header>
-      <button
-        type="button"
-        className="project-card__details"
-        aria-expanded={isOpen}
-        aria-controls={`project-drawer-${project.id}`}
-        onClick={() => onToggleDetails(project)}
-      >
-        {labels.detailsButton}
-      </button>
+
+      <p className="project-card__summary">{project.summary}</p>
+      {project.images.length > 0 ? (
+        <ProjectImageCarousel title={project.title} images={project.images} />
+      ) : null}
     </article>
   )
 }
