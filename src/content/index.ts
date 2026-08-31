@@ -7,4 +7,6 @@ export type {
   PageMeta,
   PortfolioCopy,
   Project,
+  ProjectImage,
+  ProjectLinks,
 } from './types'

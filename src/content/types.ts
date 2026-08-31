@@ -23,15 +23,25 @@ export interface BioCardContent {
   readonly content: string
 }
 
+export interface ProjectImage {
+  readonly src: string
+  readonly alt: string
+}
+
+export interface ProjectLinks {
+  readonly github?: string
+  readonly live?: string
+  readonly storybook?: string
+}
+
 export interface Project {
   readonly id: string
   readonly title: string
-  readonly liveHref: string
-  readonly liveLabel: string
-  readonly storybookHref?: string
-  readonly screenshotSrc: string
-  readonly screenshotAlt: string
+  readonly links?: ProjectLinks
+  readonly images: readonly ProjectImage[]
   readonly summary: string
+  /** Up to six technologies or concepts, shown in two columns when expanded. */
+  readonly details: readonly string[]
 }
 
 export interface LegalSection {
@@ -56,6 +66,7 @@ export interface PortfolioCopy {
     readonly bioCard: string
     readonly businessCard: string
     readonly projectLinks: string
+    readonly projectCarousel: string
     readonly projectDetails: string
   }
   readonly bioCard: BioCardContent
@@ -66,11 +77,15 @@ export interface PortfolioCopy {
   }
   readonly projects: readonly Project[]
   readonly projectCard: {
+    readonly githubLink: string
+    readonly liveLink: string
+    readonly storybookCta: string
     readonly detailsButton: string
-    readonly storybookLink: string
   }
-  readonly projectDrawer: {
-    readonly closeButton: string
+  readonly projectCarousel: {
+    readonly previous: string
+    readonly next: string
+    readonly counter: string
   }
   readonly footer: {
     readonly note: string
