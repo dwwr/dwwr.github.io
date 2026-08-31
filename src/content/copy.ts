@@ -13,6 +13,7 @@ export const copy = {
     businessCard: 'Business card',
     projectLinks: '{title} links',
     projectCarousel: '{title} screenshots',
+    projectDetails: '{title} details',
   },
 
   bioCard: {
@@ -60,6 +61,14 @@ export const copy = {
       ],
       summary:
         'Browser extension for swiping through bookmarks — keep, delete, or file into a folder.',
+      details: [
+        'WebExtension APIs',
+        'React',
+        'TypeScript',
+        'Swipe-based bookmark triage',
+        'Folder filing workflow',
+        'Vercel deployment',
+      ],
     },
     {
       id: 'quake-compare',
@@ -76,6 +85,14 @@ export const copy = {
       ],
       summary:
         'Educational calculator comparing earthquake magnitudes — amplitude, energy, and seismic moment.',
+      details: [
+        'React',
+        'Richter vs moment magnitude',
+        'Logarithmic amplitude ratios',
+        'Radiated energy estimates',
+        'Interactive charts',
+        'Static deployment',
+      ],
     },
     {
       id: 'ca-llc-guide',
@@ -93,6 +110,14 @@ export const copy = {
       ],
       summary:
         'Plain-language guide to forming and running a California LLC — fees, taxes, and official sources.',
+      details: [
+        'React',
+        'California SOS & FTB sources',
+        'LLC cost calculator',
+        'Static site generation',
+        'Storybook component docs',
+        'GitHub Pages',
+      ],
     },
     {
       id: 'instrumental',
@@ -109,6 +134,14 @@ export const copy = {
       ],
       summary:
         'React component library inspired by Evangelion UI — complex readouts, charts, and display primitives.',
+      details: [
+        'React',
+        'TypeScript',
+        'Storybook',
+        'Evangelion-inspired UI',
+        'Chart primitives',
+        'Seven-segment displays',
+      ],
     },
     {
       id: 'qudian',
@@ -124,6 +157,14 @@ export const copy = {
       ],
       summary:
         'Dark teal editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
+      details: [
+        'VS Code theme JSON',
+        'Cursor editor themes',
+        'macOS Terminal colors',
+        'Dark teal palette',
+        'Semantic token mapping',
+        'GitHub distribution',
+      ],
     },
     {
       id: 'portfolio',
@@ -135,6 +176,14 @@ export const copy = {
       },
       images: [],
       summary: 'This portfolio site — React, Vite, TypeScript, and GitHub Pages.',
+      details: [
+        'React 19',
+        'Vite',
+        'TypeScript',
+        'React Router',
+        'Storybook',
+        'GitHub Pages',
+      ],
     },
   ] as const,
 
@@ -142,6 +191,7 @@ export const copy = {
     githubLink: 'GitHub',
     liveLink: 'Live',
     storybookCta: 'Open Storybook',
+    detailsButton: 'Details',
   },
 
   projectCarousel: {

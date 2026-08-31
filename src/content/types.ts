@@ -40,6 +40,8 @@ export interface Project {
   readonly links?: ProjectLinks
   readonly images: readonly ProjectImage[]
   readonly summary: string
+  /** Up to six technologies or concepts, shown in two columns when expanded. */
+  readonly details: readonly string[]
 }
 
 export interface LegalSection {
@@ -65,6 +67,7 @@ export interface PortfolioCopy {
     readonly businessCard: string
     readonly projectLinks: string
     readonly projectCarousel: string
+    readonly projectDetails: string
   }
   readonly bioCard: BioCardContent
   readonly businessCard: BusinessCardContent
@@ -77,6 +80,7 @@ export interface PortfolioCopy {
     readonly githubLink: string
     readonly liveLink: string
     readonly storybookCta: string
+    readonly detailsButton: string
   }
   readonly projectCarousel: {
     readonly previous: string
