@@ -1,6 +1,6 @@
 .business-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
   align-items: flex-start;
 }
@@ -10,6 +10,12 @@
   width: 10rem;
   height: 10rem;
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+.business-card__body {
+  width: 100%;
+  min-width: 0;
 }
 
 .business-card__name {
@@ -17,16 +23,25 @@
   font-size: 1.5rem;
 }
 
-.business-card__role,
-.business-card__location,
-.business-card__email {
+.business-card__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .business-card__columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.business-card__text,
+.business-card__email,
+.business-card__link {
   margin: 0;
 }
 
-.business-card__links {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+.business-card__column > * + * {
+  margin-top: 0.5rem;
 }

@@ -1,6 +1,7 @@
 .project-list__heading {
   margin: 2rem 0 0;
   font-size: 1.25rem;
+  border-bottom: 1px solid currentColor;
 }
 
 .project-list__items {

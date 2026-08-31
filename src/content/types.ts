@@ -3,14 +3,24 @@ export interface NavLink {
   readonly label: string
 }
 
+export interface BusinessCardColumn {
+  readonly items: readonly BusinessCardItem[]
+}
+
+export type BusinessCardItem =
+  | { readonly kind: 'text'; readonly text: string }
+  | { readonly kind: 'email'; readonly email: string }
+  | { readonly kind: 'link'; readonly label: string; readonly href: string }
+
 export interface BusinessCardContent {
   readonly name: string
-  readonly role: string
-  readonly location: string
-  readonly email: string
-  readonly links: readonly NavLink[]
+  readonly columns: readonly [BusinessCardColumn, BusinessCardColumn]
   readonly photoSrc: string
   readonly photoAlt: string
+}
+
+export interface BioCardContent {
+  readonly content: string
 }
 
 export interface Project {
@@ -43,12 +53,15 @@ export interface PortfolioCopy {
     readonly description: string
   }
   readonly a11y: {
+    readonly bioCard: string
     readonly businessCard: string
     readonly projectLinks: string
     readonly projectDetails: string
   }
+  readonly bioCard: BioCardContent
   readonly businessCard: BusinessCardContent
   readonly home: {
+    readonly bioCardHeading: string
     readonly projectsHeading: string
   }
   readonly projects: readonly Project[]

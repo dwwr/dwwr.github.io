@@ -28,7 +28,11 @@ export function ProjectList({ projects = copy.projects }: ProjectListProps) {
           return (
             <li key={project.id} className="project-list__item">
               <ProjectCard project={project} isOpen={isOpen} onToggleDetails={toggleDetails} />
-              <ProjectDrawer project={project} isOpen={isOpen} onClose={() => setOpenProjectId(null)} />
+              <ProjectDrawer
+                project={project}
+                isOpen={isOpen}
+                onClose={() => setOpenProjectId(null)}
+              />
             </li>
           )
         })}
