@@ -12,9 +12,31 @@
   gap: 0.5rem;
 }
 
+.project-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .project-card__title {
   margin: 0;
   font-size: 1.125rem;
+}
+
+.project-card__storybook {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: #fcd34d;
+  color: #020617;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-card__storybook:hover {
+  background-color: #fde68a;
 }
 
 .project-card__links {

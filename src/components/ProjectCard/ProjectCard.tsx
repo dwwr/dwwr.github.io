@@ -8,39 +8,46 @@ export interface ProjectCardProps {
   readonly onToggleDetails: (project: Project) => void
 }
 
-function hasLinks(project: Project): boolean {
+function hasTextLinks(project: Project): boolean {
   const links = project.links
   if (!links) return false
-  return Boolean(links.github || links.live || links.storybook)
+  return Boolean(links.live || links.github)
 }
 
 export function ProjectCard({ project, isOpen, onToggleDetails }: ProjectCardProps) {
   const labels = copy.projectCard
   const links = project.links
-  const showLinks = hasLinks(project)
+  const showLinks = hasTextLinks(project)
 
   return (
     <article className="project-card">
       <header className="project-card__header">
-        <h2 className="project-card__title">{project.title}</h2>
+        <div className="project-card__title-row">
+          <h2 className="project-card__title">{project.title}</h2>
+          {links?.storybook ? (
+            <a
+              className="project-card__storybook"
+              href={links.storybook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {labels.storybookCta}
+            </a>
+          ) : null}
+        </div>
         {showLinks ? (
           <nav
             className="project-card__links"
             aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
           >
-            {links?.github ? (
-              <a href={links.github} target="_blank" rel="noopener noreferrer">
-                {labels.githubLink}
-              </a>
-            ) : null}
             {links?.live ? (
               <a href={links.live} target="_blank" rel="noopener noreferrer">
                 {labels.liveLink}
               </a>
             ) : null}
-            {links?.storybook ? (
-              <a href={links.storybook} target="_blank" rel="noopener noreferrer">
-                {labels.storybookLink}
+            {links?.github ? (
+              <a href={links.github} target="_blank" rel="noopener noreferrer">
+                {labels.githubLink}
               </a>
             ) : null}
           </nav>

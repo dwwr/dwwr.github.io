@@ -51,7 +51,9 @@ export const copy = {
       id: 'sortega',
       title: 'Sortega',
       links: {
+        live: 'https://sortega.vercel.app/',
         github: 'https://github.com/dwwr/sortega',
+        storybook: 'https://sortega.vercel.app/storybook/',
       },
       images: [
         { src: '/images/projects/sortega/sort1.png', alt: 'Sortega bookmark triage UI' },
@@ -62,14 +64,16 @@ export const copy = {
     },
     {
       id: 'quake-compare',
-      title: 'Quake Compare',
+      title: 'Compare Magnitude',
       links: {
+        live: 'https://www.compare-magnitude.com/',
         github: 'https://github.com/dwwr/earf-quake',
+        storybook: 'https://www.compare-magnitude.com/storybook/?path=/docs/overview--docs',
       },
       images: [
-        { src: '/images/projects/quake-compare/quake1.png', alt: 'Quake Compare magnitude calculator' },
-        { src: '/images/projects/quake-compare/quake2.png', alt: 'Quake Compare energy comparison' },
-        { src: '/images/projects/quake-compare/quake3.png', alt: 'Quake Compare seismograph view' },
+        { src: '/images/projects/quake-compare/quake1.png', alt: 'Compare Magnitude calculator' },
+        { src: '/images/projects/quake-compare/quake2.png', alt: 'Compare Magnitude energy comparison' },
+        { src: '/images/projects/quake-compare/quake3.png', alt: 'Compare Magnitude seismograph view' },
       ],
       summary:
         'Educational calculator comparing earthquake magnitudes — amplitude, energy, and seismic moment.',
@@ -78,7 +82,9 @@ export const copy = {
       id: 'ca-llc-guide',
       title: 'California LLC Field Manual',
       links: {
+        live: 'https://www.california-llc-guide.com/',
         github: 'https://github.com/dwwr/ca-llc-field-manual',
+        storybook: 'https://www.california-llc-guide.com/storybook/',
       },
       images: [
         {
@@ -126,7 +132,7 @@ export const copy = {
     detailsButton: 'Details',
     githubLink: 'GitHub',
     liveLink: 'Live',
-    storybookLink: 'Storybook',
+    storybookCta: 'Open Storybook',
   },
 
   projectCarousel: {

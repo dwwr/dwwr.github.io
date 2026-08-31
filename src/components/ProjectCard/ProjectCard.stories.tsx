@@ -13,6 +13,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+const sortega = copy.projects.find((p) => p.id === 'sortega')!
 const qudian = copy.projects.find((p) => p.id === 'qudian')!
 
 const decorator = [
@@ -34,14 +35,7 @@ export const Default: Story = {
 
 export const AllLinks: Story = {
   args: {
-    project: {
-      ...qudian,
-      links: {
-        github: 'https://github.com/dwwr/qudian',
-        live: 'https://example.com',
-        storybook: 'https://example.com/storybook',
-      },
-    },
+    project: sortega,
     isOpen: false,
     onToggleDetails: () => {},
   },

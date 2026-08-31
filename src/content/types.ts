@@ -78,7 +78,7 @@ export interface PortfolioCopy {
     readonly detailsButton: string
     readonly githubLink: string
     readonly liveLink: string
-    readonly storybookLink: string
+    readonly storybookCta: string
   }
   readonly projectCarousel: {
     readonly previous: string
