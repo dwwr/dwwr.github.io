@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { copy, formatCopy } from '../../content'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import type { ProjectImage } from '../../content/types'
-import './ProjectImageCarousel.css'
+import { ProjectImageCarouselView } from './ProjectImageCarouselView'
+import { ProjectImageLightbox } from './ProjectImageLightbox'
 
 const AUTO_ADVANCE_MS = 3000
 
@@ -10,88 +10,66 @@ export interface ProjectImageCarouselProps {
   readonly images: readonly ProjectImage[]
 }
 
-function ChevronLeftIcon() {
-  return (
-    <svg className="project-image-carousel__icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  )
-}
-
-function ChevronRightIcon() {
-  return (
-    <svg className="project-image-carousel__icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" />
-    </svg>
-  )
-}
-
 export function ProjectImageCarousel({ title, images }: ProjectImageCarouselProps) {
   const [index, setIndex] = useState(0)
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(false)
-  const image = images[index]
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const imageButtonRef = useRef<HTMLButtonElement>(null)
   const hasMultiple = images.length > 1
 
-  const goPrevious = () => {
+  const goPrevious = useCallback(() => {
     setAutoPlayEnabled(true)
     setIndex((current) => (current === 0 ? images.length - 1 : current - 1))
-  }
+  }, [images.length])
 
-  const goNext = () => {
+  const goNext = useCallback(() => {
     setAutoPlayEnabled(true)
     setIndex((current) => (current === images.length - 1 ? 0 : current + 1))
+  }, [images.length])
+
+  const openLightbox = () => {
+    setLightboxOpen(true)
   }
 
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false)
+    imageButtonRef.current?.focus()
+  }, [])
+
   useEffect(() => {
-    if (!hasMultiple || !autoPlayEnabled) return
+    if (!hasMultiple || !autoPlayEnabled || lightboxOpen) return
 
     const intervalId = window.setInterval(() => {
       setIndex((current) => (current === images.length - 1 ? 0 : current + 1))
     }, AUTO_ADVANCE_MS)
 
     return () => window.clearInterval(intervalId)
-  }, [autoPlayEnabled, hasMultiple, images.length, index])
+  }, [autoPlayEnabled, hasMultiple, images.length, index, lightboxOpen])
 
-  if (!image) return null
+  if (images.length === 0) return null
 
   return (
-    <div
-      className="project-image-carousel"
-      aria-label={formatCopy(copy.a11y.projectCarousel, { title })}
-    >
-      {hasMultiple ? (
-        <button
-          type="button"
-          className="project-image-carousel__nav project-image-carousel__nav--prev"
-          aria-label={copy.projectCarousel.previous}
-          onClick={goPrevious}
-        >
-          <ChevronLeftIcon />
-        </button>
-      ) : null}
+    <>
+      <ProjectImageCarouselView
+        title={title}
+        images={images}
+        index={index}
+        variant="inline"
+        onPrevious={goPrevious}
+        onNext={goNext}
+        onImageClick={openLightbox}
+        imageButtonRef={imageButtonRef}
+      />
 
-      <div className="project-image-carousel__viewport">
-        <img className="project-image-carousel__image" src={image.src} alt={image.alt} />
-        {hasMultiple ? (
-          <span className="project-image-carousel__counter">
-            {formatCopy(copy.projectCarousel.counter, {
-              current: String(index + 1),
-              total: String(images.length),
-            })}
-          </span>
-        ) : null}
-      </div>
-
-      {hasMultiple ? (
-        <button
-          type="button"
-          className="project-image-carousel__nav project-image-carousel__nav--next"
-          aria-label={copy.projectCarousel.next}
-          onClick={goNext}
-        >
-          <ChevronRightIcon />
-        </button>
-      ) : null}
-    </div>
+      <ProjectImageLightbox
+        open={lightboxOpen}
+        title={title}
+        images={images}
+        index={index}
+        onClose={closeLightbox}
+        onPrevious={goPrevious}
+        onNext={goNext}
+      />
+    </>
   )
 }

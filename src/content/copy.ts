@@ -13,6 +13,7 @@ export const copy = {
     businessCard: 'Business card',
     projectLinks: '{title} links',
     projectCarousel: '{title} screenshots',
+    projectLightbox: '{title} fullscreen image',
     projectDetails: '{title} details',
   },
 
@@ -198,6 +199,8 @@ export const copy = {
     previous: 'Previous image',
     next: 'Next image',
     counter: '{current} of {total}',
+    openLightbox: 'View fullscreen',
+    closeLightbox: 'Close fullscreen',
   },
 
   footer: {
