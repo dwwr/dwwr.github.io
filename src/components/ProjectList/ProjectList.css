@@ -1,6 +1,6 @@
 .project-list__heading {
   margin: 2rem 0 0;
-  font-size: 1.25rem;
+  font-size: calc(1.25rem + 2pt);
   border-bottom: 1px solid currentColor;
 }
 
@@ -12,4 +12,22 @@
 
 .project-list__item + .project-list__item {
   margin-top: 0;
+}
+
+.project-list__item + .project-list__item .project-card {
+  padding-top: 0;
+}
+
+.project-list__item:last-child .project-card {
+  padding-bottom: 1rem;
+}
+
+.project-list__item:not(:last-child) .project-card::after {
+  content: '';
+  display: block;
+  width: min(90%, 40rem);
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  margin-inline: auto;
+  border-bottom: 1px solid currentColor;
 }
