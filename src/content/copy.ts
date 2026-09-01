@@ -180,7 +180,8 @@ export const copy = {
           alt: 'Qudian theme in VS Code and Terminal'
         }
       ],
-      summary: 'Editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
+      summary:
+        'Editor and terminal color themes for VS Code, Cursor, and macOS Terminal inspired by the video game Caves of Qud.',
       details: [
         'VS Code theme JSON',
         'Cursor editor themes',
