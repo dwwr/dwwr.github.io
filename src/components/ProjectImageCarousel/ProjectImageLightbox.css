@@ -1,0 +1,83 @@
+.project-image-lightbox {
+  margin: 0;
+  padding: 0;
+  border: none;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: visible;
+}
+
+.project-image-lightbox::backdrop {
+  background-color: rgba(0, 0, 0, 0.88);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .project-image-lightbox::backdrop {
+    animation: project-image-lightbox-backdrop-in 160ms ease-out;
+  }
+
+  .project-image-lightbox__inner {
+    animation: project-image-lightbox-content-in 160ms ease-out;
+  }
+}
+
+@keyframes project-image-lightbox-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes project-image-lightbox-content-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.project-image-lightbox__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.project-image-lightbox__carousel-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+}
+
+.project-image-lightbox .project-image-carousel--lightbox {
+  color: #f9fafb;
+}
+
+.project-image-lightbox .project-image-carousel--lightbox .project-image-carousel__viewport {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.project-image-lightbox .project-image-carousel--lightbox .project-image-carousel__nav {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.project-image-lightbox .project-image-carousel--lightbox .project-image-carousel__nav:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.project-image-lightbox .project-image-carousel--lightbox .project-image-carousel__counter {
+  background-color: rgba(17, 24, 39, 0.85);
+}

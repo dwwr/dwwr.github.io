@@ -1,5 +1,8 @@
+@import '@fontsource/noto-sans/latin-400.css';
+@import '@fontsource/noto-sans/latin-500.css';
+
 :root {
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #111827;
@@ -8,6 +11,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Trebuchet MS', Trebuchet, sans-serif;
+  font-style: italic;
+  font-weight: 700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +37,14 @@
 
 body {
   margin: 0;
+  font-family: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 a {
