@@ -23,4 +23,4 @@ npm run storybook
 npm run build-storybook
 ```
 
-Pushes to `main` deploy the production build to GitHub Pages.
+Pushes to `main` deploy the production build and Storybook to GitHub Pages (`/` and `/storybook/`).

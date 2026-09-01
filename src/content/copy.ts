@@ -196,7 +196,7 @@ export const copy = {
       links: {
         live: 'https://dwwr.github.io/',
         github: 'https://github.com/dwwr/dwwr.github.io',
-        storybook: 'https://dwwr.github.io/'
+        storybook: 'https://dwwr.github.io/storybook/'
       },
       images: [],
       summary: 'This portfolio site — React, Vite, TypeScript, and GitHub Pages.',
