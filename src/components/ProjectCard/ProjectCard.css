@@ -98,7 +98,10 @@
   border: none;
   background: none;
   color: inherit;
-  font: inherit;
+  font-family: inherit;
+  font-size: 11pt;
+  font-weight: inherit;
+  line-height: inherit;
   cursor: pointer;
   text-decoration: underline;
 }
@@ -125,6 +128,7 @@
 
 .project-card__details-inner {
   overflow: hidden;
+  font-size: calc(1rem - 2pt);
 }
 
 .project-card__details-columns {
