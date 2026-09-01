@@ -69,12 +69,12 @@
 }
 
 .project-card__pill--github {
-  background-color: #cbd5e1;
-  color: #0f172a;
+  background-color: #4288df;
+  color: #e3eafc;
 }
 
 .project-card__pill--github:hover {
-  background-color: #e2e8f0;
+  background-color: #65a4f1;
 }
 
 .project-card__pill--storybook {
