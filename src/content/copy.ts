@@ -44,7 +44,7 @@ export const copy = {
         ]
       }
     ] as const,
-    photoSrc: '/images/headshot.webp',
+    photoSrc: '/images/headshot.jpeg',
     photoAlt: 'Portrait of Derek Warner-Reyes'
   },
 
