@@ -42,33 +42,42 @@ export function ProjectCard({ project, defaultDetailsOpen = false }: ProjectCard
         <div className="project-card__title-row">
           <h2 className="project-card__title">{project.title}</h2>
 
-          {showLinks ? (
+          {showLinks || links?.storybook ? (
             <nav
-              className="project-card__links"
+              className="project-card__pills"
               aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
             >
               {links?.live ? (
-                <a href={links.live} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="project-card__pill project-card__pill--live"
+                  href={links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {labels.liveLink}
                 </a>
               ) : null}
               {links?.github ? (
-                <a href={links.github} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="project-card__pill project-card__pill--github"
+                  href={links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {labels.githubLink}
                 </a>
               ) : null}
+              {links?.storybook ? (
+                <a
+                  className="project-card__pill project-card__pill--storybook"
+                  href={links.storybook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {labels.storybookCta}
+                </a>
+              ) : null}
             </nav>
-          ) : null}
-
-          {links?.storybook ? (
-            <a
-              className="project-card__storybook"
-              href={links.storybook}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {labels.storybookCta}
-            </a>
           ) : null}
         </div>
       </header>
