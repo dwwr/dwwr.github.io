@@ -31,9 +31,20 @@
   margin-top: 0.75rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 34rem) {
   .business-card__columns {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 26rem) {
+  .business-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .business-card__photo {
+    width: 5rem;
+    height: 5rem;
   }
 }
 
