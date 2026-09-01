@@ -4,8 +4,8 @@ import type { PortfolioCopy } from './types'
 
 export const copy = {
   meta: {
-    title: 'dwwr.github.io',
-    description: 'Portfolio of Derek Warner Reyes.',
+    title: 'Welcome to my portfolio!',
+    description: 'Portfolio of Derek Warner-Reyes, Software Engineer.'
   },
 
   a11y: {
@@ -14,37 +14,43 @@ export const copy = {
     projectLinks: '{title} links',
     projectCarousel: '{title} screenshots',
     projectLightbox: '{title} fullscreen image',
-    projectDetails: '{title} details',
+    projectDetails: '{title} details'
   },
 
   bioCard: {
     content:
-      'I am a software engineer with a passion for building user-friendly and efficient web applications.',
+      'Fullstack software engineer based in Los Angeles with experience building, testing, and maintaining web and mobile applications from conception to production. Most recently served as lead fullstack software engineer at Olio Apps from 2021-2026.'
   },
 
   businessCard: {
-    name: 'Derek Warner Reyes',
+    name: 'Derek Warner-Reyes',
     columns: [
       {
         items: [
-          { kind: 'text', text: 'Software Engineer' },
-          { kind: 'email', email: 'derek@example.com' },
-        ],
+          { kind: 'text', text: 'Fullstack Software Engineer' },
+          { kind: 'text', text: 'Based in Los Angeles' },
+          { kind: 'email', email: 'dwwarnerreyes@gmail.com' }
+        ]
       },
       {
         items: [
-          { kind: 'text', text: 'California' },
           { kind: 'link', label: 'GitHub', href: 'https://github.com/dwwr' },
-        ],
-      },
+          { kind: 'link', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dwwr/' },
+          {
+            kind: 'link',
+            label: 'Stack Overflow',
+            href: 'https://stackoverflow.com/users/15891793/sweetbabyd'
+          }
+        ]
+      }
     ] as const,
     photoSrc: '/images/headshot.webp',
-    photoAlt: 'Portrait of Derek Warner Reyes',
+    photoAlt: 'Portrait of Derek Warner-Reyes'
   },
 
   home: {
     bioCardHeading: 'Bio',
-    projectsHeading: 'Projects',
+    projectsHeading: 'Recent Personal Projects'
   },
 
   projects: [
@@ -54,22 +60,22 @@ export const copy = {
       links: {
         live: 'https://sortega.vercel.app/',
         github: 'https://github.com/dwwr/sortega',
-        storybook: 'https://sortega.vercel.app/storybook/',
+        storybook: 'https://sortega.vercel.app/storybook/'
       },
       images: [
         { src: '/images/projects/sortega/sort1.png', alt: 'Sortega bookmark triage UI' },
-        { src: '/images/projects/sortega/sort2.png', alt: 'Sortega demo showcase' },
+        { src: '/images/projects/sortega/sort2.png', alt: 'Sortega demo showcase' }
       ],
       summary:
-        'Browser extension for swiping through bookmarks — keep, delete, or file into a folder.',
+        'Browser extension for cleaning & sorting bookmarks with a swipe-based UX- sort, keep, or delete bookmarks. "Next!"',
       details: [
         'WebExtension APIs',
-        'React',
-        'TypeScript',
-        'Swipe-based bookmark triage',
+        'React + Vite',
+        'TypeScript + ESLint + Prettier',
+        'Swipe-based UX a la Tinder',
         'Folder filing workflow',
-        'Vercel deployment',
-      ],
+        'Vercel deployment'
+      ]
     },
     {
       id: 'quake-compare',
@@ -77,23 +83,29 @@ export const copy = {
       links: {
         live: 'https://www.compare-magnitude.com/',
         github: 'https://github.com/dwwr/earf-quake',
-        storybook: 'https://www.compare-magnitude.com/storybook/?path=/docs/overview--docs',
+        storybook: 'https://www.compare-magnitude.com/storybook/?path=/docs/overview--docs'
       },
       images: [
         { src: '/images/projects/quake-compare/quake1.png', alt: 'Compare Magnitude calculator' },
-        { src: '/images/projects/quake-compare/quake2.png', alt: 'Compare Magnitude energy comparison' },
-        { src: '/images/projects/quake-compare/quake3.png', alt: 'Compare Magnitude seismograph view' },
+        {
+          src: '/images/projects/quake-compare/quake2.png',
+          alt: 'Compare Magnitude energy comparison'
+        },
+        {
+          src: '/images/projects/quake-compare/quake3.png',
+          alt: 'Compare Magnitude seismograph view'
+        }
       ],
       summary:
         'Educational calculator comparing earthquake magnitudes — amplitude, energy, and seismic moment.',
       details: [
-        'React',
-        'Richter vs moment magnitude',
-        'Logarithmic amplitude ratios',
-        'Radiated energy estimates',
+        'React + Vite',
+        'TypeScript + ESLint + Prettier',
+        'custom native SVG animations',
         'Interactive charts',
         'Static deployment',
-      ],
+        'ed-tech concept'
+      ]
     },
     {
       id: 'ca-llc-guide',
@@ -101,71 +113,82 @@ export const copy = {
       links: {
         live: 'https://www.california-llc-guide.com/',
         github: 'https://github.com/dwwr/ca-llc-field-manual',
-        storybook: 'https://www.california-llc-guide.com/storybook/',
+        storybook: 'https://www.california-llc-guide.com/storybook/'
       },
       images: [
         {
           src: '/images/projects/ca-llc-guide/llc-guide.png',
-          alt: 'California LLC Field Manual guide page',
-        },
+          alt: 'California LLC Field Manual guide page'
+        }
       ],
       summary:
-        'Plain-language guide to forming and running a California LLC — fees, taxes, and official sources.',
+        'Knowledge guide to for those considering forming and running a California LLC — fees, tax calculator, and official sources.',
       details: [
-        'React',
+        'React + Vite',
+        'TypeScript + ESLint + Prettier',
         'California SOS & FTB sources',
-        'LLC cost calculator',
-        'Static site generation',
+        'Next.js SSG deployment',
         'Storybook component docs',
-        'GitHub Pages',
-      ],
+        'It is not legal, tax, or insurance advice'
+      ]
     },
     {
       id: 'instrumental',
       title: 'Instrumental Design System',
       links: {
-        github: 'https://github.com/dwwr/instrumental-design-system',
+        github: 'https://github.com/dwwr/instrumental-design-system'
       },
       images: [
-        { src: '/images/projects/instrumental/instrumental1.png', alt: 'Instrumental readout component' },
-        { src: '/images/projects/instrumental/instrumental2.png', alt: 'Instrumental hexagon display' },
-        { src: '/images/projects/instrumental/instrumental3.png', alt: 'Instrumental chart component' },
+        {
+          src: '/images/projects/instrumental/instrumental1.png',
+          alt: 'Instrumental readout component'
+        },
+        {
+          src: '/images/projects/instrumental/instrumental2.png',
+          alt: 'Instrumental hexagon display'
+        },
+        {
+          src: '/images/projects/instrumental/instrumental3.png',
+          alt: 'Instrumental chart component'
+        },
         { src: '/images/projects/instrumental/instrumental4.png', alt: 'Instrumental data label' },
-        { src: '/images/projects/instrumental/instrumental5.png', alt: 'Instrumental seven-segment display' },
+        {
+          src: '/images/projects/instrumental/instrumental5.png',
+          alt: 'Instrumental seven-segment display'
+        }
       ],
       summary:
-        'React component library inspired by Evangelion UI — complex readouts, charts, and display primitives.',
+        'React component library inspired by Evangelion UI — complex readouts, charts, and display primitives evoking the aesthetic of the anime.',
       details: [
-        'React',
+        'React + Vite',
+        'TypeScript + ESLint + Prettier',
         'TypeScript',
-        'Storybook',
+        'Storybook component docs',
         'Evangelion-inspired UI',
-        'Chart primitives',
-        'Seven-segment displays',
-      ],
+        'custom SVG animations'
+      ]
     },
     {
       id: 'qudian',
       title: 'Qudian',
       links: {
-        github: 'https://github.com/dwwr/qudian',
+        github: 'https://github.com/dwwr/qudian'
       },
       images: [
         {
           src: '/images/projects/qudian/qudian.png',
-          alt: 'Qudian theme in VS Code and Terminal',
-        },
+          alt: 'Qudian theme in VS Code and Terminal'
+        }
       ],
-      summary:
-        'Dark teal editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
+      summary: 'Editor and terminal color themes for VS Code, Cursor, and macOS Terminal.',
       details: [
         'VS Code theme JSON',
         'Cursor editor themes',
         'macOS Terminal colors',
-        'Dark teal palette',
+        'custom palette',
         'Semantic token mapping',
-        'GitHub distribution',
-      ],
+        'GitHub distribution'
+      ]
     },
     {
       id: 'portfolio',
@@ -173,7 +196,7 @@ export const copy = {
       links: {
         live: 'https://dwwr.github.io/',
         github: 'https://github.com/dwwr/dwwr.github.io',
-        storybook: 'https://dwwr.github.io/',
+        storybook: 'https://dwwr.github.io/'
       },
       images: [],
       summary: 'This portfolio site — React, Vite, TypeScript, and GitHub Pages.',
@@ -184,15 +207,16 @@ export const copy = {
         'React Router',
         'Storybook',
         'GitHub Pages',
-      ],
-    },
+        'Static deployment'
+      ]
+    }
   ] as const,
 
   projectCard: {
     githubLink: 'GitHub',
     liveLink: 'Live',
     storybookCta: 'Open Storybook',
-    detailsButton: 'Details',
+    detailsButton: 'Details'
   },
 
   projectCarousel: {
@@ -200,17 +224,17 @@ export const copy = {
     next: 'Next image',
     counter: '{current} of {total}',
     openLightbox: 'View fullscreen',
-    closeLightbox: 'Close fullscreen',
+    closeLightbox: 'Close fullscreen'
   },
 
   footer: {
-    note: '© Derek Warner Reyes',
+    note: '© Derek Warner-Reyes',
     legalAria: 'About and legal',
     legalNav: [
       { href: '/privacy', label: 'Privacy' },
       { href: '/contact', label: 'Contact' },
-      { href: '/license', label: 'License' },
-    ] as const,
+      { href: '/license', label: 'License' }
+    ] as const
   },
 
   privacy: {
@@ -222,24 +246,24 @@ export const copy = {
         id: 'overview',
         heading: 'Overview',
         paragraphs: [
-          'This site is a static portfolio. It does not use analytics or advertising trackers in the MVP.',
-          'If that changes, this page will be updated before new tracking is enabled.',
-        ],
-      },
-    ],
+          'This site is a static portfolio. It does not use advertising trackers.',
+          'If that changes, this page will be updated before new tracking is enabled.'
+        ]
+      }
+    ]
   },
 
   contact: {
     metaTitle: 'Contact · dwwr.github.io',
-    metaDescription: 'How to reach Derek Warner Reyes.',
+    metaDescription: 'How to reach Derek Warner-Reyes.',
     title: 'Contact',
     sections: [
       {
         id: 'reach',
         heading: 'Reach out',
-        paragraphs: ['Email: derek@example.com', 'GitHub: https://github.com/dwwr'],
-      },
-    ],
+        paragraphs: ['Email: dwwarnerreyes@gmail.com', 'GitHub: https://github.com/dwwr']
+      }
+    ]
   },
 
   license: {
@@ -252,11 +276,11 @@ export const copy = {
         heading: 'Site content',
         paragraphs: [
           'Portfolio site content is © Derek Warner Reyes unless otherwise noted.',
-          'Individual projects may use their own licenses — see each project repository.',
-        ],
-      },
-    ],
-  },
+          'Individual projects may use their own licenses — see each project repository.'
+        ]
+      }
+    ]
+  }
 } satisfies PortfolioCopy
 
 export type Copy = typeof copy
@@ -265,6 +289,6 @@ export type Copy = typeof copy
 export function formatCopy(template: string, values: Record<string, string>): string {
   return Object.entries(values).reduce(
     (result, [key, value]) => result.replaceAll(`{${key}}`, value),
-    template,
+    template
   )
 }
