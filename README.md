@@ -4,7 +4,10 @@ Personal site, rebuilt as a React + Vite app. Editorial content is managed with 
 
 ## Development
 
+Use Node 22 (matches CI). With nvm:
+
 ```bash
+nvm use
 npm install
 npm run dev
 ```
