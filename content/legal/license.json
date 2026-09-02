@@ -1,0 +1,15 @@
+{
+  "metaTitle": "License · dwwr.github.io",
+  "metaDescription": "License information for dwwr.github.io.",
+  "title": "License",
+  "sections": [
+    {
+      "id": "site",
+      "heading": "Site content",
+      "paragraphs": [
+        "Portfolio site content is © Derek Warner Reyes unless otherwise noted.",
+        "Individual projects may use their own licenses — see each project repository."
+      ]
+    }
+  ]
+}

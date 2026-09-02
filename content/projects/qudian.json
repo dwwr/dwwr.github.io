@@ -1,0 +1,22 @@
+{
+  "order": 5,
+  "title": "Qudian",
+  "summary": "Editor and terminal color themes for VS Code, Cursor, and macOS Terminal inspired by the video game Caves of Qud.",
+  "details": [
+    "VS Code theme JSON",
+    "Cursor editor themes",
+    "macOS Terminal colors",
+    "custom palette",
+    "Semantic token mapping",
+    "GitHub distribution"
+  ],
+  "links": {
+    "github": "https://github.com/dwwr/qudian"
+  },
+  "images": [
+    {
+      "src": "/images/projects/qudian/qudian.png",
+      "alt": "Qudian theme in VS Code and Terminal"
+    }
+  ]
+}

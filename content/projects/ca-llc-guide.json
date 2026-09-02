@@ -1,0 +1,24 @@
+{
+  "order": 3,
+  "title": "California LLC Field Manual",
+  "summary": "Knowledge guide to for those considering forming and running a California LLC — fees, tax calculator, and official sources.",
+  "details": [
+    "React + Vite",
+    "TypeScript + ESLint + Prettier",
+    "California SOS & FTB sources",
+    "Next.js SSG deployment",
+    "Storybook component docs",
+    "It is not legal, tax, or insurance advice"
+  ],
+  "links": {
+    "live": "https://www.california-llc-guide.com/",
+    "github": "https://github.com/dwwr/ca-llc-field-manual",
+    "storybook": "https://www.california-llc-guide.com/storybook/"
+  },
+  "images": [
+    {
+      "src": "/images/projects/ca-llc-guide/llc-guide.png",
+      "alt": "California LLC Field Manual guide page"
+    }
+  ]
+}

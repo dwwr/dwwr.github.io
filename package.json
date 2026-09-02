@@ -5,8 +5,8 @@
   "type": "module",
   "homepage": "https://dwwr.github.io",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "tinacms dev -c \"vite --host\"",
+    "build": "tinacms build --local --skip-cloud-checks && tsc -b && vite build",
     "build:pages": "npm run build && npm run build-storybook && cp public/favicon.svg public/favicon-32.png storybook-static/ && rm -rf dist/storybook && cp -R storybook-static dist/storybook",
     "lint": "oxlint",
     "preview": "vite preview",
@@ -17,7 +17,8 @@
     "@fontsource/noto-sans": "^5.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.3"
+    "react-router-dom": "^7.18.3",
+    "tinacms": "^3.12.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.3.0",
@@ -26,6 +27,7 @@
     "@storybook/addon-mcp": "^0.7.0",
     "@storybook/addon-vitest": "^10.5.10",
     "@storybook/react-vite": "^10.5.10",
+    "@tinacms/cli": "^2.6.1",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
