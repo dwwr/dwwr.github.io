@@ -1,0 +1,22 @@
+{
+  "order": 1,
+  "title": "Sortega",
+  "summary": "Browser extension for cleaning & sorting bookmarks with a swipe-based UX- sort, keep, or delete bookmarks. \"Next!\"",
+  "details": [
+    "WebExtension APIs",
+    "React + Vite",
+    "TypeScript + ESLint + Prettier",
+    "Swipe-based UX a la Tinder",
+    "Folder filing workflow",
+    "Vercel deployment"
+  ],
+  "links": {
+    "live": "https://sortega.vercel.app/",
+    "github": "https://github.com/dwwr/sortega",
+    "storybook": "https://sortega.vercel.app/storybook/"
+  },
+  "images": [
+    { "src": "/images/projects/sortega/sort1.png", "alt": "Sortega bookmark triage UI" },
+    { "src": "/images/projects/sortega/sort2.png", "alt": "Sortega demo showcase" }
+  ]
+}

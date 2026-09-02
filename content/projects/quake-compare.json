@@ -1,0 +1,29 @@
+{
+  "order": 2,
+  "title": "Compare Magnitude",
+  "summary": "Educational calculator comparing earthquake magnitudes — amplitude, energy, and seismic moment.",
+  "details": [
+    "React + Vite",
+    "TypeScript + ESLint + Prettier",
+    "custom native SVG animations",
+    "Interactive charts",
+    "Static deployment",
+    "ed-tech concept"
+  ],
+  "links": {
+    "live": "https://www.compare-magnitude.com/",
+    "github": "https://github.com/dwwr/earf-quake",
+    "storybook": "https://www.compare-magnitude.com/storybook/?path=/docs/overview--docs"
+  },
+  "images": [
+    { "src": "/images/projects/quake-compare/quake1.png", "alt": "Compare Magnitude calculator" },
+    {
+      "src": "/images/projects/quake-compare/quake2.png",
+      "alt": "Compare Magnitude energy comparison"
+    },
+    {
+      "src": "/images/projects/quake-compare/quake3.png",
+      "alt": "Compare Magnitude seismograph view"
+    }
+  ]
+}

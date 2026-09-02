@@ -1,0 +1,35 @@
+{
+  "order": 4,
+  "title": "Instrumental Design System",
+  "summary": "React component library inspired by Evangelion UI — complex readouts, charts, and display primitives evoking the aesthetic of the anime.",
+  "details": [
+    "React + Vite",
+    "TypeScript + ESLint + Prettier",
+    "TypeScript",
+    "Storybook component docs",
+    "Evangelion-inspired UI",
+    "custom SVG animations"
+  ],
+  "links": {
+    "github": "https://github.com/dwwr/instrumental-design-system"
+  },
+  "images": [
+    {
+      "src": "/images/projects/instrumental/instrumental1.png",
+      "alt": "Instrumental readout component"
+    },
+    {
+      "src": "/images/projects/instrumental/instrumental2.png",
+      "alt": "Instrumental hexagon display"
+    },
+    {
+      "src": "/images/projects/instrumental/instrumental3.png",
+      "alt": "Instrumental chart component"
+    },
+    { "src": "/images/projects/instrumental/instrumental4.png", "alt": "Instrumental data label" },
+    {
+      "src": "/images/projects/instrumental/instrumental5.png",
+      "alt": "Instrumental seven-segment display"
+    }
+  ]
+}

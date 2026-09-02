@@ -8,5 +8,5 @@ export type {
   PortfolioCopy,
   Project,
   ProjectImage,
-  ProjectLinks,
+  ProjectLinks
 } from './types'

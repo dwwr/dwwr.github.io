@@ -1,0 +1,39 @@
+{
+  "metaTitle": "Welcome to my portfolio!",
+  "metaDescription": "Portfolio of Derek Warner-Reyes, Software Engineer.",
+  "bioCardHeading": "Bio",
+  "projectsHeading": "Recent Personal Projects",
+  "bioContent": "Fullstack software engineer based in Los Angeles with experience building, testing, and maintaining web and mobile applications from conception to production. Most recently served as lead fullstack software engineer at Olio Apps from 2021-2026.",
+  "name": "Derek Warner-Reyes",
+  "photoSrc": "/images/headshot.jpeg",
+  "photoAlt": "Portrait of Derek Warner-Reyes",
+  "columns": [
+    {
+      "label": "About",
+      "items": [
+        { "kind": "text", "text": "Fullstack Software Engineer" },
+        { "kind": "text", "text": "Based in Los Angeles" },
+        { "kind": "email", "email": "dwwarnerreyes@gmail.com" }
+      ]
+    },
+    {
+      "label": "Links",
+      "items": [
+        { "kind": "link", "label": "GitHub", "href": "https://github.com/dwwr" },
+        { "kind": "link", "label": "LinkedIn", "href": "https://www.linkedin.com/in/dwwr/" },
+        {
+          "kind": "link",
+          "label": "Stack Overflow",
+          "href": "https://stackoverflow.com/users/15891793/sweetbabyd"
+        }
+      ]
+    }
+  ],
+  "footerNote": "© Derek Warner-Reyes",
+  "legalAria": "About and legal",
+  "legalNav": [
+    { "href": "/privacy", "label": "Privacy" },
+    { "href": "/contact", "label": "Contact" },
+    { "href": "/license", "label": "License" }
+  ]
+}
