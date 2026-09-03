@@ -40,3 +40,7 @@ Pushes to `main` deploy the production build and Storybook to GitHub Pages (`/` 
 ## Optional: Tina Cloud
 
 To edit via `/admin` on the live site, create a project at [app.tina.io](https://app.tina.io), set `TINA_PUBLIC_CLIENT_ID` / `TINA_TOKEN` (see `.env.example`), and switch the build script to `tinacms build` without `--local --skip-cloud-checks`.
+
+## Optional: Google Analytics
+
+Set `VITE_GA_ID` to a GA4 measurement id (`G-…`) in `.env` for local testing, and as a GitHub Actions secret named `VITE_GA_ID` for production builds. Omit it to leave analytics off.
