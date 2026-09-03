@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Environment secrets (e.g. VITE_GA_ID) are only available to jobs that
+    # reference this environment — deploy already uses it for Pages.
+    environment: github-pages
     steps:
       - uses: actions/checkout@v4
 

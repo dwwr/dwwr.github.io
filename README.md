@@ -43,4 +43,6 @@ To edit via `/admin` on the live site, create a project at [app.tina.io](https:/
 
 ## Optional: Google Analytics
 
-Set `VITE_GA_ID` to a GA4 measurement id (`G-…`) in `.env` for local testing, and as a GitHub Actions secret named `VITE_GA_ID` for production builds. Omit it to leave analytics off.
+Set `VITE_GA_ID` to a GA4 measurement id (`G-…`) in `.env` for local testing.
+
+For production, add a **GitHub Actions secret** named `VITE_GA_ID` on the `github-pages` **environment** (Settings → Environments → github-pages → Environment secrets), or as a repository secret. The deploy workflow’s build job reads that environment so the id is baked into the static bundle. Omit it to leave analytics off.
