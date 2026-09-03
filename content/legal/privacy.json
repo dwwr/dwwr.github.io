@@ -8,7 +8,15 @@
       "heading": "Overview",
       "paragraphs": [
         "This site is a static portfolio. It does not use advertising trackers.",
-        "If that changes, this page will be updated before new tracking is enabled."
+        "It may use Google Analytics to understand aggregate traffic (pages viewed, approximate location, device). That data is used to see whether the site is useful, not to identify you personally."
+      ]
+    },
+    {
+      "id": "analytics",
+      "heading": "Analytics",
+      "paragraphs": [
+        "When Google Analytics is enabled, Google may collect usage data under Google’s privacy policy: https://policies.google.com/privacy",
+        "This site does not set its own first-party tracking cookies. Google may set cookies for analytics. You can block cookies in your browser."
       ]
     }
   ]

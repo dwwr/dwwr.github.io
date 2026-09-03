@@ -27,6 +27,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build:pages
+        env:
+          VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

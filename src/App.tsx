@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Analytics } from './components/Analytics/Analytics'
 import { PageShell } from './components/PageShell/PageShell'
 import { SiteFooter } from './components/SiteFooter/SiteFooter'
 import { ContactPage } from './pages/ContactPage'
@@ -9,6 +10,7 @@ import { PrivacyPage } from './pages/PrivacyPage'
 export default function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <PageShell>
         <Routes>
           <Route path="/" element={<HomePage />} />
