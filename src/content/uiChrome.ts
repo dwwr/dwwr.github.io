@@ -10,9 +10,9 @@ export const uiChrome = {
     projectDetails: '{title} details'
   },
   projectCard: {
-    githubLink: 'GitHub',
+    githubLink: 'Github',
     liveLink: 'Live',
-    storybookCta: 'Open Storybook',
+    storybookCta: 'Storybook',
     detailsButton: 'Details'
   },
   projectCarousel: {
