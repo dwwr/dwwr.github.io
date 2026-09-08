@@ -50,12 +50,21 @@
 }
 
 .project-card__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   flex-shrink: 0;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
+}
+
+.project-card__link-out {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
 }
 
 .project-card__pill--live {
