@@ -1,7 +1,7 @@
 {
   "order": 5,
   "title": "Qudian",
-  "summary": "Editor and terminal color themes for VS Code, Cursor, and macOS Terminal inspired by the video game Caves of Qud.",
+  "summary": "Editor and terminal color themes for VS Code, Cursor, and macOS Terminal inspired by Caves of Qud.",
   "details": [
     "VS Code theme JSON",
     "Cursor editor themes",

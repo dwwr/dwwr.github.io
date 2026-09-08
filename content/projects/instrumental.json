@@ -5,13 +5,14 @@
   "details": [
     "React + Vite",
     "TypeScript + ESLint + Prettier",
-    "TypeScript",
     "Storybook component docs",
     "Evangelion-inspired UI",
-    "custom SVG animations"
+    "custom SVG animations",
+    "anime.js"
   ],
   "links": {
-    "github": "https://github.com/dwwr/instrumental-design-system"
+    "github": "https://github.com/dwwr/instrumental-design-system",
+    "storybook": "https://instrumental-design-system.vercel.app/"
   },
   "images": [
     {

@@ -1,7 +1,7 @@
 {
   "order": 2,
   "title": "Compare Magnitude",
-  "summary": "Educational calculator comparing earthquake magnitudes — amplitude, energy, and seismic moment.",
+  "summary": "Educational calculator comparing earthquake magnitudes — analyze amplitude, energy, and seismic moment.",
   "details": [
     "React + Vite",
     "TypeScript + ESLint + Prettier",
