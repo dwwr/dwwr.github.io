@@ -3,7 +3,7 @@
   "metaDescription": "Portfolio of Derek Warner-Reyes, Software Engineer.",
   "bioCardHeading": "Bio",
   "projectsHeading": "Recent Personal Projects",
-  "bioContent": "Fullstack software engineer based in Los Angeles with experience building, testing, and maintaining web and mobile applications from conception to production. Most recently served as lead fullstack software engineer at Olio Apps from 2021-2026.",
+  "bioContent": "Fullstack software engineer experienced in building, testing, and maintaining web and mobile applications from conception to production. Most recently served as lead fullstack software engineer at Olio Apps from 2021-2026.\n\nIn my free time I enjoy reading, writing, playing saxophone, cycling, and going to concerts. I'm also a passionate home chef, loving uncle, and I enjoy supporting my community through local activism and volunteer work.",
   "name": "Derek Warner-Reyes",
   "photoSrc": "/images/headshot.jpeg",
   "photoAlt": "Portrait of Derek Warner-Reyes",
@@ -13,7 +13,7 @@
       "items": [
         { "kind": "text", "text": "Fullstack Software Engineer" },
         { "kind": "text", "text": "Based in Los Angeles" },
-        { "kind": "email", "email": "dwwarnerreyes@gmail.com" }
+        { "kind": "text", "text": "English, Spanish, & German Speaker" }
       ]
     },
     {
@@ -25,7 +25,8 @@
           "kind": "link",
           "label": "Stack Overflow",
           "href": "https://stackoverflow.com/users/15891793/sweetbabyd"
-        }
+        },
+        { "kind": "email", "email": "dwwarnerreyes@gmail.com" }
       ]
     }
   ],
