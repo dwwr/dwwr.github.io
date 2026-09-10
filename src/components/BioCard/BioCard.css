@@ -10,3 +10,13 @@
   font-size: calc(1.25rem + 2pt);
   border-bottom: 1px solid currentColor;
 }
+
+.bio-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bio-card__body p {
+  margin: 0;
+}
