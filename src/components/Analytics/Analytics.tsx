@@ -1,28 +1,28 @@
 import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
-import { ensureGtag, getGaId, trackPageView } from '../../lib/analytics'
+import { getGaId, initGa, trackPageView } from '../../lib/analytics'
 
 /** Loads GA4 when `VITE_GA_ID` is set; records SPA navigations. */
 export function Analytics() {
   const location = useLocation()
   const gaId = getGaId()
-  const scriptReady = useRef(false)
+  const initialized = useRef(false)
 
   useEffect(() => {
-    if (!gaId) return
-    if (document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${gaId}"]`)) {
-      return
+    if (!gaId || initialized.current) return
+    initialized.current = true
+
+    initGa(gaId)
+
+    const existing = document.querySelector(
+      `script[src*="googletagmanager.com/gtag/js?id=${gaId}"]`
+    )
+    if (!existing) {
+      const script = document.createElement('script')
+      script.async = true
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
+      document.head.appendChild(script)
     }
-    if (scriptReady.current) return
-    scriptReady.current = true
-
-    ensureGtag()
-    window.gtag?.('js', new Date())
-
-    const script = document.createElement('script')
-    script.async = true
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
-    document.head.appendChild(script)
   }, [gaId])
 
   useEffect(() => {

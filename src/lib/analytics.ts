@@ -16,13 +16,24 @@ declare global {
 export function ensureGtag(): void {
   window.dataLayer ??= []
   if (!window.gtag) {
-    window.gtag = (...args: unknown[]) => {
-      window.dataLayer?.push(args)
+    // Must push the Arguments object (Google’s stub). Pushing a rest array
+    // loads gtag.js but never sends collect hits.
+    window.gtag = function gtag() {
+      window.dataLayer!.push(arguments)
     }
   }
 }
 
 export function trackPageView(gaId: string, path: string): void {
   ensureGtag()
-  window.gtag?.('config', gaId, { page_path: path })
+  window.gtag?.('event', 'page_view', {
+    page_path: path,
+    send_to: gaId
+  })
+}
+
+export function initGa(gaId: string): void {
+  ensureGtag()
+  window.gtag?.('js', new Date())
+  window.gtag?.('config', gaId, { send_page_view: false })
 }
