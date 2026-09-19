@@ -1,0 +1,16 @@
+{
+  "order": 1,
+  "title": "Prefection",
+  "summary": "UI elements inspired by the Hitchhiker's Guide, as portrayed in the 2005 film.",
+  "details": ["React 19", "TypeScript", "Vite", "Emotion", "anime.js", "Storybook 10", "Vercel"],
+  "links": {
+    "github": "https://github.com/dwwr/prefection-ui",
+    "storybook": "https://prefection-ui.vercel.app/"
+  },
+  "images": [
+    {
+      "src": "/images/projects/prefection/prefection1.png",
+      "alt": "Prefection BarGroup table of contents UI"
+    }
+  ]
+}
