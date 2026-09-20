@@ -10,7 +10,11 @@
   "images": [
     {
       "src": "/images/projects/prefection/prefection1.png",
-      "alt": "Prefection BarGroup table of contents UI"
+      "alt": "Prefection table of contents UI"
+    },
+    {
+      "src": "/images/projects/prefection/prefection2.png",
+      "alt": "Prefection table of contents mobile UI"
     }
   ]
 }

@@ -71,7 +71,7 @@ export function ProjectImageLightbox({
       className="project-image-lightbox"
       aria-label={formatCopy(copy.a11y.projectLightbox, { title })}
       onClick={(event) => {
-        if (event.target === dialogRef.current) onClose()
+        if (event.target === event.currentTarget) onClose()
       }}
       onCancel={(event) => {
         event.preventDefault()
@@ -80,7 +80,9 @@ export function ProjectImageLightbox({
     >
       <div
         className="project-image-lightbox__inner"
-        onClick={(event) => event.stopPropagation()}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) onClose()
+        }}
       >
         <div className="project-image-lightbox__carousel-wrap">
           <ProjectImageCarouselView
