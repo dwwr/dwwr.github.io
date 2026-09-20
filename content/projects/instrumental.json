@@ -31,6 +31,14 @@
     {
       "src": "/images/projects/instrumental/instrumental5.png",
       "alt": "Instrumental seven-segment display"
+    },
+    {
+      "src": "/images/projects/instrumental/instrumental6.png",
+      "alt": "Instrumental active time remaining timer"
+    },
+    {
+      "src": "/images/projects/instrumental/instrumental7.png",
+      "alt": "Instrumental active time remaining timer in perspective"
     }
   ]
 }
