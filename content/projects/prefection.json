@@ -1,5 +1,5 @@
 {
-  "order": 1,
+  "order": 2,
   "title": "Prefection",
   "summary": "UI elements inspired by the Hitchhiker's Guide, as portrayed in the 2005 film.",
   "details": ["React 19", "TypeScript", "Vite", "Emotion", "anime.js", "Storybook 10", "Vercel"],
