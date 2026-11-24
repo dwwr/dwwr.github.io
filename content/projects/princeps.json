@@ -1,0 +1,23 @@
+{
+  "order": 8,
+  "title": "Princeps",
+  "summary": "An extension for Chrome and Firefox that automatically unchecks \"Follow [company name] to stay up to date with their page\" on LinkedIn Easy Apply postings.",
+  "details": [
+    "Manifest V3 content script",
+    "Chrome + Firefox",
+    "LinkedIn Easy Apply only",
+    "No data collection",
+    "Load unpacked / store pack script",
+    "Node test suite"
+  ],
+  "links": {
+    "github": "https://github.com/dwwr/princeps",
+    "release": "https://github.com/dwwr/princeps/releases"
+  },
+  "images": [
+    {
+      "src": "/images/projects/princeps/princeps-1.png",
+      "alt": "The extension in action on a LinkedIn Easy Apply posting"
+    }
+  ]
+}
