@@ -31,6 +31,7 @@ export interface ProjectImage {
 export interface ProjectLinks {
   readonly github?: string
   readonly live?: string
+  readonly release?: string
   readonly storybook?: string
 }
 
@@ -82,6 +83,7 @@ export interface PortfolioCopy {
     readonly liveLink: string
     readonly storybookCta: string
     readonly detailsButton: string
+    readonly releaseLink: string
   }
   readonly projectCarousel: {
     readonly previous: string

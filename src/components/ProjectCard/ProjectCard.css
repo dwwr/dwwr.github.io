@@ -76,6 +76,15 @@
   background-color: #bbf7d0;
 }
 
+.project-card__pill--release {
+  background-color: #c4b5fd;
+  color: #2e1065;
+}
+
+.project-card__pill--release:hover {
+  background-color: #ddd6fe;
+}
+
 .project-card__pill--github {
   background-color: #4288df;
   color: #e3eafc;

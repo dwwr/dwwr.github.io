@@ -1,0 +1,31 @@
+{
+  "order": 1,
+  "title": "Cloud Chaser",
+  "summary": "Download tracks you uploaded, or otherwise have the right to download, from a music streaming link. Make instrumentals from streams and local audio files, split stems, export to different file types for remixing and sampling. MacOS desktop application built with Electron.",
+  "details": [
+    "Python + yt-dlp",
+    "Demucs for stem splitting",
+    "Electron Mac app",
+    "Next.js + React local UI",
+    "CLI (pull / track / instrumental)",
+    "ffmpeg for file export conversion"
+  ],
+  "links": {
+    "github": "https://github.com/dwwr/cloud-chaser",
+    "release": "https://github.com/dwwr/cloud-chaser/releases"
+  },
+  "images": [
+    {
+      "src": "/images/projects/cloud-chaser/cloud-chaser-1.png",
+      "alt": "Cloud Chaser splash screen"
+    },
+    {
+      "src": "/images/projects/cloud-chaser/cloud-chaser-2.png",
+      "alt": "Cloud Chaser main download UI"
+    },
+    {
+      "src": "/images/projects/cloud-chaser/cloud-chaser-3.png",
+      "alt": "Cloud Chaser stem splitter UI"
+    }
+  ]
+}

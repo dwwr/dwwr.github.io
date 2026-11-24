@@ -1,5 +1,3 @@
-/** UI chrome kept in code — not edited via Tina. */
-
 export const uiChrome = {
   a11y: {
     bioCard: 'Bio card',
@@ -13,7 +11,8 @@ export const uiChrome = {
     githubLink: 'Github',
     liveLink: 'Live',
     storybookCta: 'Storybook',
-    detailsButton: 'Details'
+    detailsButton: 'Details',
+    releaseLink: 'Release'
   },
   projectCarousel: {
     previous: 'Previous image',
