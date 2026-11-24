@@ -42,6 +42,7 @@ interface ProjectFile {
   links?: {
     github?: string
     live?: string
+    release?: string
     storybook?: string
   }
   images?: readonly { src: string; alt: string }[]
@@ -78,9 +79,12 @@ function mapLinks(links: ProjectFile['links']): ProjectLinks | undefined {
   const mapped: ProjectLinks = {
     ...(links.github ? { github: links.github } : {}),
     ...(links.live ? { live: links.live } : {}),
+    ...(links.release ? { release: links.release } : {}),
     ...(links.storybook ? { storybook: links.storybook } : {})
   }
-  return mapped.github || mapped.live || mapped.storybook ? mapped : undefined
+  return mapped.github || mapped.live || mapped.release || mapped.storybook
+    ? mapped
+    : undefined
 }
 
 function loadProjects(): Project[] {

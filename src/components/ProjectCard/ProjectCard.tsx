@@ -12,7 +12,7 @@ export interface ProjectCardProps {
 function hasTextLinks(project: Project): boolean {
   const links = project.links
   if (!links) return false
-  return Boolean(links.live || links.github)
+  return Boolean(links.live || links.release || links.github || links.storybook)
 }
 
 function splitDetails(items: readonly string[]): [readonly string[], readonly string[]] {
@@ -57,7 +57,7 @@ export function ProjectCard({ project, defaultDetailsOpen = false }: ProjectCard
         <div className="project-card__title-row">
           <h2 className="project-card__title">{project.title}</h2>
 
-          {showLinks || links?.storybook ? (
+          {showLinks ? (
             <nav
               className="project-card__pills"
               aria-label={formatCopy(copy.a11y.projectLinks, { title: project.title })}
@@ -70,6 +70,17 @@ export function ProjectCard({ project, defaultDetailsOpen = false }: ProjectCard
                   rel="noopener noreferrer"
                 >
                   {labels.liveLink}
+                  <LinkOutIcon />
+                </a>
+              ) : null}
+              {links?.release ? (
+                <a
+                  className="project-card__pill project-card__pill--release"
+                  href={links.release}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {labels.releaseLink}
                   <LinkOutIcon />
                 </a>
               ) : null}

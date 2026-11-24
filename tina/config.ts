@@ -246,6 +246,7 @@ export default defineConfig({
             fields: [
               { type: 'string', name: 'github', label: 'GitHub URL' },
               { type: 'string', name: 'live', label: 'Live URL' },
+              { type: 'string', name: 'release', label: 'Release URL' },
               { type: 'string', name: 'storybook', label: 'Storybook URL' }
             ]
           },
